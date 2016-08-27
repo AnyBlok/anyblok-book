@@ -1,5 +1,10 @@
 # Installer AnyBlok 
 
+
+## Créer un virtualenv
+
+
+
 1) créer un virtualenv                                                          
                                                                                 
 pyvenv-3.5 sandbox                                                              
