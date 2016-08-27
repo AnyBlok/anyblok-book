@@ -1,10 +1,22 @@
 # Installer AnyBlok 
 
+AnyBlok est un framework python. Il utilise l'ORM SQLAlchemy. Pour les besoin du tutorial nous allons utilisé Postgresql comme serveur de base de donnée. Ce choix est lié uniquement au fait que je maîtrise d'avantage cette BDD que les autres. Si vous souhaitez utilisé une autre BDD, vous devrez adapter les partis installation et l'option de commande --db-driver-name. 
 
-## Créer un virtualenv
 
-                                                         
-                                                                                
+## Préparer votre instance de travail.
+
+
+Dans un premier temps installer votre serveur de base de donnée préféré.
+
+
+> sudo apt-get install postgresql
+
+Pour plus d'information, vous pouvez suivre les indications des documentations suivantes:
+* [Ubuntu]([https://doc.ubuntu-fr.org/postgresql](https://doc.ubuntu-fr.org/postgresql)
+* [Debian](https://wiki.debian.org/PostgreSql)
+* [Fedora](http://doc.fedora-fr.org/wiki/Installation_et_configuration_de_PostgreSQL)
+* [Mac OS avec macport](https://coderwall.com/p/xezzaa/install-postgresql-9-2-on-os-x-mountain-lion)
+
 pyvenv-3.5 sandbox                                                              
                                                                                 
 2) installer anyblok                                                            
