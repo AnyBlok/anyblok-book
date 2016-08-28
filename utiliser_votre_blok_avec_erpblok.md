@@ -17,7 +17,7 @@ localhost:5000/
                                                                                 
 2) Add the new blok ``erpblok-todolist``                                        
                                                                                 
-2.1) add the dependencie anyblok_pyramid in the setup.py of the distribution    
+2.1) add the dependency anyblok_pyramid in the setup.py of the distribution    
                                                                                 
 ::                                                                              
                                                                                 
@@ -42,7 +42,7 @@ localhost:5000/
     
  
                                                                                 
-2.2) A dd a new Blok, which inherit of todolist                                 
+2.2) Add a new Blok, which inherit of todolist                                 
                                                                                 
 .. anyblok_todolist                                                             
 .. ...                                                                          
@@ -73,7 +73,7 @@ cd ..
                                                                                 
 sandbox/bin/anyblok_updatedb --db-name todolist --db-driver-name postgresql --install-bloks erpblok-todolist
                                                                                 
-2.5) start the serveur (only for test, for production use gunicorn)             
+2.5) start the server (only for test, for production use gunicorn)             
                                                                                 
 sandbox/bin/anyblok_pyramid --db-name todolist --db-driver-name postgresql      
 sandbox/bin/anyblok_interpreter --db-name todolist --db-driver-name postgresql  

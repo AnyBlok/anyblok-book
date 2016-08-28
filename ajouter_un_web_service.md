@@ -1,11 +1,11 @@
 # Ajouter un web service
 
                                                                                 
-We use Pyramid to add Rest API and tiny web client.                             
+We use Pyramid to add a Rest API and a tiny web client.                             
                                                                                 
 1)  Add the pyramid dependencies                                                
                                                                                 
-1.1) add the dependencie anyblok_pyramid in the setup.py of the distribution    
+1.1) add the dependency anyblok_pyramid in the setup.py of the distribution    
                                                                                 
 ::                                                                              
                                                                                 
@@ -27,7 +27,7 @@ We use Pyramid to add Rest API and tiny web client.
         },                                                                      
     )                                                                           
                                                                                 
-1.2) A dd a new Blok, which inherit of todolist                                 
+1.2) Add a new Blok, which inherits todolist                                 
                                                                                 
 .. anyblok_todolist                                                             
 .. ...                                                                          
@@ -57,7 +57,7 @@ cd ..
 sandbox/bin/anyblok_updatedb --db-name todolist --db-driver-name postgresql --install-bloks todolist-client
  
                                                                                 
-1.5) start the serveur (only for test, for production use gunicorn)             
+1.5) start the server (only for test, for production use gunicorn)             
                                                                                 
 sandbox/bin/anyblok_pyramid --db-name todolist --db-driver-name postgresql      
 sandbox/bin/anyblok_interpreter --db-name todolist --db-driver-name postgresql  
@@ -232,7 +232,7 @@ wget localhost:5000/todolist/
 on the serveur                                                                  
 127.0.0.1 - - [11/May/2016 18:06:14] "GET /todolist/ HTTP/1.1" 200 107          
   
-  3.3.1.3) add unit test                                                          
+  3.3.1.3) add unit tests                                                         
                                                                                 
 ::                                                                              
                                                                                 
@@ -686,7 +686,7 @@ on the serveur
             todo.cancel()                                                       
             self.webserver.post('/todolist/%d/cancel' % todo.id, status=403)    
                                                                                 
-Great you have a RestFull api for web service                                   
+Great, you have a RestFul API for a web service                                   
                                                
                                                                                
 3.4) Add client for display todolist                                            

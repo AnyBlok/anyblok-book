@@ -3,7 +3,7 @@
                                                                                 
 1) Créer un paquet python                                                       
                                                                                 
-lire le tutaux sur les paquet python pour le pypi                               
+lire le tutoriel sur les paquets python pour le pypi                               
 http://sametmax.com/creer-un-setup-py-et-mettre-sa-bibliotheque-python-en-ligne-sur-pypi/
                                                                                 
 Structure du package                                                            
@@ -157,7 +157,7 @@ sandbox/bin/anyblok_interpreter --db-name todolist --db-driver-name postgresql
                              nullable=False, default='2')  
                              
                                                                                 
-6.2) Declarer le fichier todo dans le blok                                      
+6.2) Déclarer le fichier todo dans le blok                                      
                                                                                 
 ::                                                                              
                                                                                 
@@ -420,5 +420,5 @@ Ran 4 tests in 0.880s
                                                                                 
 OK                                                                              
                                                                                 
-Congrate you have your first blok                                               
+Congrats you have your first blok                                               
                                    
