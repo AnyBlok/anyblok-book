@@ -1,70 +1,81 @@
 # Créer son premier Blok
 
-                                                                                
-1) Créer un paquet python                                                       
+Les blocs sont definis dans des pacquets python standard, un pacquet pouvant contenir plusieurs blok
+
+## Créer un paquet python                                                       
                                                                                 
 lire le tutoriel sur les paquets python pour le pypi                               
 http://sametmax.com/creer-un-setup-py-et-mettre-sa-bibliotheque-python-en-ligne-sur-pypi/
                                                                                 
-Structure du package                                                            
+Structure du package pour l'exemple
                                                                                 
-anyblok_todolist                                                                
-.. anyblok_todolist                                                             
-.. .. __init__.py                                                               
-.. .. todolist                                                                  
-.. .. .. __init__.py                                                            
-.. setup.py                                                                     
+> anyblok_todolist                                                                
+> .. anyblok_todolist                                                             
+> .. .. __init__.py                                                               
+> .. .. todolist                                                                  
+> .. .. .. __init__.py                                                            
+> .. setup.py                                                                     
                                                                                 
-1.1) Fichier setup                                                              
-                                                                                
-::                                                                              
-                                                                                
-    from setuptools import setup, find_packages                                 
-                                                                                
-    requires = [                                                                
-        'anyblok',                                                              
-    ]                                                                           
-                                                                                
-    setup(                                                                      
-        name="anyblok_todolist",                                                
-        version='0.1.0',                                                        
-        author="Jean-Sébastien Suzanne",                                        
-        author_email="jssuzanne@anybox.fr",                                     
-        description="Todolist for AnyBlok",                                     
-        license="MPL2",                                                         
-        long_description="Tiny todolist for AnyBlok",                           
-        packages=find_packages(),                                               
-        zip_safe=False,                                                         
-        include_package_data=True,                                              
-        install_requires=requires,                                                 
-        tests_require=requires + ['nose'],                                      
-        classifiers=[                                                           
-            'Intended Audience :: Developers',                                  
-            'Programming Language :: Python :: 3.3',                            
-            'Programming Language :: Python :: 3.4',                            
-            'Programming Language :: Python :: 3.5',                            
-            'Topic :: Software Development :: Libraries :: Python Modules',     
-        ],                                                                      
-        entry_points={                                                          
-            'bloks': [                                                          
-                'todolist=anyblok_todolist.todolist:BlokTodoList',              
-            ],                                                                  
-        },                                                                      
-        extras_require={},                                                      
-    )                        
+### Fichier setup
+
+Le fichier setup doit définir l'entry_point bloks. Celui ci pointe vers une module
+python, Ce module porte la déclaration du blok.
+
+> **WARNING** Le module doit être un repertoire avec un fichier __init__.py. Tous les fichiers et répertoires a l'interrieur seront définit comme appartenant au blok.
+
+````python                                                                              
+from setuptools import setup, find_packages                                 
+                                                                            
+requires = [                                                                
+    'anyblok',                                                              
+]                                                                           
+                                                                            
+setup(                                                                      
+    name="anyblok_todolist",                                                
+    version='0.1.0',                                                        
+    author="Jean-Sébastien Suzanne",                                        
+    author_email="jssuzanne@anybox.fr",                                     
+    description="Todolist for AnyBlok",                                     
+    license="MPL2",                                                         
+    long_description="Tiny todolist for AnyBlok",                           
+    packages=find_packages(),                                               
+    zip_safe=False,                                                         
+    include_package_data=True,                                              
+    install_requires=requires,                                                 
+    tests_require=requires + ['nose'],                                      
+    classifiers=[                                                           
+        'Intended Audience :: Developers',                                  
+        'Programming Language :: Python :: 3.3',                            
+        'Programming Language :: Python :: 3.4',                            
+        'Programming Language :: Python :: 3.5',                            
+        'Topic :: Software Development :: Libraries :: Python Modules',     
+    ],                                                                      
+    entry_points={                                                          
+        'bloks': [                                                          
+            'todolist=anyblok_todolist.todolist:BlokTodoList',              
+        ],                                                                  
+    },                                                                      
+    extras_require={},                                                      
+)                        
+```
                                                                                    
-1.2) Fichier de description du blok ``anyblok_todolist/anyblok_todolist/todolist/__init__.py``
+### Fichier de description du blok 
+                                
+Il est definit dans le repertoire ciblé par l'entry_point:
+> anyblok_todolist/anyblok_todolist/todolist/__init__.py
+
+La declaration du blok est faite par la création d'une class qui hérite de Blok. La seule information obligatoire est le numero de version.
+
+````python                                                                              
+from anyblok.blok import Blok                                               
+                                                                            
+                                                                            
+class BlokTodoList(Blok):                                                   
+    version = '0.1.0'                                                       
+```
                                                                                 
-::                                                                              
                                                                                 
-    from anyblok.blok import Blok                                               
-                                                                                
-                                                                                
-    class BlokTodoList(Blok):                                                   
-        version = '0.1.0'                                                       
-                                                                                
-                                                                                
-2) Installer le nouveau package.                                                
+## Installer le nouveau package.                                                
                                                                                 
 cd anyblok_todolist                                                             
 ../sandbox/bin/python setup.py develop                                          
