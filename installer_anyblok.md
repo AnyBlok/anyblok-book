@@ -63,21 +63,22 @@ L'ORM étant celui de SQLAlchemy, les amoureux de cette librairie ne seront pas 
 
 Il faut donc remplacer:
 
-"""python
+```python
 session.query(Foo)
-"""
+```
 
 par :
 
-"""python
+```python
 registry.Foo.query()
-"""
+```
 
 Dans notre premier example nous allons simplement listé les bloks existant.
 
 > sandbox/bin/anyblok_interpreter --db-name todolist --db-driver-name postgresql  
 > ==> Load config file '/Library/Application Support/AnyBlok/conf.cfg'            
-> ==> Load config file '/Users/jssuzanne/Library/Application Support/AnyBlok/conf.cfg'
+> ==> Load config file '/Users/jssuzanne/Library/Application Support/A
+> nyBlok/conf.cfg'
 > ==> >>> registry.System.Blok.query().all()                                          
 > ==> >>> [anyblok-core (installed), anyblok-io (uninstalled), anyblok-io-csv (uninstalled), anyblok-io-xml (uninstalled), model_authz (uninstalled)]
 
