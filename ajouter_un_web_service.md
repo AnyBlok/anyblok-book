@@ -1,129 +1,160 @@
 # Ajouter un web service
 
+Nous utilisons **Pyramid** pour ajouter une api Rest et un petit client.
+
+## Ajouter un nouveau blok
+
+### Modifier le setup du paquet python
+
+Il faut ajouter dans l'**entry_point** le nouveau blok. Et ne pas oublié la dépendnce a **anyblok_pyramid**.
+
+**anyblok_pyramid** a, comme son nom l'indique une dépendance vers **Pyramid**
+
+```python
+
+...
+
+required = [
+    ...
+    'anyblok_pyramid',
+]
+
+setupt(
+    ...
+    entry_points={
+        'bloks': [
+            ...
+            'todolist=anyblok_todolist.todolist:BlokTodoList',
+            'todolist-client=anyblok_todolist.client:BlokTodoListClient',
+        ],
+    },
+)
+```
+
+### Ajouter le blok BlokTodoListClient
+
+Au même niveau que le blok todolist nous ajoutons le repertoire client qui porte le blok BlokTodoListClient dans sont fichier __init__.py
+
+> .. anyblok_todolist
+> .. ...
+> .. .. todolist
+> .. .. ...
+> .. .. client
+> .. .. .. __init__.py
+
+Ici en plus de la version nous allons ajouter une notion de dépendence entre blok symbolisé par l'attribut **required**. Ca indique que le todolist sera installé avec se bloc.
+
+```python
+from anyblok.blok import Blok
+
+
+class BlokTodoListClient(Blok):
+   version = '0.1.0'
+
+   required = ['todolist']
+```
+
+### Mis à jour du paquet dans l'environnement python.
+
+Nous devons mettre a jour notre environnement pour que le nouveau **entry_point**, sinon le nouveau bloc ne sera pas disponible dans la liste des bloks car non connu.
+
+> cd anyblok_todolist
+> ../sandbox/bin/python setup.py develop
+> cd ..
+
+### Installer le nouveau blok
+
+Cette commande n'a plus de secret pour vous
                                                                                 
-We use Pyramid to add a Rest API and a tiny web client.                             
+> sandbox/bin/anyblok_updatedb --db-name todolist --db-driver-name postgresql --install-bloks todolist-client
+
+### Lister les bloks installés
+
+> sandbox/bin/anyblok_interpreter --db-name todolist --db-driver-name postgresql
+> ==> In [1]: registry.System.Blok.query().all()
+> ==> Out[1]:
+> ==> [anyblok-core (installed),
+> ==>  anyblok-io (uninstalled),
+> ==>  anyblok-io-csv (uninstalled),
+> ==>  anyblok-io-xml (uninstalled),
+> ==>  model_authz (uninstalled),
+> ==>  todolist (installed),
+> ==>  todolist-client (installed)]
+
+### Démarrer le serveur
+
+Seulement pour le developpement, car ce console script utilise le serveur wsgi de python. Pour une exploitation plus robuste il faut utiliser **gunicorn** ou **pyserve**
+
+> sandbox/bin/anyblok_pyramid --db-name todolist --db-driver-name postgresql
+
+### Faire une première requête
+
+Pour cela il suffit soit d'utiliser:
+* un navigteur
+* wget ou curl
+
+> wget localhost:5000/
+> --2016-05-11 14:32:15--  http://localhost:5000/
+> Résolution de localhost (localhost)… 127.0.0.1, ::1
+> Connexion à localhost (localhost)|127.0.0.1|:5000… connecté.
+> requête HTTP transmise, en attente de la réponse… 404 Not Found
+> 2016-05-11 14:32:15 erreur 404 : Not Found.
                                                                                 
-1)  Add the pyramid dependencies                                                
-                                                                                
-1.1) add the dependency anyblok_pyramid in the setup.py of the distribution    
-                                                                                
-::                                                                              
-                                                                                
-    ...                                                                         
-                                                                                
-    required = [                                                                
-        ...                                                                     
-        'anyblok_pyramid',                                                      
-    ]                                                                           
-                                                                                
-    setupt(                                                                     
-        ...                                                                     
-        entry_points={                                                          
-            'bloks': [                                                          
-                ...                                                             
-                'todolist-rest-api=anyblok_todolist.todolist:BlokTodoList',     
-                'todolist-client=anyblok_todolist.client:BlokTodoListClient',   
-            ],                                                                  
-        },                                                                      
-    )                                                                           
-                                                                                
-1.2) Add a new Blok, which inherits todolist                                 
-                                                                                
-.. anyblok_todolist                                                             
-.. ...                                                                          
-.. .. todolist                                                                  
-.. .. ...                                                                       
-.. .. client                                                                    
-.. .. .. __init__.py                                                            
-                                                                                
-::                                                                              
-                                                                                
-   from anyblok.blok import Blok                                                
-                                                                                
-                                                                                
-   class BlokTodoListClient(Blok):                                              
-       version = '0.1.0'                                                        
-                                                                                
-       required = ['todolist']                                                  
-                                                                                
-1.3) Update the distribution                                                    
-                                                                                
-cd anyblok_todolist                                                             
-../sandbox/bin/python setup.py develop                                          
-cd ..                                                                           
-                                                                                
-1.4) Install the blok                                                           
-                                                                                
-sandbox/bin/anyblok_updatedb --db-name todolist --db-driver-name postgresql --install-bloks todolist-client
- 
-                                                                                
-1.5) start the server (only for test, for production use gunicorn)             
-                                                                                
-sandbox/bin/anyblok_pyramid --db-name todolist --db-driver-name postgresql      
-sandbox/bin/anyblok_interpreter --db-name todolist --db-driver-name postgresql  
-==> In [1]: registry.System.Blok.query().all()                                  
-==> Out[1]:                                                                     
-==> [anyblok-core (installed),                                                  
-==>  anyblok-io (uninstalled),                                                  
-==>  anyblok-io-csv (uninstalled),                                              
-==>  anyblok-io-xml (uninstalled),                                              
-==>  model_authz (uninstalled),                                                 
-==>  todolist (installed),                                                      
-==>  todolist-client (installed)]                                               
-                                                                                
-1.6) call the path /                                                            
-                                                                                
-wget localhost:5000/                                                            
---2016-05-11 14:32:15--  http://localhost:5000/                                 
-Résolution de localhost (localhost)… 127.0.0.1, ::1                             
-Connexion à localhost (localhost)|127.0.0.1|:5000… connecté.                    
-requête HTTP transmise, en attente de la réponse… 404 Not Found                 
-2016-05-11 14:32:15 erreur 404 : Not Found.                                     
-                                                                                
-on the serveur                                                                  
-127.0.0.1 - - [11/May/2016 14:32:15] "GET / HTTP/1.1" 404 153                   
-                                                                                
-2) Convert DateTime field to str                                                
-                                                                                
+Sur le serveur vous pouvez voir les logs associés
+
+> 127.0.0.1 - - [11/May/2016 14:32:15] "GET / HTTP/1.1" 404 153
+
+Ici nous recevons un 404, ce qui est normal car aucune route n'a été définit
+
+## Convertion DateTime en string
+
+Avant de définir les routes nous allons commencé par indiqué a **Pyramid** comment représenté un **DateTime**. En effet les api retournent des json
+
+Dans le fichier:
+> anyblok_todolist/anyblok_todolist/client/pyramid.py
+
+```python
+from pyramid.renderers import JSON
+from datetime import datetime
+import pytz
+import time
+
+
+def datetime_adapter(obj, request):
+   if obj is not None:
+       if obj.tzinfo is None:
+           timezone = pytz.timezone(time.tzname[0])
+           obj = timezone.localize(obj)
+
+   return obj.isoformat()
+
+
+def json_data_adapter(config):
+   json_renderer = JSON()
+   json_renderer.add_adapter(datetime, datetime_adapter)
+   config.add_renderer('json', json_renderer)
+```
+
+Dans le fichier de déclaration du blok:
+> anyblok_todolist/anyblok_todolist/client/__init__.py
+
+```python
+
+...
+from .pyramid import json_data_adapter
+
+
+class BlokTodoListClient(Blok):
+    ...
+
+    @classmethod
+    def pyramid_load_config(cls, config):
+        json_data_adapter(config)
+```
+
+La methode **pyramid_load_config**
+
 2.1) In __init__.py of the blok todolist-client                                 
-                                                                                
-::                                                                              
-                                                                                
-    ...                                                                         
-    from .pyramid import json_data_adapter                                      
-                                                                                
-                                                                                
-    class BlokTodoListClient(Blok):                                             
-        ...                                                                     
-                                                                                
-        @classmethod                                                                
-        def pyramid_load_config(cls, config):                                   
-            json_data_adapter(config)                                           
-                                                                                
-                                                                                  
-2.2) Add pyramid module                                                         
-                                                                                
-::                                                                              
-                                                                                
-   from pyramid.renderers import JSON                                           
-   from datetime import datetime                                                
-   import pytz                                                                                                                                    
-   import time                                                                  
-                                                                                
-                                                                                
-   def datetime_adapter(obj, request):                                          
-       if obj is not None:                                                                                                                        
-           if obj.tzinfo is None:                                                                                                                 
-               timezone = pytz.timezone(time.tzname[0])                                                                                           
-               obj = timezone.localize(obj)                                                                                                       
-                                                                                        
-       return obj.isoformat()                                                   
-                                                                                
-                                                                                
-   def json_data_adapter(config):                                               
-       json_renderer = JSON()                                                   
-       json_renderer.add_adapter(datetime, datetime_adapter)                    
-       config.add_renderer('json', json_renderer)                               
                                                                                 
                                                                                 
 3) A Rest API                                                                   

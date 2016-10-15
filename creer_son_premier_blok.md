@@ -58,6 +58,8 @@ setup(
     extras_require={},                                                      
 )                        
 ```
+
+> #WARNING: dans l'**entry_point** le nom avant le **=** représente le nom du blok
                                                                                    
 ### Fichier de description du blok 
                                 
