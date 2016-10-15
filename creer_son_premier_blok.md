@@ -241,40 +241,40 @@ La methode **reload_declaration_module** est appelé lors d'une demande de recha
 
 Vu que le blok est installé, Le model est alors disponible depuis l'interpreteur.
 
-sandbox/bin/anyblok_interpreter --db-name todolist --db-driver-name postgresql
-==> In [1]: registry.System.Model.query().all().name
-==> Out[1]:
-==> ['Model.System',
-==>  'Model.System.Column',
-==>  'Model.Authorization',
-==>  'Model.Documentation.Blok',
-==>  'Model.System.Parameter',
-==>  'Model.System.Cron',
-==>  'Model.Documentation.Model',
-==>  'Model.System.Cache',
-==>  'Model.Documentation.Model.Field',
-==>  'Model.System.Model',
-==>  'Model.System.Sequence',
-==>  'Model.System.Cron.Worker',
-==>  'Model.System.Blok',
-==>  'Model.System.Cron.Job',
-==>  'Model.System.Field',
-==>  'Model.Documentation.Model.Attribute',
-==>  'Model.System.RelationShip',
-==>  'Model.Documentation',
-==>  'Model.Todo']
-==> In [2]: registry.System.Field.query().filter_by(model='Model.Todo').all().name
-==> Out[2]:
-==> ['cancelled_date',
-==>  'title',
-==>  'description',
-==>  'complexity',
-==>  'step',
-==>  'priority',
-==>  'creation_date',
-==>  'id',
-==>  'ending_date',
-==>  'deadline_date']
+> sandbox/bin/anyblok_interpreter --db-name todolist --db-driver-name postgresql
+> ==> In [1]: registry.System.Model.query().all().name
+> ==> Out[1]:
+> ==> ['Model.System',
+> ==>  'Model.System.Column',
+> ==>  'Model.Authorization',
+> ==>  'Model.Documentation.Blok',
+> ==>  'Model.System.Parameter',
+> ==>  'Model.System.Cron',
+> ==>  'Model.Documentation.Model',
+> ==>  'Model.System.Cache',
+> ==>  'Model.Documentation.Model.Field',
+> ==>  'Model.System.Model',
+> ==>  'Model.System.Sequence',
+> ==>  'Model.System.Cron.Worker',
+> ==>  'Model.System.Blok',
+> ==>  'Model.System.Cron.Job',
+> ==>  'Model.System.Field',
+> ==>  'Model.Documentation.Model.Attribute',
+> ==>  'Model.System.RelationShip',
+> ==>  'Model.Documentation',
+> ==>  'Model.Todo']
+> ==> In [2]: registry.System.Field.query().filter_by(model='Model.Todo').all().name
+> ==> Out[2]:
+> ==> ['cancelled_date',
+> ==>  'title',
+> ==>  'description',
+> ==>  'complexity',
+> ==>  'step',
+> ==>  'priority',
+> ==>  'creation_date',
+> ==>  'id',
+> ==>  'ending_date',
+> ==>  'deadline_date']
 
 ### Lister le schéma
 
@@ -336,7 +336,7 @@ La methode **insert** n'existe pas dans le fichier de déclaration du model. Cet
 > ==> In [3]: registry.commit()           
 
                                                                                
-## Amélioré le résultat affiché
+## Améliorer le résultat affiché
 
 L'ORM permet de dissocié les lignes de la table. Chaque ligne est représenté par une instance de class. Étant en python il est donc possible de définir un meilleur retoure que <anyblok.model.todo at 0x111353d30>.
 
@@ -383,11 +383,11 @@ Nous avons donc un résultat plus sexy.
 > ==> In [2]: str(registry.Todo.query().first())                                  
 > ==> Out[2]: 'Todo: My first todo entry in the todolist [Normal / Normal]'       
                                                                                 
-## Ajout d'un workflow
+## Ajouter un workflow
 
 L'objectif de ce workflow est de fournir sur le modele des methodes haut niveau pour la gestion de la todolist.
 
-### Ajout d'exception
+### Ajouter des exceptions
 
 Par convention les exceptions sont placé dans un module python qui n'est pas chargé par AnyBlok. Les exceptions sont donc importable a n'importe quel moment, même si le blok n'est pas installé.
 
@@ -409,7 +409,7 @@ class TodoExceptionCanceled(TodoException):
 
 Ici le but étant d'avoir des exceptions de base lié a notre workflow.
 
-### Modification du modele pour ajouter les méthodes haut niveaux
+### Modifier le modele pour ajouter les méthodes haut niveaux
 
 Il suffit de modifier le modele existant est d'ecrire les commande qui agisse sur une instance du modele.
 
