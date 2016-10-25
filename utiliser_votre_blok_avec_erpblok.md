@@ -6,14 +6,18 @@ ERPBlok est comme son nom l'indique un ERP basé sur AnyBlok. Notre todolist est
 
 Actuellement ERPBlok est en cour de developpement, il n'a pas de dépos sur le pypi il faut donc allez le chercher sur github
 
-> git clone https://github.com/ERPBlok/ERPBlok.git
-> cd erpblok
-> ../sandbox/bin/python setup.py install
-> cd ..
-> sandbox/bin/anyblok_pyramid --db-name todolist --db-driver-name postgresql
+```
+git clone https://github.com/ERPBlok/ERPBlok.git
+cd erpblok
+../sandbox/bin/python setup.py install
+cd ..
+sandbox/bin/anyblok_pyramid --db-name todolist --db-driver-name postgresql
+```
 
 A partir d'un navigateur, connectez vous a l'ERP:
-> localhost:5000/
+```
+localhost:5000/
+```
 
 Par défaut les indentifiants de connexion sont:
 * login: admin
@@ -49,14 +53,16 @@ setupt(
 Nous n'ajoutons pas de dépendance vers ERPBlok. Simplement parce le system de dépendance AnyBlok permettra de ne pas installer un blok lié avec ERPBlok si celui-ci n'est pas installé. Ainsi notre package reste installable même sans ERPBlok.
 
 Nous allons ajouter le blok au même niveau que les bloks existants
-> .. anyblok_todolist
-> .. ...
-> .. .. todolist
-> .. .. ...
-> .. .. client
-> .. .. ...
-> .. .. erpblok_todolist
-> .. .. .. __init__.py
+```
+.. anyblok_todolist
+.. ...
+.. .. todolist
+.. .. ...
+.. .. client
+.. .. ...
+.. .. erpblok_todolist
+.. .. .. __init__.py
+```
 
 Dans le fichier
 > anyblok_todolist/erpblok_todolist/__init__.py
@@ -75,13 +81,16 @@ class BlokTodoListERPBlok(Blok):
 
 Même principe que la dernière fois, il faut que le blok soit dans l'environnement pour qu'il soit visible.
 
-> cd anyblok_todolist
-> ../sandbox/bin/python setup.py develop
-> cd ..
+```
+cd anyblok_todolist
+../sandbox/bin/python setup.py develop
+cd ..
+```
 
 ### Installer le nouveau blok
 
-> sandbox/bin/anyblok_updatedb --db-name todolist --db-driver-name postgresql --install-bloks erpblok-todolist
+```
+sandbox/bin/anyblok_updatedb --db-name todolist --db-driver-name postgresql --install-bloks erpblok-todolist
 sandbox/bin/anyblok_interpreter --db-name todolist --db-driver-name postgresql
 ==> In [1]: registry.System.Blok.query().all()
 ==> Out[1]:
@@ -98,6 +107,7 @@ sandbox/bin/anyblok_interpreter --db-name todolist --db-driver-name postgresql
 ==>  erpblok-todolist (installed),
 ==>  model_authz (uninstalled),
 ==>  todolist-client (installed)]
+```
 
 Votre blok est installé il ne reste plus qu'a ajouter la configuration.
 
@@ -167,7 +177,9 @@ class BlokTodoListERPBlok(Blok):
 
 La méthode **update** est appelé lors de l'installation ou de la mis à jour du blok. Dans le cas d'une modification de configuration la mis à jour est obligatoire.
 
-> sandbox/bin/anyblok_updatedb --db-name todolist --db-driver-name postgresql --update-bloks erpblok-todolist
+```
+sandbox/bin/anyblok_updatedb --db-name todolist --db-driver-name postgresql --update-bloks erpblok-todolist
+```
 
 ## Définisser les vues liste et formulaire.
 
@@ -260,40 +272,40 @@ dans le fichier:
 > anyblok_todolist/erpblok_todolist/space.xml
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>                                      
-<records>                                                                   
-    <record external_id="setting_space_todolist">                           
-        ...                                                                 
-        <field name="default_action" external_id="action_setting_todolist"> 
-            ...                                                             
-            <field name="views">                                            
-                <record external_id="view_todo_list">                       
-                    <field name="selectable">1</field>                      
-                    <field name="mode">Model.UI.View.List</field>           
-                    <field name="template">AnyBlokTodoList</field>          
-                </record>                                                   
-                <record external_id="view_todo_form">                       
-                    <field name="mode">Model.UI.View.Form</field>           
-                    <field name="template">AnyBlokTodoForm</field>          
-                </record>                                                   
-            </field>                                                        
-            <field name="transitions">                                      
-                <record external_id="transition_todo_select_record">        
-                    <field name="name">selectRecord</field>                 
-                    <field name="mode">Model.UI.View.List</field>           
-                    <field name="code">open_view</field>                    
-                    <field name="view" external_id="view_todo_form"/>       
-                </record>                                                   
-                <record external_id="transition_todo_new_record">           
-                    <field name="name">newRecord</field>                    
-                    <field name="mode">Model.UI.View.List</field>           
-                    <field name="code">open_view</field>                    
-                    <field name="view" external_id="view_todo_form"/>       
-                </record>                                                   
-            </field>                                                        
-        </field>                                                            
-    </record>                                                               
-</records>      
+<?xml version="1.0" encoding="UTF-8"?>
+<records>
+    <record external_id="setting_space_todolist">
+        ...
+        <field name="default_action" external_id="action_setting_todolist">
+            ...
+            <field name="views">
+                <record external_id="view_todo_list">
+                    <field name="selectable">1</field>
+                    <field name="mode">Model.UI.View.List</field>
+                    <field name="template">AnyBlokTodoList</field>
+                </record>
+                <record external_id="view_todo_form">
+                    <field name="mode">Model.UI.View.Form</field>
+                    <field name="template">AnyBlokTodoForm</field>
+                </record>
+            </field>
+            <field name="transitions">
+                <record external_id="transition_todo_select_record">
+                    <field name="name">selectRecord</field>
+                    <field name="mode">Model.UI.View.List</field>
+                    <field name="code">open_view</field>
+                    <field name="view" external_id="view_todo_form"/>
+                </record>
+                <record external_id="transition_todo_new_record">
+                    <field name="name">newRecord</field>
+                    <field name="mode">Model.UI.View.List</field>
+                    <field name="code">open_view</field>
+                    <field name="view" external_id="view_todo_form"/>
+                </record>
+            </field>
+        </field>
+    </record>
+</records>
 ```
 
 La vue formulaire a ajouté deux boutons, ces boutons font des appel au serveur, ils appellent les méthodes:
@@ -411,52 +423,85 @@ Modifier l'espace fonctionnel
     </record>
 </records>
 ```
-                                                                                
-                                                                                
-                                                                                
-6) Add a custom view                                                            
-                                                                                
-::                                                                              
-                                                                                
-    client_js_babel = [                                                         
-        '/todolist-client/client/todolist.jsx',                                 
-    ]                                                                           
-                                                                                
-                                                                                
-::                                                                              
-                                                                                
-    <?xml version="1.0" encoding="UTF-8"?>                                      
-    <records>                                                                   
-        <record external_id="setting_space_todolist_custom">                    
-            <field name="label">Todolist App</field>                            
-            <field name="icon">fi-database</field>                              
-            <field name="description">ERPblok custom view for todolist</field>  
-            <field name="category" external_id="todolist_space_category" />     
-            <field name="default_action" external_id="action_setting_todolist_app">
-                <field name="model">Model.Todo</field>                          
-                <field name="label">Todolist</field>                            
-                <field name="views">                                            
-                    <record external_id="view_todo_custom">                     
-                        <field name="selectable">1</field>                      
-                        <field name="mode">Model.UI.View.Custom</field>         
-                        <field name="template">AnyBlokTodoCustom</field>        
-                    </record>                                                   
-                </field>                                                        
-            </field>                                                            
-        </record>                                                               
-    </records>                                                                  
-                                                                                
-                                                                                
-::                                                                              
-                                                                                
-    <templates>                                                                 
-        <template id="AnyBlokTodoCustom">                                       
-            <div id="erpblok-todolist-app"></div>                               
-            <script >                                                           
-                var app = ReactDOM.render(                                      
-                    React.createElement(TodoListApp, {}),                       
-                    document.getElementById('erpblok-todolist-app'));           
-                app.load_initial_entries();                                     
-            </script>                                                           
-        </template>                                                             
-    </templates>   
+
+## Ajout d'une vue custom.
+
+Pour ERPBlok nous nous sommes servis de la génération des vues fournit par le framework. Cependant dans certain cas nous souhaitons utiliser un affichage plus souple et plus personnalisé. Nous allons donc utiliser le client existant et le changer via ERPBlok.
+
+### Modifier la définition du bloc.
+
+Dans le fichier
+> anyblok_todolist/erpblok_todolist/__init__.py
+
+Nous allons pointer vers le client existant afin que celui ci soit chargé
+
+```python
+...
+
+class BlokTodoListERPBlok(Blok):
+
+    ...
+
+    client_js_babel = [
+        '/todolist-client/client/todolist.jsx',
+    ]
+
+    ...
+```
+
+### Ajouter un nouvel espace fonctionnel.
+
+Bien que les deux espaces traite la même fonctionnalité, la séparation en deux espaces est purement d'ordre pratique et visuel. En effet il aurait fallut ajouter un menu dans le premier espace. De plus la séparation permet de bien montrerr les différence d'interface.
+
+Dans le fichier:
+> anyblok_todolist/erpblok_todolist/space.xml
+
+Nous allons ajouter le nouvel espace
+
+```xml
+...
+<records>
+    ...
+    <record external_id="setting_space_todolist_custom">
+        <field name="label">Todolist App</field>
+        <field name="icon">fi-database</field>
+        <field name="description">ERPblok custom view for todolist</field>
+        <field name="category" external_id="todolist_space_category" />
+        <field name="default_action" external_id="action_setting_todolist_app">
+            <field name="model">Model.Todo</field>
+            <field name="label">Todolist</field>
+            <field name="views">
+                <record external_id="view_todo_custom">
+                    <field name="selectable">1</field>
+                    <field name="mode">Model.UI.View.Custom</field>
+                    <field name="template">AnyBlokTodoCustom</field>
+                </record>
+            </field>
+        </field>
+    </record>
+</records>
+```
+
+### Ajouter un template de vue
+
+Ici le template est très simple il ne doit servir que de point d'entrée au composant **Reactjs**. Il faut donc ajouter un div et un script **javascript** pour charger le client.
+
+Dans le fichier
+> anyblok_todolist/erpblok_todolist/todolist.tmpl
+
+```xml
+<templates>
+    ...
+    <template id="AnyBlokTodoCustom">
+        <div id="erpblok-todolist-app"></div>
+        <script >
+            var app = ReactDOM.render(
+                React.createElement(TodoListApp, {}),
+                document.getElementById('erpblok-todolist-app'));
+            app.load_initial_entries();
+        </script>
+    </template>
+</templates>
+```
+
+Mettez votre serveur a jour. Le petit client est désormais disponible a l'interrieur d'ERPBlok.
