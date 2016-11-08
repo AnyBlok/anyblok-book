@@ -35,12 +35,14 @@ setupt(
 
 Au même niveau que le blok todolist nous ajoutons le repertoire client qui porte le blok BlokTodoListClient dans sont fichier __init__.py
 
-> .. anyblok_todolist
-> .. ...
-> .. .. todolist
-> .. .. ...
-> .. .. client
-> .. .. .. __init__.py
+```
+.. anyblok_todolist
+.. ...
+.. .. todolist
+.. .. ...
+.. .. client
+.. .. .. __init__.py
+```
 
 Ici en plus de la version nous allons ajouter une notion de dépendence entre blok symbolisé par l'attribut **required**. Ca indique que le todolist sera installé avec se bloc.
 
@@ -58,9 +60,11 @@ class BlokTodoListClient(Blok):
 
 Nous devons mettre a jour notre environnement pour que le nouveau **entry_point**, sinon le nouveau bloc ne sera pas disponible dans la liste des bloks car non connu.
 
-> cd anyblok_todolist
-> ../sandbox/bin/python setup.py develop
-> cd ..
+```
+cd anyblok_todolist
+../sandbox/bin/python setup.py develop
+cd ..
+```
 
 ### Installer le nouveau blok
 
@@ -70,16 +74,18 @@ Cette commande n'a plus de secret pour vous
 
 ### Lister les bloks installés
 
-> sandbox/bin/anyblok_interpreter --db-name todolist --db-driver-name postgresql
-> ==> In [1]: registry.System.Blok.query().all()
-> ==> Out[1]:
-> ==> [anyblok-core (installed),
-> ==>  anyblok-io (uninstalled),
-> ==>  anyblok-io-csv (uninstalled),
-> ==>  anyblok-io-xml (uninstalled),
-> ==>  model_authz (uninstalled),
-> ==>  todolist (installed),
-> ==>  todolist-client (installed)]
+```
+sandbox/bin/anyblok_interpreter --db-name todolist --db-driver-name postgresql
+==> In [1]: registry.System.Blok.query().all()
+==> Out[1]:
+==> [anyblok-core (installed),
+==>  anyblok-io (uninstalled),
+==>  anyblok-io-csv (uninstalled),
+==>  anyblok-io-xml (uninstalled),
+==>  model_authz (uninstalled),
+==>  todolist (installed),
+==>  todolist-client (installed)]
+```
 
 ### Démarrer le serveur
 
@@ -93,12 +99,14 @@ Pour cela il suffit soit d'utiliser:
 * un navigteur
 * wget ou curl
 
-> wget localhost:5000/
-> --2016-05-11 14:32:15--  http://localhost:5000/
-> Résolution de localhost (localhost)… 127.0.0.1, ::1
-> Connexion à localhost (localhost)|127.0.0.1|:5000… connecté.
-> requête HTTP transmise, en attente de la réponse… 404 Not Found
-> 2016-05-11 14:32:15 erreur 404 : Not Found.
+```
+wget localhost:5000/
+--2016-05-11 14:32:15--  http://localhost:5000/
+Résolution de localhost (localhost)… 127.0.0.1, ::1
+Connexion à localhost (localhost)|127.0.0.1|:5000… connecté.
+requête HTTP transmise, en attente de la réponse… 404 Not Found
+2016-05-11 14:32:15 erreur 404 : Not Found.
+```
                                                                                 
 Sur le serveur vous pouvez voir les logs associés
 
@@ -152,108 +160,117 @@ class BlokTodoListClient(Blok):
         json_data_adapter(config)
 ```
 
-La methode **pyramid_load_config**
+La methode **pyramid_load_config** permet d'ajouter de la configuration a **Pyramid**
 
-2.1) In __init__.py of the blok todolist-client                                 
-                                                                                
-                                                                                
-3) A Rest API                                                                   
-                                                                                
-3.1) add module files in the blok                                               
-                                                                                
-client                                                                          
-.. __init__.py                                                                  
-.. views                                                                        
-.. .. __init__.py                                                               
-.. .. todolist.py                                                               
-.. .. todo.py                                                                   
-.. .. step.py                                                                   
-.. tests                                                                        
-.. .. __init__.py                                                               
-.. .. test_todolist.py                                                          
-.. .. test_todo.py                                                              
-.. .. test_step.py                                                              
-                                                                                
-3.2) Define the route of the API                                                
-                                                                                
-* todolist: read all, new                                                       
-* todo: read one, update, delete                                                
-* step: change the step                                                         
-                                                                                
-::                                                                              
-                                                                                
-    ...                                                                         
-                                                                                
-    class BlokTodoListClient(Blok):                                             
-                                                                                
-        ...                                                                     
-                                                                                
-        @classmethod                                                                
-        def pyramid_load_config(cls, config):                                       
-            json_data_adapter(config)                                               
-            config.add_route('todolist', '/todolist/')                              
-            config.add_route('todo', '/todolist/{id}')                          
-            config.add_route('step', '/todolist/{id}/{step}')                   
-            config.scan(cls.__module__ + '.views')                              
-                                                                                
-3.3) Add views                                                                  
-                                                                                
-* GET /todolist/: list all entries                                              
-* GET /todolist/{id}: read on entry                                             
-* POST /todolist/: create a new entry                                           
-* PUT /todolist/{id}: update one entry                                          
-* DELETE /todolist/{id}: remove an existing entry                               
-* POST /todolist/{id}/{step}: update the step for l'id                          
-                                                                                
+## Ajouter une API RESTFull
+
+Pour les besoins de nostre projet, nous avons besoin de point d'entrés / sortie pour communiquer avec le serveur sans passer par l'interpreteur python.
+
+* todolist: read all, new
+* todo: read one, update, delete
+* step: change the step
+
+```
+.. __init__.py
+.. views
+.. .. __init__.py
+.. .. todolist.py
+.. .. todo.py
+.. .. step.py
+.. tests
+.. .. __init__.py
+.. .. test_todolist.py
+.. .. test_todo.py
+.. .. test_step.py
+```
+
+dans le fichier
+> anyblok_todolist/anyblok_todolist/client/__init__.py
+
+Nous allons utiliser la méthode **pyramid_load_config** du blok pour ajouter les routes dans **Pyramid**
+
+* GET /todolist/: list all entries
+* GET /todolist/{id}: read on entry
+* POST /todolist/: create a new entry
+* PUT /todolist/{id}: update one entry
+* DELETE /todolist/{id}: remove an existing entry
+* POST /todolist/{id}/{step}: update the step for l'id
+
+```Python
+...
+
+class BlokTodoListClient(Blok):
+
+    ...
+
+    @classmethod
+    def pyramid_load_config(cls, config):
+        json_data_adapter(config)
+        config.add_route('todolist', '/todolist/')
+        config.add_route('todo', '/todolist/{id}')
+        config.add_route('step', '/todolist/{id}/{step}')
+        config.scan(cls.__module__ + '.views')
+```
+
+### Ajouter la vue pour lister les todos
+
+Le but de cette vue est de retourner l'ensemble des todos, correspondant a une liste de critère. Chaque todo retourné renseigne le titre, l'étape, la priorité et la complexité.
+
+dans le fichier
+> anyblok_todolist/anyblok_todolist/client/views/todolist.py
+
+```python
+from pyramid.view import view_defaults, view_config
+from anyblok_pyramid import current_blok
+from sqlalchemy import or_
+import sqlalchemy
+
+
+upper = sqlalchemy.func.upper
+
+
+@view_defaults(installed_blok=current_blok(),
+               route_name='todolist',
+               renderer="json")
+class TodoList:
+
+    def __init__(self, request):
+        self.request = request
+        self.registry = request.anyblok.registry
+
+    @view_config(request_method="GET")
+    def list_all_entries(self):
+        params = dict(self.request.params)
+        Todo = self.registry.Todo
+        query = Todo.query()
+        if 'filter_txt' in params:
+            filter_txt = '%' + params.pop('filter_txt').upper() + '%'
+            query = query.filter(
+                or_(upper(Todo.title).ilike(filter_txt),
+                    upper(Todo.description).ilike(filter_txt)))
+
+        for field, value in params.items():
+            query = query.filter(getattr(Todo, field) == value)
+
+        query = query.order_by(Todo.priority, Todo.creation_date)
+        result = query.all()
+
+        if not result:
+            return []
+
+        return result.to_dict('title', 'step', 'priority', 'complexity')
+```
+
+
+
 3.3.1) Add GET todolist                                                         
                                                                                 
-can take parameter (text search, step, complexity, priority)                    
-return JSON dict {title, step, complexity, priority}                            
  
                                                                                 
 3.3.1.1) Add view                                                               
                                                                                 
 in views/todolist.py::                                                          
                                                                                 
-    from pyramid.view import view_defaults, view_config                         
-    from anyblok_pyramid import current_blok                                    
-    from sqlalchemy import or_                                                  
-    import sqlalchemy                                                           
-                                                                                
-                                                                                
-    upper = sqlalchemy.func.upper                                               
-                                                                                
-                                                                                
-    @view_defaults(installed_blok=current_blok(),                               
-                   route_name='todolist',                                       
-                   renderer="json")                                             
-    class TodoList:                                                             
-                                                                                
-        def __init__(self, request):                                            
-            self.request = request                                              
-            self.registry = request.anyblok.registry                            
-                                                                                
-        @view_config(request_method="GET")                                      
-        def list_all_entries(self):                                             
-            params = dict(self.request.params)                                  
-            Todo = self.registry.Todo                                           
-            query = Todo.query()                                                
-            if 'filter_txt' in params:                                          
-                filter_txt = '%' + params.pop('filter_txt').upper() + '%'       
-                query = query.filter(                                           
-                    or_(upper(Todo.title).ilike(filter_txt),                    
-                        upper(Todo.description).ilike(filter_txt)))             
-                                                                                
-            for field, value in params.items():                                 
-                query = query.filter(getattr(Todo, field) == value)             
-                                                                                
-            query = query.order_by(Todo.priority, Todo.creation_date)           
-            result = query.all()                                                
-                                                                                
-            if not result:                                                      
-                return []                                                       
-                                                                                
-            return result.to_dict('title', 'step', 'priority', 'complexity')    
  
  3.3.1.2) test the view                                                          
                                                                                 
