@@ -1,1 +1,17 @@
-{}
+{
+  "title": "AnyBlok tutorial",
+  "description": "Create your first application step by step",
+  "plugins": [
+    "github",
+    "language-picker",
+    "heading-anchors"
+  ],
+  "pluginsConfig": {
+    "github": {
+      "url": "https://github.com/AnyBlok/premier-pas"
+    },
+    "language-picker": {
+      "grid-columns": 3
+    }
+  }
+}
