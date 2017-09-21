@@ -10,7 +10,7 @@ Dans un premier temps installer votre serveur de base de donnée préféré.
 > sudo apt-get install postgresql
 
 Pour plus d'informations, vous pouvez suivre les indications des documentations suivantes:
-* [Ubuntu]([https://doc.ubuntu-fr.org/postgresql](https://doc.ubuntu-fr.org/postgresql)
+* [Ubuntu](https://doc.ubuntu-fr.org/postgresql)
 * [Debian](https://wiki.debian.org/PostgreSql)
 * [Fedora](http://doc.fedora-fr.org/wiki/Installation_et_configuration_de_PostgreSQL)
 * [Mac OS avec macport](https://coderwall.com/p/xezzaa/install-postgresql-9-2-on-os-x-mountain-lion)
