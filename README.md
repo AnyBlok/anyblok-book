@@ -1,6 +1,17 @@
-# AnyBlok: Creation d'une Todolist.
+# AnyBlok Tutorial
 
+AnyBlok is a Python framework allowing to create highly dynamic and
+modular applications on top of SQLAlchemy. Applications are made of
+“bloks” that can be installed, extended, replaced, upgraded or
+uninstalled. 
 
-AnyBlok est un framework permettant de charger du code métier pendant l'exécution. Ce code métier étant existant il est regroupé dans des modules python appelés Blok.
+## Authors:
 
-La liste des bloks installés est stockée dans une base de données via l'ORM SQLAlchemy.
+* Jean-Sébastien Suzanne
+* Christophe Combelles
+
+## Licence
+
+This AnyBlok tutorial is released under the terms of
+[Attribution-ShareAlike 4.0 International License CC BY-SA 4.0](
+https://creativecommons.org/licenses/by-sa/4.0/)
