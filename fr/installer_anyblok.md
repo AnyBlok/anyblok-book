@@ -1,6 +1,11 @@
 # Installer AnyBlok 
 
-AnyBlok est un framework python. Il utilise l'ORM SQLAlchemy. Pour les besoins du tutoriel nous allons utiliser Postgresql comme serveur de base de données. Ce choix est lié uniquement au fait que je maîtrise davantage cette BDD que les autres. Si vous souhaitez utiliser une autre BDD, vous devrez adapter les parties installation et l'option de commande --db-driver-name. 
+AnyBlok est un framework python. Il utilise l'ORM SQLAlchemy. Pour les
+besoins du tutoriel nous allons utiliser Postgresql comme serveur de
+base de données. Ce choix est lié uniquement au fait que je maîtrise
+davantage cette BDD que les autres. Si vous souhaitez utiliser une
+autre BDD, vous devrez adapter les parties installation et l'option
+de commande --db-driver-name. 
 
 
 ## Préparer votre instance de travail.
@@ -9,13 +14,17 @@ Dans un premier temps installer votre serveur de base de donnée préféré.
 
 > sudo apt-get install postgresql
 
-Pour plus d'informations, vous pouvez suivre les indications des documentations suivantes:
+Pour plus d'informations, vous pouvez suivre les indications des
+documentations suivantes:
+
+* [Postgresql.org](https://www.postgresql.org/download/)
 * [Ubuntu](https://doc.ubuntu-fr.org/postgresql)
 * [Debian](https://wiki.debian.org/PostgreSql)
-* [Fedora](http://doc.fedora-fr.org/wiki/Installation_et_configuration_de_PostgreSQL)
-* [Mac OS avec macport](https://coderwall.com/p/xezzaa/install-postgresql-9-2-on-os-x-mountain-lion)
+* [Fedora][pg_fedora]
+* [Mac OS avec macport][pg_mac]
 
-Faite un environnement virtuel afin d'isoler les librairies utilisées de celle de votre system.
+Faite un environnement virtuel afin d'isoler les librairies utilisées
+de celle de votre system.
 
 ```
 pyvenv-3.5 sandbox
@@ -24,7 +33,8 @@ pyvenv-3.5 sandbox
 
 ## Installer anyblok
 
-AnyBlok est disponible sur le **pypi**, il suffit donc de l'installé avec la commande pip
+AnyBlok est disponible sur le **pypi**, il suffit donc de l'installé
+avec la commande pip
 
 ```
 sandbox/bin/pip install anyblok
@@ -53,8 +63,9 @@ sandbox/bin/anyblok_createdb --db-name todolist --db-driver-name postgresql
 
 ## Lancer un interpreteur python.
 
-L'interpreteur permet de se connecter a la base créé et d'utilisé l'api du serveur.
-Il est util en developpement, déboggage ou simplement pour modifier la base.
+L'interpreteur permet de se connecter a la base créé et d'utilisé
+l'api du serveur. Il est util en developpement, déboggage ou simplement
+pour modifier la base.
 
 ```
 sandbox/bin/anyblok_interpreter --db-name todolist --db-driver-name postgresql
@@ -69,9 +80,11 @@ de jouer avec et de l'enrichir.
 
 ## Lister les bloks disponibles
 
-L'ORM étant celui de SQLAlchemy, les amoureux de cette librairie ne seront pas descus, Il existe cependant des différences. La session de SQLAlchemy est wrappé par AnyBlok.
+L'ORM étant celui de SQLAlchemy, les amoureux de cette librairie ne
+seront pas déçus, Il existe cependant des différences. La session de
+SQLAlchemy est wrappé par AnyBlok.
 
-Il faut donc remplacer:
+Il faut donc remplacer :
 
 ```python
 session.query(Foo)
@@ -83,7 +96,8 @@ par :
 registry.Foo.query()
 ```
 
-Dans notre premier example nous allons simplement listé les bloks existant.
+Dans notre premier example nous allons simplement listé les bloks
+existant :
 
 ```
 sandbox/bin/anyblok_interpreter --db-name todolist --db-driver-name postgresql
@@ -95,7 +109,7 @@ sandbox/bin/anyblok_interpreter --db-name todolist --db-driver-name postgresql
 
 ## Pour les amoureux de IPython (Bonus)
 
-Commencé par installé la librairie ipython
+Commencé par installer la librairie ipython
 
 ```
 sandbox/bin/pip install ipython
@@ -115,3 +129,6 @@ sandbox/bin/anyblok_interpreter --db-name todolist --db-driver-name postgresql
 ==>  anyblok-io-xml (uninstalled),
 ==>  model_authz (uninstalled)]
 ```
+
+[pg_fedora]: http://doc.fedora-fr.org/wiki/Installation_et_configuration_de_PostgreSQL
+[pg_mac]: https://coderwall.com/p/xezzaa/install-postgresql-9-2-on-os-x-mountain-lion
