@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+* [Discover AnyBlok](discovery/README.md)
 * [Install](install/README.md)
 * [Project](project/README.md)
     * [Structure](project/structure.md)
