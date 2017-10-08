@@ -1,5 +1,6 @@
 # Understand Anyblok
 
+## Main features
 
 You may wonder why AnyBlok is useful for you?
 
@@ -32,6 +33,8 @@ spent by AnyBlok authors. Also it adds some nice feature by its own:
   customizations) by a dynamic inheritance mechanism.
 * ...
 
+
+## Anyblok Ecosystem
 
 To illustrate components let's start with our vision about AnyBlok
 ecosystem we would like to create and then we will deep in details with
@@ -81,7 +84,9 @@ required interfaces (web services). The Idea of this UI framework is
 that behaviors and representations are managed by server responses.
 Developers do not require to write javascript to manage his
 business application. Developer focus on writing backend code (the
-business) by providing expected data.
+business) by providing expected data. FureUI use famous web framework
+likes [Vue.js][vuejs] to manage the the html page, [bulma][bulma] a
+powerfull css framework.
 
 [AnyBlok FuretUI][anyblok_furetui] is a
 *Furet UI* backend that helps to generate graphical web interface
@@ -156,6 +161,34 @@ We are working on that way adding bloks to manage common used case
 mechanisme). Feel free to contribute, open issues, create pull request,
 ask new repository through [github][gh_anyblok].
 
+> **Important**: We belives splitting business code and graphical user
+> interface is an important effort that have to be done as web
+> framework involve faster than backend business code that why we
+> would like to create business API.
+
+## AnyBlok versus others
+
+You may wonder why use Anyblok compared with other existing solutions.
+
+### Odoo
+
+AnyBlok mechanisms are fairly inspired from odoo. Here some
+differences:
+
+* Anyblok is 100% OpenSource
+* AnyBlok do not create a new ORM it use an existing powerful one for
+  years: [SqlAlchemy][sqlalchemy]
+* With Anyblok you can use normal python packages to deliver and manage
+  your code
+* Backend and graphical user interface are split.
+* You can manage web sessions as you want
+*
+
+### SqlAlchemy alone
+
+### ERPNext
+
+
 
 [orm_wikipedia]: https://en.wikipedia.org/wiki/Object-relational_mapping
 [beaker]: https://github.com/bbangert/beaker
@@ -169,3 +202,5 @@ ask new repository through [github][gh_anyblok].
 [anyblok_rea]: https://github.com/AnyBlok/anyblok_rea
 [anyblok_multi_engines]: https://github.com/AnyBlok/AnyBlok_Multi_Engines
 [furetui]: https://github.com/AnyBlok/furet_ui
+[vuejs]: https://vuejs.org/
+[bulma]: http://bulma.io/
