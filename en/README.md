@@ -22,7 +22,7 @@ can read it in the way you want and you can later refer to this
 book while developing your project.
 
 * [Discover AnyBlok](discovery/README.md): Understand AnyBlok concepts,
-  for what it is a usefull framework and features availaible. We will
+  for what it is a usefull framework and availaible features. We will
   terminate with our vision and projects in the way we would create
   an eco-system around AnyBlok.
 

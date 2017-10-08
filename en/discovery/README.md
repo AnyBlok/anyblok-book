@@ -1,12 +1,41 @@
 # Understand Anyblok
 
-You may wonder why AnyBlok is useful for you. We will try to give
-most features provide by AnyBlok and help you to compare it with
-other solutions.
 
-To helps contributors we start with our vision about the ecosystem
-we would like to create and then go in thuther details with AnyBlok
-components.
+You may wonder why AnyBlok is useful for you?
+
+AnyBlok take advantages of famous python libraries and reuse packages
+that already have proven their existences:
+
+* Using [SQLAlchemy][sqlalchemy] AnyBlok is an [ORM][orm_wikipedia]:
+  in few words you don't have to worry about the database management
+  only your code source.
+* With [Pyramid][pyramid_home] easily integrate any web protocol
+  format, SOAP, JsonRPC, gRPC, REST.
+* Integrated with [beaker][beaker] you'll be able to precisely manage
+  web sessions and cache.
+
+So you may use those librairies directly in your project but headaches
+to make them working together by applying common patterns was already
+spent by AnyBlok authors. Also it adds some nice feature by its own:
+
+* Work with multiple database, to scale your application you could
+  have one database for read/write and 3 others for read requests.
+* Synchronize web session and SQL sessions
+* User authorization are managed on actions (not models)
+* Business API code: business code is disconnected from any graphical
+  user interface so it can be use with any of them easily you may even
+  integrate AnyBlok within existent python code.
+* AnyBlok provide modularity mechanisms to let you easily reuse code
+  distributed in different python packages.
+* Make it easy to manage multiple levels of responsibilities in code
+  source (for instance develop a generic product and manage
+  customizations) by a dynamic inheritance mechanism.
+* ...
+
+
+To illustrate components let's start with our vision about AnyBlok
+ecosystem we would like to create and then we will deep in details with
+AnyBlok components.
 
 > **Note**: Keep in mind some of those features are forecast at the
 > time I'm writing those lines.
@@ -17,10 +46,12 @@ components.
 +----------------+------------------------------------
 | Business Bloks UI
 +----------------+------------------------------------
-| Business Bloks | Anyblok Furet UI
-+----------+     +-----------------+--------------+---
-| REA Blok |     | Anyblok Pyramid | Anyblok auth |
-+----------+-----+-----------------+--------------+---
+|                | Anyblok Furet UI
++ Business Bloks +------------------------------------
+|                | Anyblok pyramid beaker
++----------+     +-----------------+--------------+-----------------------+-
+| REA Blok |     | Anyblok Pyramid | Anyblok auth | Anyblok multi engines | 
++----------+-----+-----------------+--------------+-----------------------+-
 | Anyblok
 +-----------------------------------------------------
 | SQL Alchemy
@@ -33,62 +64,63 @@ As most ERP Product we would like to create an ERP ecosystem around
 AnyBlok, at the time I'm writting those lines we have no business bloks
 written. Also we believe a big effort must be done in tools rather than
 start writting business code. We wants to give to developers
-a strong and stable tools to help him to wirte business bloks.
+a strong and stable tools to help them to wirte business bloks.
 
 We think business applications as a service so business rules
-should be disconnected from the user graphical interface, we would
+should be disconnected from the graphical user interface, we would
 like to create some kind of business API that let developer free to use
-common business bloks as he wants likes:
-  - integrate it to its own existing base code
+common business bloks as he wants:
+
+  - within its own existing base code
   - expose web services over http
   - let choice to connect to any kind of interfaces (Graphical or not)
 
 [Furet UI][furetui] is web user interface
-framwork it can be use without Anyblok as long the server implement
-required interfaces (web serivces). The Idea of this framwork is that
-the interface behavior and representation is manage by server response
-so, the developer do not require to write javascript to manage his
-business application. Developer can focus on writing backend code by
-providing expected data.
+framework it can be use without AnyBlok as long the server implement
+required interfaces (web services). The Idea of this UI framework is
+that behaviors and representations are managed by server responses.
+Developers do not require to write javascript to manage his
+business application. Developer focus on writing backend code (the
+business) by providing expected data.
 
 [AnyBlok FuretUI][anyblok_furetui] is a
 *Furet UI* backend that helps to generate graphical web interface
-to AnyBlok it expecte to give some features likes:
+to AnyBlok it gives features likes:
 
-* oververload graphical interfaces between bloks: for instance
-  let say we have a blok called ``product`` that manage some basic
-  information regarding them (name, code, size, price), an other
-  blok called ``product_furet_ui`` that manage how to display product
-  in the user interface. Imagine you want to extend the
-  ``product_furet_ui`` functionality by adding EAN13 (barcode value).
-  We would give you the following advice to create 2 bloks that
-  to get the following dependencies:
+* overload graphical interfaces between bloks:
 
-  ```
-  ├── product_barcode
-  │   └── product
-  │       └── anyblok
-  └── product_barcode_ui
-      └── product_furet_ui
-          └── anyblok_furet_ui
-  ```
+  Likes with AnyBlok where you are able to overload any python bloks
+  AnyBlok FuretUI let you overload the user interface:
 
-  So the ``product_barcode`` will add fields and business
-  methods to manage barecode on products. ``product_barecode_ui``
-  will extend the user interface defined in the ``product_furet_ui``
-  by adding the barcode value in the interface in the way that tell say:
-  "hey! I would like to add the field 'barcode' under the existing field
-  product code"
+  for instance let say you are using those bloks ``product`` and
+  ``product_furet_ui`` wich would be develop by someone
+  else in the community that manage some basic product information (
+  name, code, size, price) the other blok (``product_furet_ui``)
+  manage how to display products in the graphical user interface.
 
-[AnyBlok Pyramid][anyblok_pyramid] allow to easly expose web interface
+  Imagine you want to extend the ``product_furet_ui`` functionality by
+  adding EAN13 (barcode value). We would give you the following advice:
+  create 2 bloks the first ``product_barcode`` will add fields and
+  business methods to manage barecode on products. The second blok
+  ``product_barecode_ui`` will extend the user interface defined in
+  the ``product_furet_ui`` by adding the barcode field in the interface
+  in the kind of way that tell:
+  "hey! I would like to add the field 'barcode' just right after
+  the existing field product code"
+
+[AnyBlok Pyramid beaker][anyblok_beaker] using the strength of
+[beaker][beaker] you are able to precisely configure web sessions and
+cache on top of pyramid.
+
+[AnyBlok Pyramid][anyblok_pyramid] allow to easly expose web interfaces
 with the power of the well known [pyramid framework][pyramid_home].
-The main benefits is that it syncrhonized the web session with the
-sql session to the developer do not have to worries about commit,
-rollback, manage poll of sql connections and so on.
+The main benefits is that it synchronized the web session with the
+sql session to the developer do not have to worries about commits,
+rollbacks, manage pool of sql connections and so on.
 
 [SqlAlchemy][sqlalchemy] is a power full and well known orm that
 let you writing python code and not worry about SQL. It also provide
-the requiered abstractions so it can speak with differents Database
+the requiered abstractions so it can speak with different Database
 system (Postgresql, mariadb, SQL Lite...)
 
 Great but what is the value of AnyBlok their? I could ues Pyramid
@@ -96,6 +128,8 @@ and sqlAlchemy without AnyBlok if I only require a web service ?
 
 Yes that true! here are some response of Anyblok values:
 
+* It already do the work to make those greate python libraries works
+  together.
 * load python module at runtime: You can add blok at runtime, so you
   don't have to stop the service to add functionalities.
 * With sames python packages installed in one environement, you can
@@ -103,7 +137,7 @@ Yes that true! here are some response of Anyblok values:
   you have chosen to install. This information is saved in the
   database so each database is an instance that can get a very different
   behaviours with only one running server, likes what is done in
-  odoo an instance require a database to know wich bloks are
+  odoo an instance require a database to know which bloks are
   installed.
 * You can easly separate code source in different bloks, in a blok
   you will be able to extend, overwrite or overload other bloks,
@@ -123,11 +157,15 @@ mechanisme). Feel free to contribute, open issues, create pull request,
 ask new repository through [github][gh_anyblok].
 
 
+[orm_wikipedia]: https://en.wikipedia.org/wiki/Object-relational_mapping
+[beaker]: https://github.com/bbangert/beaker
 [rea]: https://en.wikipedia.org/wiki/Resources,_events,_agents_(accounting_model)
-[anyblok_rea]: https://github.com/AnyBlok/anyblok_rea
 [sqlalchemy]: hhttp://www.sqlalchemy.org/
-[furetui]: https://github.com/AnyBlok/furet_ui
+[pyramid_home]: https://trypyramid.com/
+[gh_anyblok]: https://github.com/AnyBlok
 [anyblok_furetui]: https://github.com/AnyBlok/anyblok_furetui
 [anyblok_pyramid]: https://github.com/AnyBlok/anyblok_pyramid
-[gh_anyblok]: https://github.com/AnyBlok
-[pyramid_home]: https://trypyramid.com/
+[anyblok_beaker]: https://github.com/AnyBlok/AnyBlok_Pyramid_Beaker
+[anyblok_rea]: https://github.com/AnyBlok/anyblok_rea
+[anyblok_multi_engines]: https://github.com/AnyBlok/AnyBlok_Multi_Engines
+[furetui]: https://github.com/AnyBlok/furet_ui
