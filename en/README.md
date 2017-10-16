@@ -21,6 +21,11 @@ We try to make each sections of this book independents that you
 can read it in the way you want and you can later refer to this
 book while developing your project.
 
+* [Discover AnyBlok](discovery/README.md): Understand AnyBlok concepts,
+  for what it is a usefull framework and availaible features. We will
+  terminate with our vision and projects in the way we would create
+  an eco-system around AnyBlok.
+
 * [Install AnyBlok](install/README.md): Learn how to install and setup
   an AnyBlok project from the development environement to the
   production platform with recommends configurations.
