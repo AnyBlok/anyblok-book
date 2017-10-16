@@ -184,11 +184,6 @@ differences:
 * You can manage web sessions as you want
 *
 
-### SqlAlchemy alone
-
-### ERPNext
-
-
 
 [orm_wikipedia]: https://en.wikipedia.org/wiki/Object-relational_mapping
 [beaker]: https://github.com/bbangert/beaker
