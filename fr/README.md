@@ -1,9 +1,8 @@
-# AnyBlok: Creation d'une Todolist.
+# AnyBlok: Le livre
 
 
-AnyBlok est un framework permettant de charger du code métier pendant
-l'exécution. Ce code métier étant existant il est regroupé dans des
-modules python appelés Blok.
+AnyBlok est un framework python dont le principale objectif est d'aider
+à développer des applications métiers.
 
-La liste des bloks installés est stockée dans une base de données via
-l'ORM SQLAlchemy.
+Désolé, ce livre n'est pas traduit en français, veuillez vous référer à la
+version anglaise.
