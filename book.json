@@ -8,7 +8,7 @@
   ],
   "pluginsConfig": {
     "github": {
-      "url": "https://github.com/AnyBlok/premier-pas"
+      "url": "https://github.com/AnyBlok/anyblok-book"
     },
     "language-picker": {
       "grid-columns": 3

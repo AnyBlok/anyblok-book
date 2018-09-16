@@ -9,6 +9,7 @@ uninstalled.
 
 * Jean-Sébastien Suzanne
 * Christophe Combelles
+* Pierre Verkest
 
 ## Licence
 
