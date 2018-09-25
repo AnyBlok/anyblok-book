@@ -15,7 +15,7 @@ Ready!?
 
 If you are in a hurry and wants to give a try or setup a new project
 quickly without verbose concepts you may read this [how to setup
-project with cookiecutter](project/howto_cookiecutter_project.md)
+project with cookiecutter](02_project/02_cookiecutter.md)
 
 We try to make each sections of this book independents that you
 can read it in the way you want and you can later refer to this
@@ -34,9 +34,9 @@ knowing where they will give their courses.
   terminate with our vision and projects in the way we would create
   an eco-system around AnyBlok.
 
-* [Install AnyBlok](install/README.md): Learn how to install and setup
-  an AnyBlok project from the development environement to the
-  production platform with recommends configurations.
+* [II - Setup your project](02_project/README.md): Learn how to setup your
+  development environment, initialize a new project, run it \o/ and understand
+  how it is composed.
 
 * [Project](project/README.md): Learn what's an AnyBlok project, what
   are main AnyBlok components and how they works together.
