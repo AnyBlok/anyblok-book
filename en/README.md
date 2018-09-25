@@ -38,16 +38,14 @@ knowing where they will give their courses.
   development environment, initialize a new project, run it \o/ and understand
   how it is composed.
 
-* [Project](project/README.md): Learn what's an AnyBlok project, what
-  are main AnyBlok components and how they works together.
+* [III - First Bloks](blok/README.md): start to develop !
+  discover AnyBlok features that make it really modular and let you full
+  control to create product that others can reuse and adapt to their own
+  business.
 
-* [Blok](blok/README.md): Go in deep with bloks concepts and let you
-  guide to develop a simple blok
-
-* [Advanced concepts](advanced/README.md): In this section we will
-  discover some advanced feature of AnyBlok that make it really modular
-  and let you full control to create product that others can reuse
-  and adapt to their business use case.
+* [IV - create a service](04_service/README.md): It's time to exose your
+  service, provide a REST API and use it in a  graphical user interface
+  to play with pyramid facilities and use existing utility Bloks.
 
 
 ## Authors:
