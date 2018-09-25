@@ -1,4 +1,4 @@
-# AnyBlok book
+# I - Book intent
 
 AnyBlok is a Python framework allowing to create business application.
 
@@ -21,7 +21,15 @@ We try to make each sections of this book independents that you
 can read it in the way you want and you can later refer to this
 book while developing your project.
 
-* [Discover AnyBlok](discovery/README.md): Understand AnyBlok concepts,
+All examples and exercices are availaible and extracted from a dedicated repo:
+[AnyBlok book examples][anyblok_book_examples] that makes easy to test them or
+start this tutorial from any section.
+
+We have imagine a business story that give a guideline to this book. You have
+to develop an online service to schedule classrooms booking to let teacher
+knowing where they will give their courses.
+
+* [I - Discover AnyBlok](01_discovery/README.md): Understand AnyBlok concepts,
   for what it is a usefull framework and availaible features. We will
   terminate with our vision and projects in the way we would create
   an eco-system around AnyBlok.
@@ -53,3 +61,5 @@ book while developing your project.
 This AnyBlok tutorial is released under the terms of
 [Attribution-ShareAlike 4.0 International License CC BY-SA 4.0](
 https://creativecommons.org/licenses/by-sa/4.0/)
+
+[anyblok_book_examples]: https://github.com/anyblok/anyblok-book-examples
