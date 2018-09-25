@@ -11,7 +11,7 @@ uninstalled.
 * Christophe Combelles
 * Pierre Verkest
 
-## Licence
+## License
 
 This AnyBlok tutorial is released under the terms of
 [Attribution-ShareAlike 4.0 International License CC BY-SA 4.0](
