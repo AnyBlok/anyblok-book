@@ -50,7 +50,7 @@ Yes that true! here are some response of AnyBlok values:
 * It already do the work to make those greate python libraries works
   together.
 * load python module at runtime: You can add blok at runtime, so you
-  don't have to stop the service to add functionalities.
+  don't have to stop the service to add features.
 * With sames python packages installed in one environement, you can
   get multiple instance with different behaviors according which bloks
   you have chosen to install. This information is saved in the
