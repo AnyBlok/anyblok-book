@@ -1,9 +1,9 @@
 # AnyBlok Tutorial
 
-AnyBlok is a Python framework allowing to create highly dynamic and
-modular applications on top of SQLAlchemy. Applications are made of
-“bloks” that can be installed, extended, replaced, upgraded or
-uninstalled. 
+[Anyblok](https://github.com/AnyBlok "Anyblok") is a Python framework allowing
+to create highly dynamic and modular applications on top of SQLAlchemy.
+Applications are made of “bloks” that can be installed, extended, replaced,
+upgraded or uninstalled. 
 
 ## Authors:
 
