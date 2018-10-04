@@ -6,12 +6,12 @@ learned in the how to [Setup your own project](./02_cookiecutter.md).
 
 
 ```bash
-├── app.cfg                      # configuration file use in production
+├── app.cfg                      # Configuration file used in production
 ├── app.dev.cfg                  # Configuration file used for development
-├── app.test.cfg                 # Configuration file used to run unittest
+├── app.test.cfg                 # Configuration file used to run tests
 ├── CHANGELOG.rst                # Change log of your project
-├── doc                          # documentation directory
-│   ├── build                    # Directory where is build output documentation(s)
+├── doc                          # Documentation directory
+│   ├── build                    # Directory where the output documentation(s) is built
 │   ├── Makefile                 # Used to build the documentation
 │   └── source                   # Source "code" documentation directory
 │       ├── apidoc.rst           # Predefined apidoc chapter loading api blok documentation
@@ -22,18 +22,18 @@ learned in the how to [Setup your own project](./02_cookiecutter.md).
 ├── LICENSE                      # Project license
 ├── Makefile                     # A Makefile: see make help to list available commands
 ├── README.rst                   # Project's README with basics project information
-├── requirements.dev.txt         # Python package dependencies requiered for developements
-├── requirements.test.txt        # Python packaege dependences requiered for running unittest
+├── requirements.dev.txt         # Python package dependencies required for development
+├── requirements.test.txt        # Python package dependencies required for running unittest
 ├── rooms_booking                # The python package directory where you develop your bloks 
 │   ├── room                     # A blok directory
 │   │   ├── __init__.py          # Blok definition
 │   │   ├── model.py             # Python module with model that define an example class
 │   │   ├── tests                # Test directory
-│   │   │   ├── __init__.py      # Likes standart python, the __init__.py file!
-│   │   │   ├── test_model.py    # file that test model.py methods
-│   │   │   └── test_pyramid.py  # file used to test view.py methods
+│   │   │   ├── __init__.py      # Likes standard python, the __init__.py file!
+│   │   │   ├── test_model.py    # File that test model.py methods
+│   │   │   └── test_pyramid.py  # File that test view.py methods
 │   │   └── views.py             # Python module to declare pyramid route components 
-│   └── __init__.py              # Likes standart python, the __init__.py file!
+│   └── __init__.py              # Likes standard python, the __init__.py file!
 ├── setup.cfg                    # The python package setup.cfg file
 ├── setup.py                     # The python package setup.py file
 └── VERSION                      # Python package version file
@@ -43,7 +43,6 @@ An AnyBlok project follow rules of [python package projects]
 [doc_python_package], there is few additional requirements:
 
 * You must add ``room`` blok in the ``bloks`` list 
-
 ``entry_points`` in your package manifest: the ``setup.py``
 file:
 
@@ -53,7 +52,7 @@ entry_points={
         'room=rooms_booking.room:Room'
         ]
 },
-    ```
+```
 
 * Then you must declare your blok in ``rooms_booking/room/__init__.py`` by
   creating a python class that inherits from ``anyblok.blok.Blok``:
@@ -100,9 +99,9 @@ class Room(Blok):
             self.registry.Example.insert(name="An example")
 ```
 
-As you can see a python package can contains one or more bloks. 
+As you can see a python package can contain one or more bloks. 
 
-An anyblok application project is a blok by itself that will have requirements
+An Anyblok application project is a blok by itself that will have requirements
 to some other bloks published in other python packages or within the same
 package.
 

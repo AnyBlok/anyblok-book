@@ -4,7 +4,7 @@
 In this section you will learn how to install and setup new AnyBlok project and
 how it differ from a standard python library.
 
-At the end of this chapter you are going to get a virtual environment created
+At the end of this chapter, you are going to have a virtual environment created
 to develop the classrooms reservation with your first blok and the default
 example created by the project template.
 
