@@ -3,9 +3,9 @@
 In this chapter (we hope) you'll start to understand what's [AnyBlok][AnyBlok]
 its mains features, the current ecosystem. How it differ from others products.
 
-Motivations and AnyBlok's history, why it was created ?
+Motivations and AnyBlok's history, why it was created?
 
-Finaly we will try to discribe who we are, our values and why you
+Finally, we will try to describe who we are, our values and why you
 should use AnyBlok and what we expected for the future.
 
 If you are in a hurry and wants to give a try or setup a new project
