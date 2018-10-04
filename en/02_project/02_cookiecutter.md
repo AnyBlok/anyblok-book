@@ -5,17 +5,17 @@ run and hack.
 
 ### Project initialisation
 
-We assume you have at least python3.3 environement ready to works with
+We assume you have at least a python3.3 environment ready to work with
 and Postgresql listening on port 5432.
 
 To quickly setup a new project we maintain [a cookiee cutter recipe]
-[cookiecutter] which help you to generate an AnyBlok project while
-awnsering to few awnsers.
+[cookiecutter] which help you generate an AnyBlok project by
+answering to few answers.
 
 As you are a good opportunist innovator (and mainly as we would like to show you
 some AnyBlok concepts) you feel after learning from your customers that making
-classrooms booking looks likes reserved meeting rooms in any companies. For
-the time begin that's won't change a lot of things but after that will
+classrooms booking looks like reserved meeting rooms in any companies. For
+the time being that won't change a lot of things but after that we will
 demonstrate how to split your code in different Bloks. So let's call this
 project **rooms booking** and create a first blok room.
 
@@ -55,13 +55,13 @@ github_username [Your github username]: petrus-v
 ```
 
 Congratulations! Your project is there, you have created a ``rooms-booking``
-directory with a blok called ``room`` an ``Example`` model is present inside.
+directory with a blok called ``room`` and an ``Example`` model is present inside.
 
 
-### Setup environement
+### Setup environment
 
 We have a project directory but before running Anyblok you need
-to get dependencies likes AnyBlok itself and setup a database:
+to get dependencies like AnyBlok itself and setup a database:
 
 ```bash
 (rooms-venv)$ cd rooms-booking
@@ -79,20 +79,20 @@ setup-dev: ## install python project dependencies for development
 ```
 
 - We have installed dev requirements
-- install current package using ``develop`` that let you develop and run
-  your package without re-install it between each change
+- Installed current package using ``develop`` that let you develop and run
+  your package without re-installing it after each changes
 - Create (or update) a database with ``room`` blok installed with all
-  its requirements.
+  its requirements
 
-As you probably notice, the state about which bloks are instelled or not
-is saved in a database, so you can have two different database working
-with the same code that behave in a different way accoring installed bloks.
+As you probably noticed, the state saying what bloks are installed or not
+is saved in a database, so you can have two different databases working
+with the same code that behave in a different way according to installed bloks.
 
 ### Run your project
 
-As long you choose ``anyblok_pyramid`` you have two options, we will start
+As long as you chose ``anyblok_pyramid``, you have two options. We will start
 to open a console interpreter to add *Example* record in your database then
-we are going to list them in your prefered browser and see how to launch
+we are going to list them in your preferred browser and see how to launch
 unittest.
 
 
@@ -136,7 +136,7 @@ Load config file '/home/pverkest/AnyBlok/rooms-booking/app.dev.cfg'
 Load config file '/home/pverkest/AnyBlok/rooms-booking/app.cfg'
 ```
 
-Then open your favorite web browser and visit following urls:
+Then open your favorite web browser and visit the following urls:
 
 ```bash
 $ curl localhost:8080/
@@ -154,7 +154,7 @@ An example
 
 Before running test, you'll have to configure the tests environment, we usually
 use a different database to launch unittests as some test may depends on
-some expected demo data that we don't want to alter while testing manually !
+some expected demo data that we don't want to alter while testing manually!
 
 ```bash
 (rooms-venv)$ make setup-tests
@@ -185,8 +185,8 @@ OK
 
 ```
 
-We have seen how to bootstrap an AnyBlok project and run it without explain
-what are each components if you want to go futher you may keep reading !
+We saw how to bootstrap an AnyBlok project and run it without explaining
+what are each components, if you want to go further, keep reading!
 
 
 [cookiecutter]: https://github.com/AnyBlok/cookiecutter-anyblok-project

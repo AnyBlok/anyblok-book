@@ -13,15 +13,15 @@ packages that already have proven their existences:
   format, SOAP, JsonRPC, gRPC, REST.
 * Integrated with [beaker][beaker] you'll be able to precisely manage
   web sessions and cache.
-* Using [dramatiq][dramatiq] you can ealsy scale your application and
-  distributed the workload
-* And so on... Read more about what values bloks bellow
+* Using [dramatiq][dramatiq] you can easily scale your application and
+  distribute the workload
+* And so on... Read more about what values have bloks below 
 
-So you may use those librairies directly in your project but headaches
+So you may use those libraries directly in your project but headaches
 to make them working together by applying common patterns was already
 spent by AnyBlok authors. Also it adds some nice feature by its own:
 
-* Work with multiple database, to distribute your database workload
+* Work with multiple databases, to distribute your database workload
   you will be able to have one database for read/write and 3 others for
   read requests.
 * Synchronize web session and SQL sessions
@@ -37,29 +37,29 @@ spent by AnyBlok authors. Also it adds some nice feature by its own:
 
 
 We'll like to focus on [SqlAlchemy][sqlalchemy] to show AnyBlok's values:
-[SqlAlchemy][sqlalchemy] is a power full and well known ORM that let you
-writing python code and not worry about SQL. It also provide the requiered
-abstractions so it can speak with different Database system (PostgreSQL,
+[SqlAlchemy][sqlalchemy] is a powerful and well known ORM that let you
+write python code and not worry about SQL. It also provide the required
+abstractions so it can speak with different Database systems (PostgreSQL,
 mariadb, SQL Lite...)
 
 Great but what is the value of AnyBlok then? We could use Pyramid
 and sqlAlchemy without AnyBlok if we only require a web service ?
 
-Yes that true! here are some response of AnyBlok values:
+Yes that's true! here are some examples of AnyBlok values:
 
-* It already do the work to make those greate python libraries works
+* It already do the work to make those great python libraries work
   together.
-* load python module at runtime: You can add blok at runtime, so you
-  don't have to stop the service to add features.
-* With sames python packages installed in one environement, you can
+* load python module at runtime: you can add blok at runtime, so you
+  don't have to stop the service to add functionalities.
+* With the same python packages installed in one environment, you can
   get multiple instance with different behaviors according which bloks
   you have chosen to install. This information is saved in the
   database so each database is an instance that can get a very different
   behaviours with only one running server.
-* You can easly separate code source in different bloks, in a blok
+* You can easily separate code source in different bloks, in a blok
   you will be able to extend, overwrite or overload other bloks,
   this let you customize all components of an application without
-  doing any change in blok develop by someone else. You have
+  doing any change in blok developed by someone else. You have
   the full control to ordering module import and bloks dependencies.
 
 [AnyBlok]: https://github.com/AnyBlok/AnyBlok

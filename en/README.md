@@ -38,12 +38,12 @@ knowing where they will give their courses.
   development environment, initialize a new project, run it \o/ and understand
   how it is composed.
 
-* [III - First Bloks](blok/README.md): start to develop !
+* [III - First Bloks](blok/README.md): start to develop!
   discover AnyBlok features that make it really modular and let you full
   control to create product that others can reuse and adapt to their own
   business.
 
-* [IV - create a service](04_service/README.md): It's time to exose your
+* [IV - create a service](04_service/README.md): It's time to expose your
   service, provide a REST API and use it in a  graphical user interface
   to play with pyramid facilities and use existing utility Bloks.
 
