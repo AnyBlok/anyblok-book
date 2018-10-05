@@ -8,7 +8,8 @@ Here we gonna use [mixins][wikipedia_mixin] to:
 
 ### Install ``anyblok_mixins``
 
-Add ``anyblok_mixins`` to your package requirements and install the package.
+Add [anyblok_mixins][pypi_anyblok_mixins] to your package requirements and
+install the package.
 
 ```python
 file: setup.py
@@ -112,9 +113,6 @@ here the diff result:
 ```
 
 
-
 [wikipedia_mixin]: https://en.wikipedia.org/wiki/Mixin
-[gh_anyblok_mixins]: https://github.com/AnyBlok/anyblok_mixins/
-[pypi_address_blok]: https://pypi.org/project/anyblok_address/
-[gh_address_blok]: https://github.com/AnyBlok/anyblok_address/tree/master/anyblok_address/bloks/address
 [ref_doc_auto_update]: http://doc.anyblok.org/en/latest/MEMENTO.html#column<
+[pypi_address_blok]: https://pypi.org/project/anyblok_mixins/
