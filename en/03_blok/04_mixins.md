@@ -6,6 +6,11 @@ Here we gonna use [mixins][wikipedia_mixin] to:
 * Use the ``TrackModel`` mixin that add 2 fields to record creation and last
   modification date:
 
+> **Note**: You can clone ``III-03_create-model`` branch from
+> [AnyBlok/anyblok-book-examples][gh_abe] repo to get ready to start
+> with this chapter.
+
+
 ### Install ``anyblok_mixins``
 
 Add [anyblok_mixins][pypi_anyblok_mixins] to your package requirements and
@@ -113,6 +118,7 @@ here the diff result:
 ```
 
 
+[gh_abe]: https://github.com/AnyBlok/anyblok-book-examples
 [wikipedia_mixin]: https://en.wikipedia.org/wiki/Mixin
 [ref_doc_auto_update]: http://doc.anyblok.org/en/latest/MEMENTO.html#column<
 [pypi_address_blok]: https://pypi.org/project/anyblok_mixins/
