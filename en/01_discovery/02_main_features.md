@@ -4,7 +4,7 @@ Yet, you may wonder why AnyBlok is useful for you?
 
 [![Latest release on PyPI][pypi_anyblok_svg]][pypi_anyblok]
 [AnyBlok][AnyBlok] takes advantages of famous python libraries and reuse
-packages that already have proven their existences:
+packages that already have proven their efficiency:
 
 * Using [SQLAlchemy][sqlalchemy] AnyBlok is an [ORM][orm_wikipedia]:
   in few words you don't have to worry about the database management
@@ -12,10 +12,10 @@ packages that already have proven their existences:
 * With [Pyramid][pyramid_home] easily integrate any web protocol
   format, SOAP, JsonRPC, gRPC, REST.
 * Integrated with [beaker][beaker] you'll be able to precisely manage
-  web sessions and cache.
+  browser sessions and cache.
 * Using [dramatiq][dramatiq] you can easily scale your application and
-  distribute the workload
-* And so on... Read more about what values have bloks below 
+  distribute asynchronously the workload through message brokers.
+* And so on... Read more about what values have bloks below.
 
 So you may use those libraries directly in your project but headaches
 to make them working together by applying common patterns was already
@@ -25,8 +25,8 @@ spent by AnyBlok authors. Also it adds some nice feature by its own:
   you will be able to have one database for read/write and 3 others for
   read requests.
 * Synchronize web session and SQL sessions
-* Business API code: business code is disconnected from any graphical
-  user interface so it can be use with any of them. You may even
+* Business API code: Business code is disconnected from any graphical
+  user interface so it can be used with any of them. You may even
   integrate AnyBlok within existent python code.
 * AnyBlok provide modularity mechanisms to let you easily reuse code
   distributed in different python packages.
@@ -40,22 +40,22 @@ We'll like to focus on [SqlAlchemy][sqlalchemy] to show AnyBlok's values:
 [SqlAlchemy][sqlalchemy] is a powerful and well known ORM that let you
 write python code and not worry about SQL. It also provide the required
 abstractions so it can speak with different Database systems (PostgreSQL,
-mariadb, SQL Lite...)
+mariadb, SQLite...)
 
 Great but what is the value of AnyBlok then? We could use Pyramid
 and sqlAlchemy without AnyBlok if we only require a web service ?
 
-Yes that's true! here are some examples of AnyBlok values:
+Yes that's true! Here are some examples of AnyBlok values:
 
-* It already do the work to make those great python libraries work
+* It already do the hard work to make those great python libraries talk
   together.
-* load python module at runtime: you can add blok at runtime, so you
+* Load python module at runtime: you can add blok at runtime, so you
   don't have to stop the service to add functionalities.
 * With the same python packages installed in one environment, you can
-  get multiple instance with different behaviors according which bloks
-  you have chosen to install. This information is saved in the
-  database so each database is an instance that can get a very different
-  behaviours with only one running server.
+  get multiple instance with different behaviors according to which bloks
+  you choose to install. This information is saved in the database so each
+  database is an instance that can get a very different behaviours with only
+  one running server.
 * You can easily separate code source in different bloks, in a blok
   you will be able to extend, overwrite or overload other bloks,
   this let you customize all components of an application without
