@@ -1,67 +1,58 @@
 ## AnyBlok Ecosystem
 
+What we call `the Anyblok Ecosystem` is the collection of Python packages that
+provide reusable Bloks or pluggable facilities to external Python libraries.
 
-> **Important**: We believe splitting business code and graphical user
-> interface is an important effort that has to be done as web
-> framework evolve faster than backend business code that's why we
-> would like to create business APIs.
+To illustrate this, let's start with our vision about the AnyBlok ecosystem *we
+would like to exist*. Then we will cover currently existing bloks in more depth.
 
+As a quick reminder, don't forget that a reusable Blok is always inside a
+Python package.
+A Python package can expose several Bloks. A Blok provides models and behaviours
+of its own or merely acts as a wrapper for an external library.
 
-To illustrate components let's start with our vision about the AnyBlok
-ecosystem we would like to create and then we will go deep in details with
-existing bloks.
+Anyblok's goal is to make developing business applications easier. To do that,
+we think that a development team needs at least three different kinds of packages
+to play with:
 
-> **Note**: Keep in mind some of those features are forecast at the
-> time we're writing those lines, other are proof of concepts and some are
-> stable to use in production.
+**Business bloks**: Functional and business oriented bloks
+**Technical bloks**: Bloks that add technical features, such as, e.g., network 
+protocols, data handling, session management... 
+**Development tools**: Everything that makes development easier, faster and
+reliable.
 
-```
-+-----------------------------------------------------
-| Furet UI
-+----------------+------------------------------------
-| Business Bloks UI
-+----------------+------------------------------------
-|                | AnyBlok Furet UI
-+ Business Bloks +------------------------------------
-|                | AnyBlok pyramid beaker
-+----------+     +-----------------+--------------+-----------------------+-
-| REA Blok |     | AnyBlok Pyramid | AnyBlok auth | AnyBlok multi engines | 
-+----------+-----+-----------------+--------------+-----------------------+-
-| AnyBlok
-+-----------------------------------------------------
-| SQL Alchemy
-+-----------------------------------------------------
-| SGBD: PostgreSQL / mariadb / SQL Lite / ...
-+-----------------------------------------------------
-```
+For now the easiest way to explore the Anyblok Ecosystem is Anyblok Organisation
+main github page [AnyBlokOrg]. Please note that all of those
+repositories are tagged with topics according to the hereby categorisation.
 
-As most ERP Product / business product we would like to create an ecosystem
-around [AnyBlok][AnyBlok], at the time we're writing those lines there is
-only few business bloks written. Also we believe a big effort must be done
-in tools rather than start writing business code. We want to give to
-developers strong and stable tools to help them write business bloks.
+One of the main stakes with business applications is their trustworthiness.
+To achieve that, we believe in those simple rules:
 
-We think of business applications as a service so business rules
-should be disconnected from the graphical user interface, we would
-like to create some kind of business API that let developer free to use
-common business bloks as he wants:
+* Use existing robust and mature component is better than reinventing the wheel.
+* The value of a reusable business Blok lies with its genericity and ability of
+being usable for any use case. It's better to have a smaller scope that can be
+useful for everyone than to address edge case.
+* Separate the business API from user interface is always a good idea because
+it avoids polluting the business API with assumptions about one given user
+interface.
+* Unit testing, coverage, implementation examples are mandatory for a reusable
+Blok.
 
-  - within its own existing base code
-  - expose web services over http
-  - let choose to connect to any kind of interfaces (Graphical or not)
+> **Note**: Please, keep in mind that some of those features are forecasts at
+> the time we're writing those lines, while some others are proof of concepts
+> and some are stable to use in production.
 
 ### Business Bloks
 
-
 [![Latest release on PyPI][pypi_anyblok_address_svg]][pypi_anyblok_address]
-[AnyBlok address][anyblok_address] These are bloks for address management.
+[AnyBlok address][anyblok_address] A blok for postal addresses normalization
 
 [![Latest release on PyPI][pypi_anyblok_wms_base_svg]][pypi_anyblok_wms_base]
 [AnyBlok WMS Base][anyblok_wms_base] These are base Bloks to build
-Warehouse Management and Logistics applications with AnyBlok.
+Warehouse Management and Logistics applications.
 
 [![Latest release on PyPI][pypi_anyblok_product_svg]][pypi_anyblok_product]
-[AnyBlok Product][anyblok_product] provide product management bloks.
+[AnyBlok Product][anyblok_product] provide product catalog management bloks.
 
 [![Latest release on PyPI][pypi_anyblok_sale_svg]][pypi_anyblok_sale]
 [AnyBlok sale][anyblok_sale] These are bloks used for sale managment.
@@ -77,71 +68,12 @@ We are working in that way adding bloks to manage common use cases.
 Feel free to contribute, open issues, create pull request,
 ask new repository through [github][gh_anyblok].
 
-
 ### Technical Bloks
-
-[Furet UI][furetui] [POC not released] is a web user interface
-framework that can be used without AnyBlok as long the server implement
-required interfaces (web services). The Idea of this UI framework is
-that behaviors and representations are managed by server responses.
-Then developers do not require to write Javascript to manage their
-business application. Developers focus on writing backend code (the
-business) by providing expected data. FureUI use famous web frameworks
-like [Vue.js][vuejs] to manage the HTML page, [bulma][bulma] a
-powerful css framework.
-
-[![Latest release on PyPI][pypi_anyblok_furetui_svg]][pypi_anyblok_furetui]
-[AnyBlok FuretUI][anyblok_furetui] is a *Furet UI* backend that helps generating
- graphical web interface to AnyBlok. It gives features like:
-
-* overload graphical interfaces between bloks:
-
-  As with AnyBlok you are able to overload any python bloks,
-  AnyBlok FuretUI let you overload the user interface:
-
-  for instance, let's say you are using those bloks ``product`` and
-  ``product_furet_ui`` which would be developed by someone
-  else in the community that manage some basic product information (
-  name, code, size, price), the other blok (``product_furet_ui``)
-  manage how to display products in the graphical user interface.
-
-  Imagine you want to extend the ``product_furet_ui`` functionality by
-  adding EAN13 (barcode value). We would give you the following advice:
-  create 2 bloks, the first one ``product_barcode`` will add fields and
-  business methods to manage barcode on products. The second blok
-  ``product_barecode_ui`` will extend the user interface defined in
-  the ``product_furet_ui`` by adding the barcode field in the interface
-  in a way to tell:
-  "hey! I would like to add the field 'barcode' just right after
-  the existing field product code"
-
-  Here an example of dependency tree:
-
-  ```
-  +-----------------------------------------------------
-  | Furet UI
-  +----------------+------------------------------------
-  | Product barecode UI
-  +----------------+------------------------------------
-  |    Product     | AnyBlok Furet UI
-  +                +------------------------------------
-  |    Barecode    | AnyBlok pyramid beaker
-  +----------+-----+-----------------+--------------+-----------------------+-
-  | Product  | ... | AnyBlok Pyramid | AnyBlok auth | AnyBlok multi engines | 
-  +----------+-----+-----------------+--------------+-----------------------+-
-  | AnyBlok
-  +-----------------------------------------------------
-  | SQL Alchemy
-  +-----------------------------------------------------
-  | SGBD: PostgreSQL / mariadb / SQL Lite / ...
-  +-----------------------------------------------------
-  ```
 
 [![Latest release on PyPI][pypi_anyblok_beaker_svg]][pypi_anyblok_beaker]
 [AnyBlok Pyramid beaker][anyblok_beaker] using the strength of
 [beaker][beaker] you are able to precisely configure web sessions and cache
 on top of [pyramid][pyramid_home].
-
 
 [![Latest release on PyPI][pypi_anyblok-pyramid-rest-api-svg]
 ][pypi_anyblok-pyramid-rest-api]
@@ -183,8 +115,9 @@ in your reports.
 attachement and report systems.
 
 [![Latest release on PyPI][pypi_anyblok_postgres_svg]][pypi_anyblok_postgres]
-[AnyBlok postgres][anyblok_postgres] add special features to AnyBlok that are dedicated and based on 
-[PostgreSQL][postgresql] features. Bloks (will) exploit the strengh of:
+[AnyBlok postgres][anyblok_postgres] add special features to AnyBlok that are
+dedicated and based on [PostgreSQL][postgresql] features. Bloks (will) exploit
+the strengh of:
 
 * [JSONB field](
   https://www.postgresql.org/docs/current/static/datatype-json.html) which add
@@ -220,8 +153,19 @@ multi database backends. Let's says you have one master with multiple
 replicate databases, you can easily send read request on replicates and
 writes to the master.
 
+### Development tools
 
+[![Latest release on PyPI][pypi_anyblok_svg]][pypi_anyblok]
+[AnyBlok][AnyBlok] Scripts for creating or updating database and unit testing.
+
+[![Latest release on PyPI][pypi_cookiecutter-anyblok-project_svg]]
+[pypi_cookiecutter-anyblok-project] [Cookiecutter][cookiecutter] project
+template for bootstraping Anyblok based projects.
+
+[AnyBlokOrg]: https://github.com/AnyBlok
 [AnyBlok]: https://github.com/AnyBlok/AnyBlok
+[pypi_anyblok]: https://pypi.org/project/AnyBlok
+[pypi_anyblok_svg]: https://img.shields.io/pypi/v/anyblok.svg
 [anyblok_address]: https://github.com/AnyBlok/anyblok_address
 [pypi_anyblok_address]: https://pypi.python.org/pypi/anyblok_address
 [pypi_anyblok_address_svg]: https://img.shields.io/pypi/v/anyblok_address.svg
@@ -240,9 +184,6 @@ writes to the master.
 [anyblok_dramatiq]: https://github.com/AnyBlok/anyblok_dramatiq
 [pypi_anyblok_dramatiq]: https://pypi.python.org/pypi/anyblok_dramatiq
 [pypi_anyblok_dramatiq_svg]: https://img.shields.io/pypi/v/anyblok_dramatiq.svg
-[anyblok_furetui]: https://github.com/AnyBlok/anyblok_furetui
-[pypi_anyblok_furetui]: https://pypi.python.org/pypi/anyblok_furetui
-[pypi_anyblok_furetui_svg]: https://img.shields.io/pypi/v/anyblok_furetui.svg
 [anyblok_io]: https://github.com/AnyBlok/anyblok_io
 [pypi_anyblok_io]: https://pypi.python.org/pypi/anyblok_io
 [pypi_anyblok_io_svg]: https://img.shields.io/pypi/v/anyblok_io.svg
@@ -291,3 +232,4 @@ writes to the master.
 [rea]: https://en.wikipedia.org/wiki/Resources,_events,_agents_(accounting_model)
 [sqlalchemy]: http://www.sqlalchemy.org/
 [vuejs]: https://vuejs.org/
+[cookiecutter]: https://github.com/audreyr/cookiecutter
