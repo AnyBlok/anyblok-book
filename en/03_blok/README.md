@@ -44,4 +44,5 @@ requirements:
 * [Create new model](03_create_model.md)
 * [Use mixins](04_mixins.md)
 * [link models](05_link_models.md)
-* [Exercise](06_exercices.md)
+* [link models](06_polymorphism.md)
+* [Exercise](07_exercices.md)

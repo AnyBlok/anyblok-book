@@ -325,6 +325,9 @@ registry.Room.query(
 ('Salle 101', 'La Sorbonne', 25)
 ```
 
+> **Note**: You can clone ``III-05_link-models`` branch from
+> [AnyBlok/anyblok-book-examples][gh_abe] repo to get that whole code.
+
 
 [sqlalchemy_query]: https://docs.sqlalchemy.org/en/latest/orm/query.html
 [gh_abe]: https://github.com/AnyBlok/anyblok-book-examples
