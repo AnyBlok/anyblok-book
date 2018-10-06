@@ -22,11 +22,7 @@ We have had some models to get start with polymorphism by:
 [Polymorphism][wiki_polymorphism] in AnyBlok allows to get clear business
 readable queries as we will see later.
 
-So we are going to add ``Student`` that extend ``Person`` model to add class
-
-
-###
-
+...
 
 [gh_abe]: https://github.com/AnyBlok/anyblok-book-examples
 [wiki_polymorphism]: https://en.wikipedia.org/wiki/Polymorphism_(computer_science)

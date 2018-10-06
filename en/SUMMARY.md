@@ -16,6 +16,6 @@
     * [Create model](03_blok/03_create_model.md)
     * [Use mixins](03_blok/04_mixins.md)
     * [Link models](03_blok/05_link_models.md)
-    * [Exercices](03_blok/06_polymorphism.md)
+    * [Polymorphism](03_blok/06_polymorphism.md)
     * [Exercices](03_blok/07_exercises.md)
 * [IV - Expose your http service](04_service/README.md)
