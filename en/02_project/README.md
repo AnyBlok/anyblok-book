@@ -1,12 +1,12 @@
 # II - Project
 
 
-In this section you will learn how to install and setup new AnyBlok project and
-how it differ from a standard python library.
+In this section you will learn how setup a new AnyBlok project and how it
+differ from a standard python library.
 
-At the end of this chapter, you are going to have a virtual environment created
-to develop the classrooms reservation with your first blok and the default
-example created by the project template.
+At the end of this chapter, you will have a virtual environment created
+to develop the classrooms reservation, with a first blok and the default
+example created by the cookiecutter project template.
 
 * [Install AnyBlok][01_install.md]
 * [Create a new Anyblok project: step by step](02_cookiecutter.md):

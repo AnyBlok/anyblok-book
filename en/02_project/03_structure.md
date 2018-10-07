@@ -6,11 +6,11 @@ learned in the how to [Setup your own project](./02_cookiecutter.md).
 
 
 ```bash
-├── app.cfg                      # Configuration file used in production
+├── app.cfg                      # Configuration file used in production environment
 ├── app.dev.cfg                  # Configuration file used for development
 ├── app.test.cfg                 # Configuration file used to run tests
-├── CHANGELOG.rst                # Change log of your project
-├── doc                          # Documentation directory
+├── CHANGELOG.rst                # Change log of the project
+├── doc                          # Documentation root directory
 │   ├── build                    # Directory where the output documentation(s) is built
 │   ├── Makefile                 # Used to build the documentation
 │   └── source                   # Source "code" documentation directory
@@ -39,7 +39,7 @@ learned in the how to [Setup your own project](./02_cookiecutter.md).
 └── VERSION                      # Python package version file
 ```
 
-An AnyBlok project follow rules of [python package projects]
+An AnyBlok project follow the rules of [python package projects]
 [doc_python_package], there is few additional requirements:
 
 * You must add ``room`` blok in the ``bloks`` list 

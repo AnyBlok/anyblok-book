@@ -5,9 +5,6 @@ run and hack.
 
 ### Project initialisation
 
-We assume you have at least a python3.3 environment ready to work with
-and Postgresql listening on port 5432.
-
 To quickly setup a new project we maintain [a cookiee cutter recipe]
 [cookiecutter] which help you generate an AnyBlok project by
 answering to few answers.
@@ -58,6 +55,9 @@ directory with a blok called ``room`` and an ``Example`` model is present inside
 
 
 ### Setup environment
+
+**Note:** We assume you have at least a python3.3 environment ready to work
+with and Postgresql listening on port 5432.
 
 We have a project directory but before running Anyblok you need
 to get dependencies like AnyBlok itself and setup a database:
