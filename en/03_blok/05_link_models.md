@@ -9,8 +9,8 @@ project.
 
 ### Add the field
 
-Likes in database to link 2 tables together we use relations, here we add a
-``Many2One`` relation ship between ``Room`` and ``Address``:
+In any database system, to link two tables together we use relations, here we 
+need to add a ``Many2One`` relationship between ``Room`` and ``Address``:
 
 ```python
 # File rooms_booking/room/room.py
@@ -31,9 +31,9 @@ Likes in database to link 2 tables together we use relations, here we add a
 +    )
 ```
 
-### Fix test
+### Fix tests
 
-You probably notice that your tests fails! We have to fix it.
+You probably notice that your tests fails! We have to fix them.
 
 ```python
 rooms_booking/room/tests/test_room.py
@@ -72,13 +72,13 @@ rooms_booking/room/tests/test_room.py
 
 ```
 
-Curious developer may read which kind of relations provided by AnyBlok and
-learn from [documentation reference][doc_ref_relationship]
-
+Curious developer may read which kind of relation AnyBlok provides and learn
+from [documentation reference][doc_ref_relationship]
 
 ### Init some data
 
-To play with queries we will add some data while installing the blok
+To play with queries we need to populate some data entries while installing
+the blok.
 
 ```python
 # File: rooms_booking/room/__init__.py
@@ -195,9 +195,9 @@ make setup-dev
 
 ### Play with queries
 
-As AnyBlok is based on **SqlAlchemy** to know how query using AnyBlok you
-can directly learn from [SqlAlchemy query API doc][sqlalchemy_query]. Here
-some example using ``anyblok_interpreter -c app.dev.cfg``
+As AnyBlok is based on **SqlAlchemy** you can directly learn how to build
+queriesfrom [SqlAlchemy query API doc][sqlalchemy_query]. Here are some examples
+using ``anyblok_interpreter -c app.dev.cfg``
 
 * How many addresses we have
 

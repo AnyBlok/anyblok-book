@@ -7,14 +7,15 @@ In this chapter we will see how to create a new Room model.
 > with this chapter.
 
 
-As explain in the [section intro](README.md) a room is described as:
+As explained in the [section intro](README.md) a room is described as:
 
-* name: the room name or room number
+* name: The room name or room number
 * address: The address linked to the room
-* capacity: how many people can be sit behind a desk
+* capacity: How many people can be sit behind a desk
 
-So let's create a simple test that we can insert room with name and capacity.
-We will see how to links models (Room and Address) in [chapter 5 of this
+Let's create a simple test that check that we can insert a new room with name
+and capacity.
+We will then see how to links models (Room and Address) in [chapter 5 of this
 section](./05_link_models.md)
 
 ```python

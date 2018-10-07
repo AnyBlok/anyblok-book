@@ -1,9 +1,9 @@
-## Use mixins
+## Using mixins
 
-Here we gonna use [mixins][wikipedia_mixin] to:
-* refactor our code to reuse ``IdColumn`` mixin to create the id primary key
-  field on the room model
-* Use the ``TrackModel`` mixin that add 2 fields to record creation and last
+Now we gonna use AnyBlok [mixins][wikipedia_mixin] to:
+* Refactor our code in order to reuse ``IdColumn`` mixin to create the id
+  primary key column  on the room model
+* Use the ``TrackModel`` mixin that add 2 fields to track creation and last
   modification date:
 
 > **Note**: You can clone ``III-03_create-model`` branch from
@@ -29,7 +29,7 @@ file: setup.py
 
 ```
 
-Declare ``anyblok-mixins`` blok as required blok for your projec
+Declare ``anyblok-mixins`` blok as required in the Room blok init file.
 
 ```python
 file: rooms_booking/room/__init__.py
@@ -46,9 +46,8 @@ file: rooms_booking/room/__init__.py
 
 ### Add a unittest
 
-
-In the following test we make sure as asked by our customer that
-``edit_date`` field is properly updated after we change room information.
+In the following test we make sure as wanted by our customer that
+``edit_date`` field is properly updated after a change occurs for a room.
 
 ```python
 #File: rooms_booking/room/tests/test_room.py
@@ -87,9 +86,9 @@ class TestRoom(BlokTestCase):
 
 > *Note*: ``room.refresh()`` is used to clear cache on the ORM side to
 > request data from the database. So that will perform a flush before if
-> necssary.
+> necessary.
 
-Those method are rarely used in your code but can be tricky while playing with
+Those methods are rarely used in your code but can be tricky while playing with
 some kind of field.
 
 ### Reuse mixins

@@ -1,7 +1,7 @@
 ## Add external Blok
 
-We are going to use an external existing blok within our project to represent
-addresses.
+We are going to use an existing generic business blok within our project to
+represent addresses.
 
 > **Note**: You can clone ``II_setup-project`` branch from
 > [AnyBlok/anyblok-book-examples][gh_abe] repo to get ready to start
@@ -14,7 +14,7 @@ we are going to depend on the [address blok][gh_address_blok] developed
 by the community and published in the [anyblok address python package
 ][pypi_address_blok].
 
-To get the blok we needs to install that package by adding it in
+To get the business blok we need to install that package by adding it in
 your package dependency:
 
 ```python
@@ -50,7 +50,7 @@ from command line:
 (rooms-venv)$ anyblok_updatedb -c app.dev.cfg --install-bloks address
 ```
 
-You can now add/remove addresses:
+You can now add/remove addresses with the AnyBlok Python interpreter:
 ```python
 anyblok_interpreter -c app.dev.cfg
 

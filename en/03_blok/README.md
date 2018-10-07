@@ -14,24 +14,27 @@ git clone -b II_setup-project https://github.com/AnyBlok/anyblok-book-examples a
 cd anyblok-book-examples
 source ../venv
 ```
-In this section, you will learn how to add external bloks, extend existing models
-provided by other bloks, create new model or link models together.
+In this section, you will learn how to add: 
 
-For our project we know that:
+* External bloks
+* Extend existing models provided by other bloks
+* Create a new model or link models together
 
-* Each rooms are located with one address. 
+For our project we assume that:
+
+* Each rooms are located with one address.
 * An university may have multiple addresses and each building will be
-  represented by a different address.
-* On each address, we need to be able to collect access information
+  represented with a different address.
+* For each address, we need to be able to store access information
   to get into the building as they sometime use code for restricted
   laboratories, require a key to open the main door, etc...
-* A room is specified by:    
+* A room is specified by:
     * name: the room name or room number
     * address: the address linked to the room
     * capacity: how many people can be sit behind a desk
 
-In this section, we will create an API using multiple bloks with the following
-requirements:
+In this section, we will create a Python API using multiple bloks with the
+following requirements:
 
 * We should track the last change date on a room
 * We should be able to count the number of rooms

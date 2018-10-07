@@ -1,6 +1,6 @@
 # I - Book intent
 
-AnyBlok is a Python framework allowing to create business application.
+AnyBlok is a Python framework fir building business application.
 
 ## Expected readers
 
