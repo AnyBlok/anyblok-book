@@ -115,6 +115,8 @@ This way, we can test that we can add some access information on an Address:
 
 ```python
 # file: rooms_booking/room/tests/test_address.py
+from anyblok.tests.testcase import BlokTestCase
+
 
 class TestAddress(BlokTestCase):
     """ Test extended registry.Address model"""
