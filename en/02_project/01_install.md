@@ -16,8 +16,18 @@ sudo apt-get install python3-dev python3-venv
 sudo apt-get install git libffi-dev libssl-dev libxml2-dev libxslt1-dev libyaml-dev zlib1g-dev
 ```
 
+<<<<<<< HEAD
 Once your operating system and database engine are ready, it's time to create
-a Postgresql user for the project (Replace 'myusername' with yours).
+a Postgresql user for the project (Replace 'myusername' with yours) that match
+your host user, at least you should be able to createdb/dropdb without errors:
+
+```bash
+createdb testws
+dropdb testws
+```
+
+If you get some errors create a role (``--createrole``, ``--superuser`` are up
+to you):
 
 ```bash
 sudo -u postgres createuser --createdb --createrole --superuser myusername
