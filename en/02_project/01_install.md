@@ -3,13 +3,25 @@
 
 ### Requirements
 
-All this book was tested using PostgreSQL so we recommend to install it locally.
-
 To develop an AnyBlok project you need to make sure you have
 python >= 3.3 and a SGDB supported by [SQLAlchemy]
-[sqlalchemy_requirements]
+[sqlalchemy_requirements]. Also, don't forget to install [Git][git]
 
-[comment]: <> (TODO: make sure reader has the expected role in its database)
+All this book was tested using Debian and PostgreSQL. Here is how to install all
+system dependencies on Debian like operating system:
+
+```bash
+sudo apt-get install postgresql libpq-dev
+sudo apt-get install python3-dev python3-venv
+sudo apt-get install git libffi-dev libssl-dev libxml2-dev libxslt1-dev libyaml-dev zlib1g-dev
+```
+
+Once your operating system and database engine are ready, it's time top create
+a Postgresl user for the project (Replace 'myusername' with yours).
+
+```bash
+sudo -u postgres createuser --createdb --createrole --superuser myusername
+```
 
 ### Virtual environment
 
@@ -25,6 +37,7 @@ Here is how to create the virtualenv and activating it.
 python3 -m venv rooms-venv
 source rooms-venv/bin/activate
 ```
+
 Once activated all python commands (likes ``pip`` and so on) are launched in
 this context.
 
@@ -36,5 +49,5 @@ its name is generally displayed.
 (rooms-venv) yourname@mycomputer:~/anyblok$ 
 ```
 
-
 [sqlalchemy_requirements]: http://docs.sqlalchemy.org/en/latest
+[git]: https://git-scm.com/

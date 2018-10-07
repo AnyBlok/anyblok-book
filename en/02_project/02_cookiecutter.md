@@ -22,7 +22,6 @@ project **rooms booking** and create a first blok room.
 ```bash
 (rooms-venv)$ pip install cookiecutter
 (rooms-venv)$ cookiecutter gh:AnyBlok/cookiecutter-anyblok-project
-You've downloaded /home/pverkest/.cookiecutters/cookiecutter-anyblok-project before. Is it okay to delete and re-download it? [yes]: yes
 project_name [Project name]: Rooms booking
 project_slug [rooms-booking]: 
 project_short_description [A short description of the Anyblok based project]: Anyblok service to manage (class)rooms reservation       
@@ -98,7 +97,7 @@ unittest.
 
 #### Console interpreter
 
-This show how to add and request the Example model using [ipython](
+This show you how to add and query the Example model using [ipython](
 https://ipython.org/index.html):
 
 ```python
