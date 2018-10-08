@@ -5,8 +5,8 @@ ready to hack using [anyblok cookiecutter project template](
 https://github.com/AnyBlok/cookiecutter-anyblok-project).
 
 You can clone ``II_setup-project`` branch from [AnyBlok/anyblok-book-examples](
-https://github.com/AnyBlok/anyblok-book-examples) repo to get ready to start
-this section:
+https://github.com/AnyBlok/anyblok-book-examples) repository to get ready to
+start this section:
 
 ```bash
 # clone 
@@ -46,6 +46,6 @@ following requirements:
 * [Extend Blok](02_extend_blok.md)
 * [Create new model](03_create_model.md)
 * [Use mixins](04_mixins.md)
-* [link models](05_link_models.md)
-* [link models](06_polymorphism.md)
+* [Link models](05_link_models.md)
+* [Polymorphism](06_polymorphism.md)
 * [Exercise](07_exercices.md)

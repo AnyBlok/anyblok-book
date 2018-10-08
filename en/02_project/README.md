@@ -1,8 +1,8 @@
 # II - Project
 
 
-In this section you will learn how setup a new AnyBlok project and how it
-differ from a standard python library.
+In this section you will learn how set up a new AnyBlok project and how it
+differs from a standard python library.
 
 At the end of this chapter, you will have a virtual environment created
 to develop the classrooms reservation, with a first blok and the default
