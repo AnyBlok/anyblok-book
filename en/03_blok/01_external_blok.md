@@ -15,7 +15,7 @@ by the community and published in the [anyblok address python package
 ][pypi_address_blok].
 
 To get the business blok we need to install that package by adding it in
-your package dependency:
+the package dependencies of the project:
 
 ```python
 diff --git a/setup.py b/setup.py
@@ -32,7 +32,7 @@ index ca2ca86..1216cde 100644
  test_requirements = [
 ```
 
-To install new dependency use one of the following commands:
+To install new package dependency use one of the following commands:
 
 ```bash
 (rooms-venv)$ make setup-dev

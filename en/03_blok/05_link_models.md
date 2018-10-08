@@ -72,7 +72,7 @@ rooms_booking/room/tests/test_room.py
 
 ```
 
-Curious developer may read which kind of relation AnyBlok provides and learn
+Curious developers may read which kind of relation AnyBlok provides and learn
 from [documentation reference][doc_ref_relationship]
 
 ### Init some data

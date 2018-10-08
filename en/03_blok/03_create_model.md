@@ -1,6 +1,6 @@
 ## Create a new model
 
-In this chapter we will see how to create a new Room model.
+In this chapter we will see how to create a new ``Room`` model.
 
 > **Note**: You can clone ``III-02_extend-blok`` branch from
 > [AnyBlok/anyblok-book-examples][gh_abe] repo to get ready to start

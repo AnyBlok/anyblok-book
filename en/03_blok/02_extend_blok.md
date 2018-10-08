@@ -34,8 +34,7 @@ rm rooms_booking/room/model.py \
 
 ### Extend the Adress model
 
-We are going to add an ``access`` information field on each addresses.
-
+We need to add an ``access`` information field on each addresses.
 Let's add two new files in your project:
 
 * ``rooms_booking/room/address.py``: We are going to extend Address model in
@@ -76,7 +75,7 @@ In our case if the *Room* blok state is ``installed`` in a database
 not used because the blok is uninstalled.
 
 **Note:** When you need to know if a blok is installed, launch and
-anyblok_interpereter and query `registry.System.Blok`
+anyblok_interpreter and query `registry.System.Blok`
 
 ```
 In [1]: registry.System.Blok.query().all()
@@ -112,7 +111,7 @@ Blok:
 ```
 
 (loving [TDD][wikipedia_tdd]) Add following unit tests before starting coding.
-This way test that we can add some access information on an Address:
+This way, test that we can add some access information on an Address:
 
 ```python
 # file: rooms_booking/room/tests/test_address.py
