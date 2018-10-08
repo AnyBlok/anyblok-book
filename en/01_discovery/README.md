@@ -8,7 +8,7 @@ Motivations and AnyBlok's history, why it was created?
 Finally, we will try to describe who we are, our values and why you
 should use AnyBlok and what we expected for the future.
 
-If you are in a hurry and wants to give a try or setup a new project
+If you are in a hurry and wants to give a try or set up a new project
 quickly without verbose concepts you should skip this section.
 
 * [What's AnyBlok ?](./01_what_is_it.md)

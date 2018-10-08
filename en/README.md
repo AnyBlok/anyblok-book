@@ -12,8 +12,8 @@ Ready!?
 
 ## Summary
 
-If you are in a hurry and wants to quickly give it a try, or just setup a new
-project without verbose concepts you may read this [how to setup project with
+If you are in a hurry and wants to quickly give it a try, or just set up a new
+project without verbose concepts you may read this [how to set up project with
 cookiecutter](02_project/02_cookiecutter.md)
 
 We try to make each sections of this book independents, so you can read it the 
@@ -31,7 +31,7 @@ know where they will give their courses.
   concepts. For what it is a useful framework and available features. We will
   end with our vision and projects to create an eco-system around AnyBlok.
 
-* [II - Setup your project](02_project/README.md): Learn how to setup your
+* [II - Setup your project](02_project/README.md): Learn how to set up your
   development environment, initialize a new project, run it \o/ and understand
   how it is composed.
 
