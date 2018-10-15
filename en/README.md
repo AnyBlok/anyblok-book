@@ -1,12 +1,13 @@
 # I - Book intent
 
-AnyBlok is a Python framework fir building business application.
-
-## Expected readers
+AnyBlok is a Python framework to build business applications.
 
 This tutorial is made to teach you how to develop applications with
-AnyBlok. We expect reader to know at least one procedural programming
-language!
+AnyBlok.
+
+## Reader requirements
+
+We expect the reader to know at least one procedural programming language!
 
 Ready!?
 
@@ -16,7 +17,7 @@ If you are in a hurry and wants to quickly give it a try, or just set up a new
 project without verbose concepts you may read this [how to set up project with
 cookiecutter](02_project/02_cookiecutter.md)
 
-We try to make each sections of this book independents, so you can read it the 
+We try to make each section of this book independent, so you can read it the 
 way you want and later refer to it while developing your project.
 
 All examples and exercices are available and extracted from a dedicated repo:
@@ -24,7 +25,7 @@ All examples and exercices are available and extracted from a dedicated repo:
 start this tutorial from any section.
 
 Let's imagine a business story that gives a guideline to this book. You have
-to develop an online service to schedule classrooms booking to let teachers
+to develop an online service to schedule classrooms booking so teachers can
 know where they will give their courses.
 
 * [I - Discover AnyBlok](01_discovery/README.md): Understanding AnyBlok
@@ -37,7 +38,7 @@ know where they will give their courses.
 
 * [III - First Bloks](blok/README.md): Start to develop!
   Discover AnyBlok features that makes it really modular, and let you get full
-  control to create product that others can reuse and adapt to their own
+  control to create products that others can reuse and adapt to their own
   business.
 
 * [IV - Create a service](04_service/README.md): It's time to expose your

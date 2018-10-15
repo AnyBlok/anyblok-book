@@ -8,7 +8,7 @@ packages that already have proven their efficiency:
 
 * Using [SQLAlchemy][sqlalchemy] AnyBlok is an [ORM][orm_wikipedia]:
   in few words you don't have to worry about the database management
-  only your code source.
+  only your source code.
 * With [Pyramid][pyramid_home] easily integrate any web protocol
   format, SOAP, JsonRPC, gRPC, REST.
 * Integrated with [beaker][beaker] you'll be able to precisely manage
@@ -19,7 +19,7 @@ packages that already have proven their efficiency:
 
 So you may use those libraries directly in your project but headaches
 to make them working together by applying common patterns was already
-spent by AnyBlok authors. Also it adds some nice feature by its own:
+spent by AnyBlok authors. Also it adds some nice features by its own:
 
 * Work with multiple databases, to distribute your database workload
   you will be able to have one database for read/write and 3 others for
@@ -38,7 +38,7 @@ spent by AnyBlok authors. Also it adds some nice feature by its own:
 
 We'll like to focus on [SqlAlchemy][sqlalchemy] to show AnyBlok's values:
 [SqlAlchemy][sqlalchemy] is a powerful and well known ORM that let you
-write python code and not worry about SQL. It also provide the required
+write python code and not worry about SQL. It also provides the required
 abstractions so it can speak with different Database systems (PostgreSQL,
 mariadb, SQLite...)
 
@@ -59,8 +59,8 @@ Yes that's true! Here are some examples of AnyBlok values:
 * You can easily separate code source in different bloks, in a blok
   you will be able to extend, overwrite or overload other bloks,
   this let you customize all components of an application without
-  doing any change in blok developed by someone else. You have
-  the full control to ordering module import and bloks dependencies.
+  doing any change in a blok developed by someone else. You have
+  full control over modules import order and bloks dependencies.
 
 [AnyBlok]: https://github.com/AnyBlok/AnyBlok
 [pypi_anyblok]: https://pypi.python.org/

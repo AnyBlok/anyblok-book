@@ -16,7 +16,7 @@ we think that a development team needs at least three different kinds of package
 to play with:
 
 **Business bloks**: Functional and business oriented bloks
-**Technical bloks**: Bloks that add technical features, such as, e.g., network 
+**Technical bloks**: Bloks that adds technical features, such as, e.g., network 
 protocols, data handling, session management... 
 **Development tools**: Everything that makes development easier, faster and
 reliable.
@@ -60,7 +60,7 @@ Warehouse Management and Logistics applications.
 [![Latest release on PyPI][pypi_anyblok_rea_svg]][pypi_anyblok_rea]
 [AnyBlok REA][anyblok_rea] give abstract class that you can apply
 to your business, [REA][rea] itself is a collection of business
-patern which you can apply to manage stock, accounts and so on...
+pattern which you can apply to manage stock, accounts and so on...
 
 We're writing those lines in the early age of the ecosystem,
 as it grow it will gain more value.
@@ -77,11 +77,11 @@ on top of [pyramid][pyramid_home].
 
 [![Latest release on PyPI][pypi_anyblok-pyramid-rest-api-svg]
 ][pypi_anyblok-pyramid-rest-api]
-[AnyBlok Pyramid rest api][AnyBlok-pyramid-rest-api] this blok provide
+[AnyBlok Pyramid rest api][AnyBlok-pyramid-rest-api] this blok provides
 facilities for building restful api that interacts with AnyBlok models
 through a CRUD like pattern. It is based on [Cornice][cornice] that provides
 helpers to build & document REST-ish Web Services with [Pyramid][pyramid_home],
-with decent default behaviors. 
+with decent default behaviours. 
 
 [![Latest release on PyPI][pypi_anyblok_bus_svg]][pypi_anyblok_bus]
 [AnyBlok bus][anyblok_bus] Lets AnyBlok send/receive messages on a BUS. Based
@@ -90,7 +90,7 @@ through the well known [AMQP](https://www.amqp.org/). Also based on
 [marshmallow][marshmallow] models are easily serialized/de-serialized.
 
 [![Latest release on PyPI][pypi_anyblok_jsonschema_svg]][pypi_anyblok_jsonschema]
-[AnyBlok jsonschema][anyblok_jsonschema] This blok generate
+[AnyBlok jsonschema][anyblok_jsonschema] This blok generates
 [JSON Schema Draft v4](http://json-schema.org/) formatting from models using
 [marshmallow-jsonschema](https://github.com/fuhrysteve/marshmallow-jsonschema)
 
@@ -129,7 +129,7 @@ the strengh of:
 [![Latest release on PyPI][pypi_anyblok_io_svg]][pypi_anyblok_io]
 [AnyBlok io][anyblok_io] Provide bloks related to Input/Output (I/O) used
 to import / export allowing to initialize data from files using any
-formats (xml, csv, ...).
+format (xml, csv, ...).
 
 [![Latest release on PyPI][pypi_anyblok_mixins_svg]][pypi_anyblok_mixins]
 [AnyBlok mixins][anyblok_mixins] 
@@ -143,15 +143,15 @@ development, some features are:
 
 [![Latest release on PyPI][pypi_anyblok_dramatiq_svg]][pypi_anyblok_dramatiq]
 [AnyBlok dramatiq][anyblok_dramatiq]: [Dramatiq][dramatiq] is a distributed
-task queueing library. This Blok make it easy to use [Dramatiq][dramatiq]
+task queueing library. This Blok makes it easy to use [Dramatiq][dramatiq]
 with AnyBlok and distribute your workloads over multiple servers.
 
 [![Latest release on PyPI][pypi_AnyBlok_Multi_Engines_svg]
 ][pypi_AnyBlok_Multi_Engines]
-[AnyBlok Multi Engines][AnyBlok_Multi_Engines] This blok allow to use
+[AnyBlok Multi Engines][AnyBlok_Multi_Engines] This blok allows to use
 multi database backends. Let's says you have one master with multiple
 replicate databases, you can easily send read request on replicates and
-writes to the master.
+write on the master.
 
 ### Development tools
 

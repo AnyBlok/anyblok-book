@@ -14,7 +14,7 @@ we are going to depend on the [address blok][gh_address_blok] developed
 by the community and published in the [anyblok address python package
 ][pypi_address_blok].
 
-To get the business blok we need to install that package by adding it in
+To get the business blok, we need to install that package by adding it in
 the package dependencies of the project:
 
 ```python
@@ -32,7 +32,7 @@ index ca2ca86..1216cde 100644
  test_requirements = [
 ```
 
-To install new package dependency use one of the following commands:
+To install new package dependencies use one of the following commands:
 
 ```bash
 (rooms-venv)$ make setup-dev
@@ -42,7 +42,7 @@ To install new package dependency use one of the following commands:
 (rooms-venv)$ pip install -e .
 ```
 
-To install new blok, you may add it as a requirement to a module
+To install a new blok, you may add it as a requirement to a module
 as shown in the [next chapter](./02_extend_blok.md) or install it
 from command line:
 
