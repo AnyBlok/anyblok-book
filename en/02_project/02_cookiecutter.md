@@ -1,20 +1,20 @@
-## Setup classrooms booking project
+## Set up your own project
 
 In this chapter you will learn how to start an Anyblok project ready to
 run and hack.
 
 ### Project initialisation
 
-To quickly setup a new project we maintain [a cookiee cutter recipe]
-[cookiecutter] which help you generate an AnyBlok project by
-answering to few answers.
+To quickly set up a new project we maintain [a cookie cutter recipe]
+[cookiecutter] which helps you generate a new AnyBlok project by
+answering a few questions.
 
-As you are a good opportunist innovator (and mainly as we would like to show you
-some AnyBlok concepts) you feel after learning from your customers that making
-classrooms booking looks like reserved meeting rooms in any companies. For
-the time being that won't change a lot of things but after that we will
-demonstrate how to split your code in different Bloks. So let's call this
-project **rooms booking** and create a first blok room.
+As you take any good opportunity to innovate (and mainly because we would like to show you
+some AnyBlok concepts), after talking with your customers it feels like booking a classroom looks
+a lot like reserving a meeting room in any company. For now,
+it won't change a lot of things but later we will demonstrate how to split your 
+code in different Bloks. 
+So let's call this project **rooms booking** and create a first blok named  ``room``.
 
 ```bash
 (rooms-venv)$ pip install cookiecutter
@@ -54,7 +54,7 @@ Congratulations! Your project is there, you have created a ``rooms-booking``
 directory with a blok called ``room`` and an ``Example`` model is present inside.
 
 
-### Setup environment
+### Set up your environment
 
 **Note:** We assume you have at least a python3.3 environment ready to work
 with and Postgresql listening on port 5432.
@@ -92,12 +92,12 @@ with the same code that behave in a different way according to installed bloks.
 As long as you chose ``anyblok_pyramid``, you have two options. We will start
 to open a console interpreter to add *Example* record in your database then
 we are going to list them in your preferred browser and see how to launch
-unittest.
+unittests.
 
 
 #### Console interpreter
 
-This show you how to add and query the Example model using [ipython](
+This shows you how to add and query the Example model using [ipython](
 https://ipython.org/index.html):
 
 ```python
@@ -151,8 +151,8 @@ An example
 
 ### Run tests
 
-Before running test, you'll have to configure the tests environment, we usually
-use a different database to launch unittests as some test may depends on
+Before running tests, you'll have to configure the tests environment, we usually
+use a different database to launch unittests as some tests may depend on
 some expected demo data that we don't want to alter while testing manually!
 
 ```bash
@@ -184,8 +184,8 @@ OK
 
 ```
 
-We saw how to bootstrap an AnyBlok project and run it without explaining
-what are each components, if you want to go further, keep reading!
+We learned how to bootstrap an AnyBlok project and run it without explaining
+what each component is, if you want to go further, keep reading!
 
 
 [cookiecutter]: https://github.com/AnyBlok/cookiecutter-anyblok-project

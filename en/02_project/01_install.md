@@ -16,8 +16,8 @@ sudo apt-get install python3-dev python3-venv
 sudo apt-get install git libffi-dev libssl-dev libxml2-dev libxslt1-dev libyaml-dev zlib1g-dev
 ```
 
-Once your operating system and database engine are ready, it's time top create
-a Postgresl user for the project (Replace 'myusername' with yours).
+Once your operating system and database engine are ready, it's time to create
+a Postgresql user for the project (Replace 'myusername' with yours).
 
 ```bash
 sudo -u postgres createuser --createdb --createrole --superuser myusername
@@ -28,17 +28,17 @@ sudo -u postgres createuser --createdb --createrole --superuser myusername
 We advice to use a [python virtual environment](
 https://docs.python.org/3/tutorial/venv.html). One of its main advantage
 is to make you able to develop different projects with different
-version of libraries. This avoid conflict when 2 applications depend on
+versions of libraries. This avoid conflict when 2 applications depend on
 different versions of the same library.
 
-Here is how to create the virtualenv and activating it.
+Here is how to create the virtualenv and activate it.
 
 ```bash
 python3 -m venv rooms-venv
 source rooms-venv/bin/activate
 ```
 
-Once activated all python commands (likes ``pip`` and so on) are launched in
+Once activated, all python commands (like ``pip`` and so on) are launched in
 this context.
 
 In all this book we assume you have activated your virtual environment. You can
