@@ -2,11 +2,11 @@
 
 You may wonder why using [AnyBlok][AnyBlok] over other existing
 solutions. We don't really like to compare because we wouldn't probably
-compete with others but in some conditions it can helps to understand and make
+compete with others but in some conditions it can help to understand and make
 a choice.
 
 > **Disclaimer**: this part is how we understand other tools at the time we
-> are writing this book. World is moving, feel free to open a Pull Request
+> are writing this book. The world is moving, feel free to open a Pull Request
 > and change the content of this book if we are wrong.
 
 ### Odoo

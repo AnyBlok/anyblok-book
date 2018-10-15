@@ -1,14 +1,14 @@
 # I - Understand AnyBlok
 
 In this chapter (we hope) you'll start to understand what's [AnyBlok][AnyBlok]
-its mains features, the current ecosystem. How it differ from others products.
+its mains features, the current ecosystem. How it differs from others products.
 
 Motivations and AnyBlok's history, why it was created?
 
 Finally, we will try to describe who we are, our values and why you
-should use AnyBlok and what we expected for the future.
+should use AnyBlok and what we expect for the future.
 
-If you are in a hurry and wants to give a try or set up a new project
+If you are in a hurry and want to give a try or set up a new project
 quickly without verbose concepts you should skip this section.
 
 * [What's AnyBlok ?](./01_what_is_it.md)
