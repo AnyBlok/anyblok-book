@@ -1,9 +1,9 @@
 ## Using mixins
 
 Now we are going to use AnyBlok [mixins][wikipedia_mixin] to:
-* Refactor our code in order to reuse ``IdColumn`` mixin to create the id
+* Refactor our code in order using ``IdColumn`` mixin to create the id
   primary key column on the room model
-* Use the ``TrackModel`` mixin that add 2 fields to track creation and last
+* Use the ``TrackModel`` mixin that adds 2 fields to track creation and last
   modification date:
 
 > **Note**: You can clone ``III-03_create-model`` branch from
@@ -46,8 +46,8 @@ file: rooms_booking/room/__init__.py
 
 ### Add a unittest
 
-In the following test we make sure as wanted by our customer that
-``edit_date`` field is properly updated after a change occurs for a room.
+In the following test we make sure as requested by our customer that
+``edit_date`` field is properly updated after a change occurs on a room.
 
 ```python
 #File: rooms_booking/room/tests/test_room.py
@@ -85,17 +85,17 @@ class TestRoom(BlokTestCase):
 > option wich is called before sending data to the database.
 
 > *Note*: ``room.refresh()`` is used to clear cache on the ORM side to
-> request data from the database. So that will perform a flush before if
+> request data from the database. It will perform a flush before if
 > necessary.
 
 Those methods are rarely used in your code but can be tricky while playing with
-some kind of field.
+some kind of fields.
 
 ### Reuse mixins
 
 Using multiple inheritance capability we inherits from
-``Declarations.Mixin.IdColumn`` and ``Declarations.Mixin.TrackModel``
-here the diff result:
+``Declarations.Mixin.IdColumn`` and ``Declarations.Mixin.TrackModel``.
+Diff result:
 
 ```python
  from anyblok import Declarations

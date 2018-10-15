@@ -1,6 +1,6 @@
 ## Link models
 
-We know that each room must be linked to an address. Let make it true in our
+We know that each room must be linked to an address. Lets make it true in our
 project.
 
 > **Note**: You can clone ``III-04_mixins`` branch from
@@ -9,7 +9,7 @@ project.
 
 ### Add the field
 
-In any database system, to link two tables together we use relations, here we 
+In any database system, to link two tables together we use relationships, here we 
 need to add a ``Many2One`` relationship between ``Room`` and ``Address``:
 
 ```python
@@ -33,7 +33,7 @@ need to add a ``Many2One`` relationship between ``Room`` and ``Address``:
 
 ### Fix tests
 
-You probably notice that your tests fails! We have to fix them.
+You probably noticed that your tests fails now! We have to fix them.
 
 ```python
 rooms_booking/room/tests/test_room.py
@@ -72,7 +72,7 @@ rooms_booking/room/tests/test_room.py
 
 ```
 
-Curious developers may read which kind of relation AnyBlok provides and learn
+If you are curious, you may read which kind of relationship AnyBlok provides and learn
 from [documentation reference][doc_ref_relationship]
 
 ### Init some data
@@ -196,7 +196,7 @@ make setup-dev
 ### Play with queries
 
 As AnyBlok is based on **SqlAlchemy** you can directly learn how to build
-queriesfrom [SqlAlchemy query API doc][sqlalchemy_query]. Here are some examples
+queries from [SqlAlchemy query API doc][sqlalchemy_query]. Here are some examples
 using ``anyblok_interpreter -c app.dev.cfg``
 
 * How many addresses we have
@@ -206,7 +206,7 @@ registry.Address.query().count()
 3
 ```
 
-* Count how many rooms with a capacity greater than 45
+* Count how many rooms have a capacity greater than 45
 
 ```python
 registry.Room.query().filter(
@@ -214,7 +214,7 @@ registry.Room.query().filter(
 8
 ```
 
-* Count how many rooms with a capacity greater than 45 in France
+* Count how many rooms have a capacity greater than 45 in France
 
 ```python
 registry.Room.query().join(
@@ -238,7 +238,7 @@ str(
  WHERE address.country = %(country_1)s AND room.capacity > %(capacity_1)s'
 ```
 
-* Count how many rooms with a capacity greater than 45 **OR** in France
+* Count how many rooms have a capacity greater than 45 **OR** in France
 
 ```python
 from sqlalchemy import or_
@@ -253,8 +253,7 @@ registry.Room.query().join(
 13
 ```
 
-* Display a list of tuple with the Room name and the address first name and
-  capacity for the previous query.
+* Display a list of tuple (room name, address first name, room capacity) using the previous query.
 
 ```Python
 registry.Room.query(
@@ -283,7 +282,7 @@ registry.Room.query(
  ('Amphi Chappe', "l'IMT Lille Douai", 500)]
 ```
 
-* ... and order element by capacity
+* ... and order results by capacity
 
 ```python
 registry.Room.query(

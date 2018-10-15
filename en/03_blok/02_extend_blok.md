@@ -1,4 +1,4 @@
-## Extend existing Blok
+## Extend an existing Blok
 
 In this chapter we will discover how to add a field to the ̀ `Address`` model.
 
@@ -34,7 +34,7 @@ rm rooms_booking/room/model.py \
 
 ### Extend the Adress model
 
-We need to add an ``access`` information field on each addresses.
+We need to add an ``access`` information field on each address.
 Let's add two new files in your project:
 
 * ``rooms_booking/room/address.py``: We are going to extend Address model in
@@ -42,7 +42,7 @@ Let's add two new files in your project:
 * ``rooms_booking/room/tests/test_address.py``: here we are going to tests our
   additional features on this model.
 
-In order to import address python module (the ``address.py`` file), in an
+In order to import the address python module (the ``address.py`` file), in an
 **Anyblok** project you must do it in the [import declaration module method]
 [ref_doc_import_declaration_module] and the [reload declaration module method]
 [ref_doc_reload_declaration_module] in the Blok class declaration.
@@ -71,10 +71,10 @@ Those methods are called when the registry is created or reloaded for a given
 database.
 
 In our case if the *Room* blok state is ``installed`` in a database
-``address.py`` will be imported otherwise all our code can be present but
+``address.py`` will be imported. Otherwise all our code will be present but
 not used because the blok is uninstalled.
 
-**Note:** When you need to know if a blok is installed, launch and
+**Note:** When you need to know if a blok is installed, launch an
 anyblok_interpreter and query `registry.System.Blok`
 
 ```
@@ -91,7 +91,7 @@ Out[1]:
 In [2]:  
 ```
 
-In the same file adapt the [update method][ref_doc_update], at the moment
+In the same file, adapt the [update method][ref_doc_update]. At the moment
 we are not going to do anything here while updating or installing the *Room*
 Blok:
 
@@ -110,8 +110,8 @@ Blok:
 
 ```
 
-(loving [TDD][wikipedia_tdd]) Add following unit tests before starting coding.
-This way, test that we can add some access information on an Address:
+(loving [TDD][wikipedia_tdd]) Before you start coding, add the following unit tests.
+This way, we can test that we can add some access information on an Address:
 
 ```python
 # file: rooms_booking/room/tests/test_address.py
@@ -141,7 +141,7 @@ class TestAddress(BlokTestCase):
 ```
 
 If you run this test you'll probably notice the following error as we haven't
-created yet the ``access`` field on ``Address`` model.
+created yet the ``access`` field on our ``Address`` model.
 
 ```bash
 make setup-tests

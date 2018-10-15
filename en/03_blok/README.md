@@ -22,21 +22,21 @@ In this section, you will learn how to add:
 
 For our project we assume that:
 
-* Each rooms are located with one address.
+* Each room are located with one address.
 * An university may have multiple addresses and each building will be
   represented with a different address.
 * For each address, we need to be able to store access information
-  to get into the building as they sometime use code for restricted
-  laboratories, require a key to open the main door, etc...
+  to get into the building as they require sometimes a code for restricted
+  laboratories, a key to open the main door, etc...
 * A room is specified by:
     * name: the room name or room number
     * address: the address linked to the room
-    * capacity: how many people can be sit behind a desk
+    * capacity: quantity of people who can sit behind a desk
 
 In this section, we will create a Python API using multiple bloks with the
 following requirements:
 
-* We should track the last change date on a room
+* We should track the date on wich a room have been modified
 * We should be able to count the number of rooms
     * per address
     * per university

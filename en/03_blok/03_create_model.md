@@ -11,11 +11,11 @@ As explained in the [section intro](README.md) a room is described as:
 
 * name: The room name or room number
 * address: The address linked to the room
-* capacity: How many people can be sit behind a desk
+* capacity: The quantity of people who can sit behind a desk
 
-Let's create a simple test that check that we can insert a new room with name
+Let's create a simple test that checks if we can insert a new room with name
 and capacity.
-We will then see how to links models (Room and Address) in [chapter 5 of this
+Then we will see how to link models (Room and Address) in [chapter 5 of this
 section](./05_link_models.md)
 
 ```python
@@ -42,7 +42,7 @@ class TestRoom(BlokTestCase):
         )
 ```
 
-Then implement the new model creating a new python module.
+Then we implement the new model creating a new python module.
 
 ```python
 # file: rooms_booking/room/room.py
