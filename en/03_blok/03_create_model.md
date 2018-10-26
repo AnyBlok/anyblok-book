@@ -57,10 +57,15 @@ register = Declarations.register
 @register(Model)
 class Room:
 
+    id = Integer(primary_key=True)
     name = String(label="Room name", nullable=False, index=True)
     capacity = Integer(label="Capacity", nullable=False)
 
 ```
+
+> **Note**: AnyBlok requires a primary key because the SQLAlchemy ORM needs it
+> as exmplain in [this SQLAlchemy FAQ](
+> https://docs.sqlalchemy.org/en/rel_1_1/faq/ormconfiguration.html#faq-mapper-primary-key)
 
 Mind to import your new module ``room.py`` in the *Blok* definition:
 
