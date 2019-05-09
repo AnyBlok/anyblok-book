@@ -33,7 +33,7 @@ need to add a ``Many2One`` relationship between ``Room`` and ``Address``:
 
 ### Fix tests
 
-You probably noticed that your tests fails now! We have to fix them.
+You probably have noticed that your tests are failing now! We have to fix them.
 
 ```python
 rooms_booking/room/tests/test_room.py

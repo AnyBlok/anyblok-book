@@ -3,7 +3,7 @@
 Yet, you may wonder why AnyBlok is useful for you?
 
 [![Latest release on PyPI][pypi_anyblok_svg]][pypi_anyblok]
-[AnyBlok][AnyBlok] takes advantages of famous python libraries and reuse
+[AnyBlok][AnyBlok] takes advantages of famous python libraries and reuses
 packages that already have proven their efficiency:
 
 * Using [SQLAlchemy][sqlalchemy] AnyBlok is an [ORM][orm_wikipedia]:
@@ -15,14 +15,14 @@ packages that already have proven their efficiency:
   browser sessions and cache.
 * Using [dramatiq][dramatiq] you can easily scale your application and
   distribute asynchronously the workload through message brokers.
-* And so on... Read more about what values have bloks below.
+* And so on... Read more below about what values bloks have.
 
 So you may use those libraries directly in your project but headaches
 to make them working together by applying common patterns was already
-spent by AnyBlok authors. Also it adds some nice features by its own:
+spent by AnyBlok authors. Also it adds some nice features on its own:
 
 * Work with multiple databases, to distribute your database workload
-  you will be able to have one database for read/write and 3 others for
+  you will be able to have one database to read/write and 3 others to
   read requests.
 * Synchronize web session and SQL sessions
 * Business API code: Business code is disconnected from any graphical
@@ -30,8 +30,8 @@ spent by AnyBlok authors. Also it adds some nice features by its own:
   integrate AnyBlok within existent python code.
 * AnyBlok provide modularity mechanisms to let you easily reuse code
   distributed in different python packages.
-* Make it easy to manage multiple levels of responsibilities in code
-  source (for instance develop a generic product and manage
+* Make it easy to manage multiple levels of responsibilities in source code
+  (for instance develop a generic product and manage
   customizations) by a dynamic inheritance mechanism.
 * ...
 
@@ -47,7 +47,7 @@ and sqlAlchemy without AnyBlok if we only require a web service ?
 
 Yes that's true! Here are some examples of AnyBlok values:
 
-* It already do the hard work to make those great python libraries talk
+* It already does the hard work to make those great python libraries talk
   together.
 * Load python module at runtime: you can add blok at runtime, so you
   don't have to stop the service to add functionalities.
@@ -56,10 +56,10 @@ Yes that's true! Here are some examples of AnyBlok values:
   you choose to install. This information is saved in the database so each
   database is an instance that can get a very different behaviours with only
   one running server.
-* You can easily separate code source in different bloks, in a blok
+* You can easily separate source code in different bloks, in a blok
   you will be able to extend, overwrite or overload other bloks,
-  this let you customize all components of an application without
-  doing any change in a blok developed by someone else. You have
+  this allows you to customize all components of an application without
+  doing any changes in a blok developed by someone else. You have
   full control over modules import order and bloks dependencies.
 
 [AnyBlok]: https://github.com/AnyBlok/AnyBlok

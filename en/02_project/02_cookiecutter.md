@@ -78,19 +78,19 @@ setup-dev: ## install python project dependencies for development
 ```
 
 - We have installed dev requirements
-- Installed current package using ``develop`` that let you develop and run
+- Installed current package using ``develop`` that allows you to develop and run
   your package without re-installing it after each changes
 - Create (or update) a database with ``room`` blok installed with all
   its requirements
 
-As you probably noticed, the state saying what bloks are installed or not
+As you may have noticed, the state saying what bloks are installed or not
 is saved in a database, so you can have two different databases working
 with the same code that behave in a different way according to installed bloks.
 
 ### Run your project
 
 As long as you chose ``anyblok_pyramid``, you have two options. We will start
-to open a console interpreter to add *Example* record in your database then
+to open a console interpreter to add *Example* records in your database then
 we are going to list them in your preferred browser and see how to launch
 unittests.
 
@@ -185,7 +185,7 @@ OK
 ```
 
 We learned how to bootstrap an AnyBlok project and run it without explaining
-what each component is, if you want to go further, keep reading!
+what each component is, if you want to go further keep reading!
 
 
 [cookiecutter]: https://github.com/AnyBlok/cookiecutter-anyblok-project

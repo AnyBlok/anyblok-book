@@ -39,8 +39,8 @@ learned in the how to [Set up your own project](./02_cookiecutter.md).
 └── VERSION                      # Python package version file
 ```
 
-An AnyBlok project follow the rules of [python package projects]
-[doc_python_package], there is few additional requirements:
+An AnyBlok project follows the rules of [python package projects]
+[doc_python_package], there are few additional requirements:
 
 * You must add ``room`` blok in the ``bloks`` list 
 ``entry_points`` in your package manifest: the ``setup.py``

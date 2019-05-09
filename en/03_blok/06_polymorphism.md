@@ -11,11 +11,11 @@ cd III-06-polymorphisme
 We have added some models to get started with polymorphism:
 
 * A **person** blok that contains following models
-    * ``Person`` model that represent people with a name and firstname
-    * ``Employee`` model that add position field on person model using
+    * ``Person`` model that represents people with a name and firstname
+    * ``Employee`` model that adds position field on person model using
       polymorphism
-* A **university** blok that represent all things regarding education
-    * ``Professor`` model that extend Employee model using polymorphism
+* A **university** blok that represents all things regarding education
+    * ``Professor`` model that extends Employee model using polymorphism
 
 
 [Polymorphism][wiki_polymorphism] in AnyBlok allows you to get clear business
