@@ -9,7 +9,7 @@ represent addresses.
 
 ### Add dependency
 
-According to customers specification, we need to manage addresses, so
+According to customers specifications we need to manage addresses, so
 we are going to depend on the [address blok][gh_address_blok] developed
 by the community and published in the [anyblok address python package
 ][pypi_address_blok].

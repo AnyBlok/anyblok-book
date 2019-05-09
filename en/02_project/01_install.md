@@ -8,7 +8,7 @@ python >= 3.3 and a SGDB supported by [SQLAlchemy]
 [sqlalchemy_requirements]. Also, don't forget to install [Git][git]
 
 All this book was tested using Debian and PostgreSQL. Here is how to install all
-system dependencies on Debian like operating system:
+system dependencies on a Debian like operating system:
 
 ```bash
 sudo apt-get install postgresql libpq-dev
@@ -18,7 +18,7 @@ sudo apt-get install git libffi-dev libssl-dev libxml2-dev libxslt1-dev libyaml-
 
 
 Once your operating system and database engine are ready, it's time to create
-a Postgresql role for the project (Replace 'myusername' with yours) that match
+a Postgresql role for the project (Replace 'myusername') that matches
 your host user, at least you should be able to createdb/dropdb without errors:
 
 ```bash
@@ -36,9 +36,9 @@ sudo -u postgres createuser --createdb --superuser myusername
 ### Virtual environment
 
 We advice to use a [python virtual environment](
-https://docs.python.org/3/tutorial/venv.html). One of its main advantage
+https://docs.python.org/3/tutorial/venv.html). One of its main features
 is to make you able to develop different projects with different
-versions of libraries. This avoid conflict when 2 applications depend on
+versions of libraries. This avoid conflict when 2 applications are depending on
 different versions of the same library.
 
 Here is how to create the virtualenv and activate it.

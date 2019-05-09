@@ -21,15 +21,15 @@ differences:
   your code (which become possible in odoo with community efforts)
 * Backend and graphical user interface are split
 * With AnyBlok you can manage web sessions as you want
-* AnyBlok reuse existing community packages as soon as it can
+* AnyBlok reuses existing community packages as soon as it can
 
 ### SqlAlchemy / Pyramid
 
 Below are some sorts of things that you don't have to worry with AnyBlok that you
 should implement if you are using SQLAlchemy and Pyramid by yourself:
 
-* AnyBlok make it easy to extend models between different python packages
-* AnyBlok allow to install different bloks provided by same packages to get
+* AnyBlok makes it easy to extend models between different python packages
+* AnyBlok allows to install different bloks provided by same packages to get
   different behaviours and models installed in the database
 * Pyramid web session is synced with database transaction
 

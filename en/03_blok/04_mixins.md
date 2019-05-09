@@ -1,7 +1,7 @@
 ## Using mixins
 
 Now we are going to use AnyBlok [mixins][wikipedia_mixin] to:
-* Refactor our code in order using ``IdColumn`` mixin to create the id
+* Refactor our code in order to use ``IdColumn`` mixin to create the id
   primary key column on the room model
 * Use the ``TrackModel`` mixin that adds 2 fields to track creation and last
   modification date:
