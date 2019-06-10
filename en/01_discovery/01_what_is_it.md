@@ -9,3 +9,5 @@ Bloks can provide SQL Models, Column types, Fields, Mixins, SQL views,
 or even plain Python code unrelated to the database. All of these
 can be dynamically customized, modified, or extended without strong
 dependencies between them, just by adding new bloks.
+
+[AnyBlok]: https://github.com/AnyBlok/AnyBlok

@@ -158,9 +158,8 @@ write on the master.
 [![Latest release on PyPI][pypi_anyblok_svg]][pypi_anyblok]
 [AnyBlok][AnyBlok] Scripts for creating or updating database and unit testing.
 
-[![Latest release on PyPI][pypi_cookiecutter-anyblok-project_svg]]
-[pypi_cookiecutter-anyblok-project] [Cookiecutter][cookiecutter] project
-template for bootstraping Anyblok based projects.
+[Cookiecutter][cookiecutter] project template for bootstraping Anyblok
+based projects.
 
 [AnyBlokOrg]: https://github.com/AnyBlok
 [AnyBlok]: https://github.com/AnyBlok/AnyBlok
