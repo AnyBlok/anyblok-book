@@ -30,6 +30,7 @@ learned in the how to [Set up your own project](./02_cookiecutter.md).
 │   │   ├── model.py             # Python module with model that define an example class
 │   │   ├── tests                # Test directory
 │   │   │   ├── __init__.py      # Likes standard python, the __init__.py file!
+│   │   │   ├── conftest.py      # py.test configuration file. (You will likely import ``anyblok.conftest``
 │   │   │   ├── test_model.py    # File that test model.py methods
 │   │   │   └── test_pyramid.py  # File that test view.py methods
 │   │   └── views.py             # Python module to declare pyramid route components 
@@ -107,4 +108,4 @@ package.
 
 
 [cookiecutter]: https://github.com/AnyBlok/cookiecutter-anyblok-project
-[doc_python_package]: https://python.org/fixme
+[doc_python_package]: https://packaging.python.org/tutorials/packaging-projects/
