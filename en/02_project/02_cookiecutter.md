@@ -9,32 +9,38 @@ To quickly set up a new project we maintain [a cookie cutter recipe]
 [cookiecutter] which helps you generate a new AnyBlok project by
 answering a few questions.
 
-As you take any good opportunity to innovate (and mainly because we would like to show you
-some AnyBlok concepts), after talking with your customers it feels like booking a classroom looks
-a lot like reserving a meeting room in any company. For now,
-it won't change a lot of things but later we will demonstrate how to split your 
-code in different Bloks. 
-So let's call this project **rooms booking** and create a first blok named  ``room``.
+As you take any good opportunity to innovate (and mainly because we would like
+to show you some AnyBlok concepts), after talking with your customers it
+feels like booking a classroom looks a lot like reserving a meeting room in
+any company. For now, it won't change a lot of things but later we will
+demonstrate how to split your code in different Bloks.
+So let's call this project **rooms booking** and create a first blok
+named ``room``.
 
 ```bash
 (rooms-venv)$ pip install cookiecutter
 (rooms-venv)$ cookiecutter gh:AnyBlok/cookiecutter-anyblok-project
 project_name [Project name]: Rooms booking
-project_slug [rooms-booking]: 
-project_short_description [A short description of the Anyblok based project]: Anyblok service to manage (class)rooms reservation       
-python_package [rooms_booking]: 
+project_slug [rooms-booking]:
+project_short_description [A short description of the Anyblok based project]: Anyblok service to manage (class)rooms reservation
+python_package [rooms_booking]:
 blok_name [rooms_booking]: room
 Select db_driver_name:
 1 - postgresql
-Choose from 1 [1]: 
-db_name [rooms_booking]: 
+2 - mysql
+Choose from 1, 2 (1, 2) [1]:
+db_name [rooms_booking]:
 Select http_server:
 1 - no
 2 - anyblok_pyramid
 3 - anyblok_pyramid+beaker
 4 - anyblok_pyramid+gunicorn
 5 - anyblok_pyramid+beaker+gunicorn
-Choose from 1, 2, 3, 4, 5 [1]: 2
+Choose from 1, 2, 3, 4, 5 (1, 2, 3, 4, 5) [1]: 2
+Select has_anyblok_marshmallow:
+1 - no
+2 - yes
+Choose from 1, 2 (1, 2) [1]:
 Select open_source_license:
 1 - Mozilla Public License Version 2.0
 2 - GNU General Public License v3
@@ -43,8 +49,8 @@ Select open_source_license:
 5 - ISC license
 6 - Apache Software License 2.0
 7 - Not open source
-Choose from 1, 2, 3, 4, 5, 6, 7 [1]: 
-version [0.1.0]: 
+Choose from 1, 2, 3, 4, 5, 6, 7 (1, 2, 3, 4, 5, 6, 7) [1]:
+version [0.1.0]:
 full_name [Your name]: Pierre Verkest
 email [Your address email (eq. you@example.com)]: pverkest@anybox.fr
 github_username [Your github username]: petrus-v
@@ -67,8 +73,7 @@ to get dependencies like AnyBlok itself and setup a database:
 (rooms-venv)$ make setup-dev
 ```
 
-You can read the [Makefile](https://github.com/AnyBlok/anyblok-book-examples/
-blob/I_setup-project/Makefile#L27-L30) to understand what's done:
+You can read the [Makefile][makefile-setup-dev] to understand what's done:
 
 ```bash
 setup-dev: ## install python project dependencies for development
@@ -130,9 +135,9 @@ To run a development webserver execute:
 anyblok_pyramid -c app.dev.cfg --wsgi-host 0.0.0.0
 AnyBlok Load init: EntryPoint.parse('anyblok_pyramid_config = anyblok_pyramid:anyblok_init_config')
 Load config file '/etc/xdg/AnyBlok/conf.cfg'
-Load config file '/home/pverkest/.config/AnyBlok/conf.cfg'
-Load config file '/home/pverkest/AnyBlok/rooms-booking/app.dev.cfg'
-Load config file '/home/pverkest/AnyBlok/rooms-booking/app.cfg'
+Load config file '~/.config/AnyBlok/conf.cfg'
+Load config file '~/AnyBlok/rooms-booking/app.dev.cfg'
+Load config file '~/AnyBlok/rooms-booking/app.cfg'
 ```
 
 Then open your favorite web browser and visit the following urls:
@@ -157,31 +162,36 @@ some expected demo data that we don't want to alter while testing manually!
 
 ```bash
 (rooms-venv)$ make setup-tests
-$ make test
-anyblok_nose -c app.test.cfg -- -v -s rooms_booking
-AnyBlok Load init: EntryPoint.parse('anyblok_pyramid_config = anyblok_pyramid:anyblok_init_config')
+(rooms-venv)$ make test
+ANYBLOK_CONFIG_FILE=app.test.cfg py.test -v -s rooms_booking
+=============================================================================================== test session starts ===============================================================================================
+platform linux -- Python 3.5.3, pytest-4.6.3, py-1.8.0, pluggy-0.12.0 -- ~/anyblok/rooms-venv/bin/python3
+cachedir: .pytest_cache
+rootdir: ~/anyblok/rooms-booking
+plugins: cov-2.7.1
+collected 5 items
+
+rooms_booking/room/tests/test_model.py::TestExample::test_create_example AnyBlok Load init: EntryPoint.parse('anyblok_pyramid_config = anyblok_pyramid:anyblok_init_config')
 Loading config file '/etc/xdg/AnyBlok/conf.cfg'
-Loading config file '/home/pverkest/.config/AnyBlok/conf.cfg'
-Loading config file '/home/pverkest/anyblok/rooms-booking/app.test.cfg'
-Loading config file '/home/pverkest/anyblok/rooms-booking/app.cfg'
-AnyBlok Load init: EntryPoint.parse('anyblok_pyramid_config = anyblok_pyramid:anyblok_init_config')
+Loading config file '~/.config/AnyBlok/conf.cfg'
+Loading config file '~/anyblok/rooms-booking/app.test.cfg'
+Loading config file '~/anyblok/rooms-booking/app.cfg'
 Loading config file '/etc/xdg/AnyBlok/conf.cfg'
-Loading config file '/home/pverkest/.config/AnyBlok/conf.cfg'
-test_create_example (rooms_booking.room.tests.test_model.TestExample) ... ok
-test_examples (rooms_booking.room.tests.test_pyramid.TestCanigooRestApi) ... ok
-test_get_example (rooms_booking.room.tests.test_pyramid.TestCanigooRestApi) ... ok
-test_post_example (rooms_booking.room.tests.test_pyramid.TestCanigooRestApi) ... /home/pverkest/anyblok/rooms-venv/lib/python3.5/site-packages/webob/acceptparse.py:1088: DeprecationWarning: The MIMEAccept class has been replaced by webob.acceptparse.create_accept_header. This compatibility shim will be deprecated in a future version of WebOb.
-  DeprecationWarning
-/home/pverkest/anyblok/rooms-venv/lib/python3.5/site-packages/webob/acceptparse.py:972: DeprecationWarning: The behavior of AcceptValidHeader.best_match is currently being maintained for backward compatibility, but it will be deprecated in the future, as it does not conform to the RFC.
-  DeprecationWarning,
-ok
-Test pyramid Example get route / ... ok
+Loading config file '~/.config/AnyBlok/conf.cfg'
+PASSED
+rooms_booking/room/tests/test_pyramid.py::TestPyramidExampleViews::test_examples PASSED
+rooms_booking/room/tests/test_pyramid.py::TestPyramidExampleViews::test_get_example PASSED
+rooms_booking/room/tests/test_pyramid.py::TestPyramidExampleViews::test_post_example PASSED
+rooms_booking/room/tests/test_pyramid.py::TestPyramidExampleViews::test_root PASSED
 
-----------------------------------------------------------------------
-Ran 5 tests in 1.134s
+================================================================================================ warnings summary =================================================================================================
+rooms_booking/room/tests/test_model.py::TestExample::test_create_example
+  ~/anyblok/venvs/rooms-venv/lib/python3.5/site-packages/SQLAlchemy-1.3.5-py3.5-linux-x86_64.egg/sqlalchemy/pool/impl.py:96: SADeprecationWarning: PoolListener is deprecated in favor of the PoolEvents listener interface.  The Pool.listeners parameter will be removed in a future release.
+    Pool.__init__(self, creator, **kw)
 
-OK
-
+-- Docs: https://docs.pytest.org/en/latest/warnings.html
+====================================================================================== 5 passed, 1 warnings in 2.24 seconds =======================================================================================
+(
 ```
 
 We learned how to bootstrap an AnyBlok project and run it without explaining
@@ -189,3 +199,4 @@ what each component is, if you want to go further keep reading!
 
 
 [cookiecutter]: https://github.com/AnyBlok/cookiecutter-anyblok-project
+[makefile-setup-dev]: https://github.com/AnyBlok/anyblok-book-examples/blob/II_setup-project/Makefile#L29-L33
