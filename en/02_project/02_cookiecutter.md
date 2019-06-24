@@ -163,35 +163,40 @@ some expected demo data that we don't want to alter while testing manually!
 ```bash
 (rooms-venv)$ make setup-tests
 (rooms-venv)$ make test
-ANYBLOK_CONFIG_FILE=app.test.cfg py.test -v -s rooms_booking
-=============================================================================================== test session starts ===============================================================================================
-platform linux -- Python 3.5.3, pytest-4.6.3, py-1.8.0, pluggy-0.12.0 -- ~/anyblok/rooms-venv/bin/python3
+========================================== test session starts ==========================================
+platform linux -- Python 3.5.3, pytest-4.6.3, py-1.8.0, pluggy-0.12.0 -- ~/anyblok/venvs/rooms-venv/bin/python3
 cachedir: .pytest_cache
-rootdir: ~/anyblok/rooms-booking
+rootdir: ~/anyblok/rooms-booking, inifile: tox.ini
 plugins: cov-2.7.1
-collected 5 items
-
-rooms_booking/room/tests/test_model.py::TestExample::test_create_example AnyBlok Load init: EntryPoint.parse('anyblok_pyramid_config = anyblok_pyramid:anyblok_init_config')
+collecting ... AnyBlok Load init: EntryPoint.parse('anyblok_pyramid_config = anyblok_pyramid:anyblok_init_config')
 Loading config file '/etc/xdg/AnyBlok/conf.cfg'
 Loading config file '~/.config/AnyBlok/conf.cfg'
 Loading config file '~/anyblok/rooms-booking/app.test.cfg'
 Loading config file '~/anyblok/rooms-booking/app.cfg'
 Loading config file '/etc/xdg/AnyBlok/conf.cfg'
 Loading config file '~/.config/AnyBlok/conf.cfg'
+collected 5 items                                                                                       
+
+rooms_booking/room/tests/test_model.py::TestExample::test_create_example AnyBlok Load init: EntryPoint.parse('anyblok_pyramid_config = anyblok_pyramid:anyblok_init_config')
+Loading config file '/etc/xdg/AnyBlok/conf.cfg'
+Loading config file '~/.config/AnyBlok/conf.cfg'
 PASSED
+rooms_booking/room/tests/test_pyramid.py::TestPyramidExampleViews::test_root PASSED
 rooms_booking/room/tests/test_pyramid.py::TestPyramidExampleViews::test_examples PASSED
 rooms_booking/room/tests/test_pyramid.py::TestPyramidExampleViews::test_get_example PASSED
 rooms_booking/room/tests/test_pyramid.py::TestPyramidExampleViews::test_post_example PASSED
-rooms_booking/room/tests/test_pyramid.py::TestPyramidExampleViews::test_root PASSED
 
-================================================================================================ warnings summary =================================================================================================
+=========================================== warnings summary ============================================
 rooms_booking/room/tests/test_model.py::TestExample::test_create_example
   ~/anyblok/venvs/rooms-venv/lib/python3.5/site-packages/SQLAlchemy-1.3.5-py3.5-linux-x86_64.egg/sqlalchemy/pool/impl.py:96: SADeprecationWarning: PoolListener is deprecated in favor of the PoolEvents listener interface.  The Pool.listeners parameter will be removed in a future release.
     Pool.__init__(self, creator, **kw)
 
 -- Docs: https://docs.pytest.org/en/latest/warnings.html
-====================================================================================== 5 passed, 1 warnings in 2.24 seconds =======================================================================================
-(
+
+----------- coverage: platform linux, python 3.5.3-final-0 -----------
+Coverage HTML written to dir htmlcov
+
+================================= 5 passed, 1 warnings in 2.23 seconds ==================================
 ```
 
 We learned how to bootstrap an AnyBlok project and run it without explaining
