@@ -44,7 +44,7 @@ file: rooms_booking/room/__init__.py
 
 ```
 
-### Add a unittest
+### Add test
 
 In the following test we make sure as requested by our customer that
 ``edit_date`` field is properly updated after a change occurs on a room.
@@ -57,27 +57,25 @@ import time
 import pytz
 
 
-class TestRoom(BlokTestCase):
+class TestRoom:
+    """Test Room model"""
 
     [...]
 
-    def test_track_modification_date(self):
+    def test_track_modification_date(self, rollback_registry):
+        registry = rollback_registry
         before_create = datetime.now(tz=pytz.timezone(time.tzname[0]))
-        room = self.registry.Room.insert(
+        room = registry.Room.insert(
             name="A1",
             capacity=25,
         )
         room.refresh()
         after_create = datetime.now(tz=pytz.timezone(time.tzname[0]))
         room.name = "A2"
-        self.registry.flush()
+        registry.flush()
         after_edit = datetime.now(tz=pytz.timezone(time.tzname[0]))
-        self.assertTrue(
-            before_create <= room.create_date <= after_create
-        )
-        self.assertTrue(
-            after_create <= room.edit_date <= after_edit
-        )
+        assert before_create <= room.create_date <= after_create
+        assert after_create <= room.edit_date <= after_edit
 ```
 
 > *Note*: ``room.flush()`` is used here to force sending data to the database
