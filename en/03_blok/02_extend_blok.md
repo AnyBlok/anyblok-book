@@ -110,20 +110,21 @@ Blok:
 
 ```
 
-(loving [TDD][wikipedia_tdd]) Before you start coding, add the following unit tests.
-This way, we can test that we can add some access information on an Address:
+(loving [TDD][wikipedia_tdd]) Before you start coding, add the following unit
+tests. This way, we can test that we can add some access information on
+an *Address*:
 
 ```python
 # file: rooms_booking/room/tests/test_address.py
-from anyblok.tests.testcase import BlokTestCase
 
 
-class TestAddress(BlokTestCase):
-    """ Test extended registry.Address model"""
+class TestAddress:
+    """Test extended registry.Address model"""
 
-    def test_create_address(self):
-        address_count = self.registry.Address.query().count()
-        queens_college_address = self.registry.Address.insert(
+    def test_create_address(self, rollback_registry):
+        registry = rollback_registry
+        address_count = registry.Address.query().count()
+        queens_college_address = registry.Address.insert(
             first_name="The Queen's College",
             last_name="University of oxford",
             street1="High Street",
@@ -132,14 +133,8 @@ class TestAddress(BlokTestCase):
             country="GBR",
             access="Kick the door to open it!"
         )
-        self.assertEqual(
-            self.registry.Address.query().count(),
-            address_count + 1
-        )
-        self.assertEqual(
-            queens_college_address.access,
-            "Kick the door to open it!"
-        )
+        assert registry.Address.query().count() == address_count + 1
+        assert queens_college_address.access == "Kick the door to open it!"
 ```
 
 If you run this test you'll probably notice the following error as we haven't
@@ -148,13 +143,88 @@ created the ``access`` field on our ``Address`` model yet.
 ```bash
 make setup-tests
 make test
-[...]
-TypeError: 'access' is an invalid keyword argument for ModelAddress
-[...]
-----------------------------------------------------------------------
-Ran 1 test in 0.780s
+ANYBLOK_CONFIG_FILE=app.test.cfg py.test -v -s rooms_booking
+========================================== test session starts ==========================================
+platform linux -- Python 3.5.3, pytest-4.6.3, py-1.8.0, pluggy-0.12.0 -- ~/anyblok/venvs/book/bin/python3
+cachedir: .pytest_cache
+rootdir: ~/anyblok/anyblok-book-examples, inifile: tox.ini
+plugins: cov-2.7.1
+collected 1 item                                                                                        
 
-FAILED (errors=1)
+rooms_booking/room/tests/test_address.py::TestAddress::test_create_address AnyBlok Load init: EntryPoint.parse('anyblok_pyramid_config = anyblok_pyramid:anyblok_init_config')
+Loading config file '/etc/xdg/AnyBlok/conf.cfg'
+Loading config file '~/.config/AnyBlok/conf.cfg'
+Loading config file '~/anyblok/anyblok-book-examples/app.test.cfg'
+Loading config file '~/anyblok/anyblok-book-examples/app.cfg'
+Loading config file '/etc/xdg/AnyBlok/conf.cfg'
+Loading config file '~/.config/AnyBlok/conf.cfg'
+FAILED
+
+=============================================== FAILURES ================================================
+____________________________________ TestAddress.test_create_address ____________________________________
+
+self = <rooms_booking.room.tests.test_address.TestAddress object at 0x7f6765e0bcc0>
+rollback_registry = <anyblok.registry.Registry object at 0x7f676583fe10>
+
+    def test_create_address(self, rollback_registry):
+        registry = rollback_registry
+        address_count = registry.Address.query().count()
+        queens_college_address = registry.Address.insert(
+            first_name="The Queen's College",
+            last_name="University of oxford",
+            street1="High Street",
+            zip_code="OX1 4AW",
+            city="Oxford",
+            country="GBR",
+>           access="Kick the door to open it!"
+        )
+
+rooms_booking/room/tests/test_address.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+../venvs/book/lib/python3.5/site-packages/anyblok/bloks/anyblok_core/core/sqlbase.py:605: in insert
+    instance = cls(**kwargs)
+<string>:4: in __init__
+    ???
+../venvs/book/lib/python3.5/site-packages/sqlalchemy/orm/state.py:441: in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+../venvs/book/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py:68: in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+../venvs/book/lib/python3.5/site-packages/sqlalchemy/util/compat.py:154: in reraise
+    raise value
+../venvs/book/lib/python3.5/site-packages/sqlalchemy/orm/state.py:438: in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <Address: None, None, None, None, None, Country(alpha_2='GB', alpha_3='GBR', name='United Kingdom', numeric='826', official_name='United Kingdom of Great Britain and Northern Ireland') [RO=None] >
+kwargs = {'access': 'Kick the door to open it!', 'city': 'Oxford', 'country': 'GBR', 'first_name': "The Queen's College", ...}
+cls_ = <class 'anyblok.model.factory.ModelAddress'>, k = 'access'
+
+    def _declarative_constructor(self, **kwargs):
+        """A simple constructor that allows initialization from kwargs.
+    
+        Sets attributes on the constructed instance using the names and
+        values in ``kwargs``.
+    
+        Only keys that are present as
+        attributes of the instance's class are allowed. These could be,
+        for example, any mapped columns or relationships.
+        """
+        cls_ = type(self)
+        for k in kwargs:
+            if not hasattr(cls_, k):
+                raise TypeError(
+>                   "%r is an invalid keyword argument for %s" % (k, cls_.__name__)
+                )
+E               TypeError: 'access' is an invalid keyword argument for ModelAddress
+
+../venvs/book/lib/python3.5/site-packages/sqlalchemy/ext/declarative/base.py:840: TypeError
+=========================================== warnings summary ============================================
+[...]
+======================================== short test summary info ========================================
+FAILED rooms_booking/room/tests/test_address.py::TestAddress::test_create_address - TypeError: 'access...
+================================= 1 failed, 1 warnings in 2.06 seconds ==================================
+Makefile:57 : la recette pour la cible « test » a échouée
+make: *** [test] Erreur 1
 ```
 
 It's time to extend the Address model to make our previous test successful:
@@ -204,7 +274,7 @@ make test
 [anyblok_postgres]: https://github.com/AnyBlok/anyblok_postgres
 [wikipedia_tdd]: https://fr.wikipedia.org/wiki/Test_driven_development
 [python_decorator]: https://www.python.org/dev/peps/pep-0318/
-[ref_doc_column_type]: https://doc.anyblok.org/en/latest/MEMENTO.html#column
+[ref_doc_column_type]: http://doc.anyblok.org/en/latest/MEMENTO.html#column
 [ref_doc_import_declaration_module]: http://doc.anyblok.org/en/latest/MEMENTO.html#blok
 [ref_doc_reload_declaration_module]: http://doc.anyblok.org/en/latest/MEMENTO.html#blok
 [ref_doc_update]: http://doc.anyblok.org/en/latest/MEMENTO.html#blok
