@@ -10,7 +10,7 @@ start this section:
 
 ```bash
 # clone 
-git clone -b II_setup-project https://github.com/AnyBlok/anyblok-book-examples anyblok
+git clone -b II_setup-project https://github.com/AnyBlok/anyblok-book-examples
 cd anyblok-book-examples
 source ../venv
 ```
