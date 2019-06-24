@@ -37,6 +37,7 @@ learned in the how to [Set up your own project](./02_cookiecutter.md).
 │   └── __init__.py              # Likes standard python, the __init__.py file!
 ├── setup.cfg                    # The python package setup.cfg file
 ├── setup.py                     # The python package setup.py file
+├── tox.ini                      # A default tox config file
 └── VERSION                      # Python package version file
 ```
 
