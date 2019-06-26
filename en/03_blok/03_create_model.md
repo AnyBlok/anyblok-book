@@ -20,26 +20,21 @@ section](./05_link_models.md)
 
 ```python
 # file: rooms_booking/room/tests/test_room.py
-from anyblok.tests.testcase import BlokTestCase
 
 
-class TestRoom(BlokTestCase):
-    """ Test python api on AnyBlok models"""
+class TestRoom:
+    """Test Room model"""
 
-    def test_create_room(self):
-        room_count = self.registry.Room.query().count()
-        room = self.registry.Room.insert(
+    def test_create_room(self, rollback_registry):
+        registry = rollback_registry
+        room_count = registry.Room.query().count()
+        room = registry.Room.insert(
             name="A1",
             capacity=25,
         )
-        self.assertEqual(
-            self.registry.Room.query().count(),
-            room_count + 1
-        )
-        self.assertEqual(
-            room.name,
-            "A1"
-        )
+        assert registry.Room.query().count() == room_count + 1
+        assert room.name == "A1"
+
 ```
 
 Then we implement the new model creating a new python module.
@@ -100,22 +95,25 @@ anyblok_updatedb -c app.test.cfg --update-bloks room
 [...]
 # run your tests
 (rooms-venv) $ make test
-anyblok_nose -c app.test.cfg -- -v -s rooms_booking
-AnyBlok Load init: EntryPoint.parse('anyblok_pyramid_config = anyblok_pyramid:anyblok_init_config')
-Loading config file '/etc/xdg/AnyBlok/conf.cfg'
-Loading config file '/home/pverkest/.config/AnyBlok/conf.cfg'
-Loading config file '/home/pverkest/anyblok/anyblok-book-examples/app.test.cfg'
-Loading config file '/home/pverkest/anyblok/anyblok-book-examples/app.cfg'
-AnyBlok Load init: EntryPoint.parse('anyblok_pyramid_config = anyblok_pyramid:anyblok_init_config')
-Loading config file '/etc/xdg/AnyBlok/conf.cfg'
-Loading config file '/home/pverkest/.config/AnyBlok/conf.cfg'
-test_create_address (rooms_booking.room.tests.test_address.TestAddress) ... ok
-test_create_room (rooms_booking.room.tests.test_room.TestRoom) ... ok
+ANYBLOK_CONFIG_FILE=app.test.cfg py.test -v -s rooms_booking
+========================================== test session starts ==========================================
+platform linux -- Python 3.5.3, pytest-4.6.3, py-1.8.0, pluggy-0.12.0 -- ~/anyblok/venvs/book/bin/python3
+cachedir: .pytest_cache
+rootdir: ~/anyblok/anyblok-book-examples, inifile: tox.ini
+plugins: cov-2.7.1
+collected 2 items                                                                                       
 
-----------------------------------------------------------------------
-Ran 2 tests in 0.868s
-
-OK
+rooms_booking/room/tests/test_address.py::TestAddress::test_create_address AnyBlok Load init: EntryPoint.parse('anyblok_pyramid_config = anyblok_pyramid:anyblok_init_config')
+Loading config file '/etc/xdg/AnyBlok/conf.cfg'
+Loading config file '~/.config/AnyBlok/conf.cfg'
+Loading config file '~/anyblok/anyblok-book-examples/app.test.cfg'
+Loading config file '~/anyblok/anyblok-book-examples/app.cfg'
+Loading config file '/etc/xdg/AnyBlok/conf.cfg'
+Loading config file '~/.config/AnyBlok/conf.cfg'
+PASSED
+rooms_booking/room/tests/test_room.py::TestRoom::test_create_room PASSED
+[...]
+================================= 2 passed, 1 warnings in 2.13 seconds ==================================
 ```
 
 

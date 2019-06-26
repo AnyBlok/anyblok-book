@@ -9,8 +9,8 @@ project.
 
 ### Add the field
 
-In any database system, to link two tables together we use relationships, here we 
-need to add a ``Many2One`` relationship between ``Room`` and ``Address``:
+In any database system, to link two tables together we use relationships, here
+we need to add a ``Many2One`` relationship between ``Room`` and ``Address``:
 
 ```python
 # File rooms_booking/room/room.py
@@ -35,45 +35,62 @@ need to add a ``Many2One`` relationship between ``Room`` and ``Address``:
 
 You probably have noticed that your tests are failing now! We have to fix them.
 
+
+
+```python
+rooms_booking/room/tests/conftest.py
+@@ -1 +1,15 @@
++import pytest
+ from anyblok.conftest import *  # noqa: F401,F403
++
++
++@pytest.fixture()
++def an_address(rollback_registry):
++    return rollback_registry.Address.insert(
++        first_name="The Queen's College",
++        last_name="University of oxford",
++        street1="High Street",
++        zip_code="OX1 4AW",
++        city="Oxford",
++        country="GBR",
++        access="Kick the door to open it!"
++    )
+```
+
 ```python
 rooms_booking/room/tests/test_room.py
-@@ -15,11 +15,23 @@ import pytz
- class TestRoom(BlokTestCase):
-     """ Test python api on AnyBlok models"""
+@@ -14,22 +13,24 @@ import pytz
+ class TestRoom:
+     """Test Room model"""
 
-+    def setUp(self):
-+        self.an_address = self.registry.Address.insert(
-+            first_name="The Queen's College",
-+            last_name="University of oxford",
-+            street1="High Street",
-+            zip_code="OX1 4AW",
-+            city="Oxford",
-+            country="GBR",
-+            access="Kick the door to open it!"
-+        )
-+
-     def test_create_room(self):
-         room_count = self.registry.Room.query().count()
-         room = self.registry.Room.insert(
+-    def test_create_room(self, rollback_registry):
++    def test_create_room(self, rollback_registry, an_address):
+         registry = rollback_registry
+         room_count = registry.Room.query().count()
+         room = registry.Room.insert(
              name="A1",
              capacity=25,
-+            address=self.an_address
++            address=an_address
          )
-         self.assertEqual(
-             self.registry.Room.query().count(),
-@@ -35,6 +47,7 @@ class TestRoom(BlokTestCase):
-         room = self.registry.Room.insert(
+         assert registry.Room.query().count() == room_count + 1
+         assert room.name == "A1"
+
+-    def test_track_modification_date(self, rollback_registry):
++    def test_track_modification_date(self, rollback_registry, an_address):
+         registry = rollback_registry
+         before_create = datetime.now(tz=pytz.timezone(time.tzname[0]))
+         room = registry.Room.insert(
              name="A1",
              capacity=25,
-+            address=self.an_address
++            address=an_address
          )
          room.refresh()
          after_create = datetime.now(tz=pytz.timezone(time.tzname[0]))
 
 ```
 
-If you are curious, you may read which kind of relationship AnyBlok provides and learn
-from [documentation reference][doc_ref_relationship]
+If you are curious, you may read which kind of relationship AnyBlok provides
+and learn from [documentation reference][doc_ref_relationship]
 
 ### Init some data
 

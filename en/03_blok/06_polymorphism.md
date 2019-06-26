@@ -15,7 +15,11 @@ We have added some models to get started with polymorphism:
     * ``Employee`` model that adds position field on person model using
       polymorphism
 * A **university** blok that represents all things regarding education
-    * ``Professor`` model that extends Employee model using polymorphism
+    * ``Professor`` model that extends *Employee* model using polymorphism
+    * ``Student`` model that extends *Person* model using polymorphism
+
+We also add the ``University`` model link to the Address model, an university
+could have zero or more addresses.
 
 
 [Polymorphism][wiki_polymorphism] in AnyBlok allows you to get clear business
