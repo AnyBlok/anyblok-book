@@ -23,8 +23,9 @@ index ca2ca86..1216cde 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -28,6 +28,7 @@ requirements = [
+     'sqlalchemy,'
      'anyblok',
-     'psycopg2',
+     'psycopg2-binary',
      'anyblok_pyramid',
 +    'anyblok_address',
  ]
