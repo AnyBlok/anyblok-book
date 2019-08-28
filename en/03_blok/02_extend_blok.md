@@ -24,7 +24,7 @@ rm rooms_booking/room/model.py \
 * Remove pyramid configurations:
 
 ```python
--    # file: ``/rooms_booking/room/__init__.py``
+     # file: ``/rooms_booking/room/__init__.py``
 
 -    @classmethod
 -    def pyramid_load_config(cls, config):
