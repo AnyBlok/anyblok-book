@@ -24,6 +24,8 @@ rm rooms_booking/room/model.py \
 * Remove pyramid configurations:
 
 ```python
+-    # file: ``/rooms_booking/room/__init__.py``
+
 -    @classmethod
 -    def pyramid_load_config(cls, config):
 -        config.add_route("root", "/")
@@ -74,23 +76,6 @@ In our case if the *Room* blok state is ``installed`` in a database
 ``address.py`` will be imported. Otherwise all our code will be present but
 not used because the blok is uninstalled.
 
-**Note:** When you need to know if a blok is installed, launch an
-anyblok_interpreter and query `registry.System.Blok`
-
-```
-In [1]: registry.System.Blok.query().all()
-Out[1]: 
-[anyblok-core (installed),
- auth (uninstalled),
- auth-password (uninstalled),
- authorization (uninstalled),
- model_authz (uninstalled),
- room (installed),
- anyblok-test (uninstalled)]
-
-In [2]:  
-```
-
 In the same file, adapt the [update method][ref_doc_update]. At the moment
 we are not going to do anything here while updating or installing the *Room*
 Blok:
@@ -108,6 +93,27 @@ Blok:
     def install(self):
         pass
 
+```
+
+In order to start the project and install newly added bloks, you can run 
+`make setup-dev`.
+
+**Note:** When you need to know if a blok is installed, launch an
+anyblok_interpreter and query `registry.System.Blok`
+
+```
+In [1]: registry.System.Blok.query().all()
+Out[1]: 
+[anyblok-core (installed),
+ address (installed),
+ auth (uninstalled),
+ auth-password (uninstalled),
+ authorization (uninstalled),
+ model_authz (uninstalled),
+ room (installed),
+ anyblok-test (uninstalled)]
+
+In [2]:  
 ```
 
 (loving [TDD][wikipedia_tdd]) Before you start coding, add the following unit
