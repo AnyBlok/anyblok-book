@@ -95,9 +95,6 @@ Blok:
 
 ```
 
-In order to start the project and install newly added bloks, you can run 
-`make setup-dev`.
-
 **Note:** When you need to know if a blok is installed, launch an
 anyblok_interpreter and query `registry.System.Blok`
 
@@ -142,6 +139,10 @@ class TestAddress:
         assert registry.Address.query().count() == address_count + 1
         assert queens_college_address.access == "Kick the door to open it!"
 ```
+
+Before starting tests, you may need to create test database using
+`make setup-tests` and then run `anyblok_updatedb -c app.test.cfg --install-bloks address`
+in order to install address blok if it is not already.
 
 If you run this test you'll probably notice the following error as we haven't
 created the ``access`` field on our ``Address`` model yet.
