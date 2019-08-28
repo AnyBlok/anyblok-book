@@ -114,6 +114,8 @@ Diff result:
      capacity = Integer(label="Capacity", nullable=False)
 ```
 
+You should now be able to launch previousily added tests and make them pass.
+
 
 [gh_abe]: https://github.com/AnyBlok/anyblok-book-examples
 [wikipedia_mixin]: https://en.wikipedia.org/wiki/Mixin
