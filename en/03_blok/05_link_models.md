@@ -341,6 +341,18 @@ registry.Room.query(
 ('Salle 101', 'La Sorbonne', 25)
 ```
 
+* Get a unique instance matching query if exists and None otherwise
+
+```Python
+registry.Room.query(
+    registry.Room.name, registry.Room.capacity
+).filter_by(
+    name='Salle 101').one_or_none()
+('Salle 101', 25)
+registry.Room.query().filter_by(name='not an existing name').one_or_none()
+None
+```
+
 > **Note**: You can clone ``III-05_link-models`` branch from
 > [AnyBlok/anyblok-book-examples][gh_abe] repo to get that whole code.
 
