@@ -17,7 +17,7 @@ Add [anyblok_mixins][pypi_anyblok_mixins] to your package requirements and
 install the package.
 
 ```python
-file: setup.py
+ # file: setup.py
 
  requirements = [
      'anyblok',
@@ -32,7 +32,7 @@ file: setup.py
 Declare ``anyblok-mixins`` blok as required in the Room blok init file.
 
 ```python
-file: rooms_booking/room/__init__.py
+  # file: rooms_booking/room/__init__.py
 
   class Room(Blok):
      """Room's Blok class definition
@@ -50,7 +50,7 @@ In the following test we make sure as requested by our customer that
 ``edit_date`` field is properly updated after a change occurs on a room.
 
 ```python
-#File: rooms_booking/room/tests/test_room.py
+# file: rooms_booking/room/tests/test_room.py
 
 from datetime import datetime
 import time
@@ -113,6 +113,8 @@ Diff result:
      name = String(label="Room name", nullable=False, index=True)
      capacity = Integer(label="Capacity", nullable=False)
 ```
+
+You should now be able to launch previousily added tests and make them pass.
 
 
 [gh_abe]: https://github.com/AnyBlok/anyblok-book-examples
