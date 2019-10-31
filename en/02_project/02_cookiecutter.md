@@ -3,7 +3,7 @@
 In this chapter you will learn how to start an Anyblok project ready to
 run and hack.
 
-### Project initialisation
+### Project initialization
 
 To quickly set up a new project we maintain [a cookie cutter recipe]
 [cookiecutter] which helps you generate a new AnyBlok project by
@@ -62,7 +62,7 @@ directory with a blok called ``room`` and an ``Example`` model is present inside
 
 ### Set up your environment
 
-**Note:** We assume you have at least a python3.3 environment ready to work
+**Note:** We assume you have at least a python3.6 environment ready to work
 with and Postgresql listening on port 5432.
 
 We have a project directory but before running Anyblok you need
@@ -140,7 +140,7 @@ Load config file '~/AnyBlok/rooms-booking/app.dev.cfg'
 Load config file '~/AnyBlok/rooms-booking/app.cfg'
 ```
 
-Then open your favorite web browser and visit the following urls:
+Then open your favorite web browser and visit following urls:
 
 ```bash
 $ curl localhost:8080/
@@ -199,7 +199,7 @@ Coverage HTML written to dir htmlcov
 ================================= 5 passed, 1 warnings in 2.23 seconds ==================================
 ```
 
-We learned how to bootstrap an AnyBlok project and run it without explaining
+We have learned how to bootstrap an AnyBlok project and run it without explaining
 what each component is, if you want to go further keep reading!
 
 
