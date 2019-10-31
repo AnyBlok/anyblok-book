@@ -1,7 +1,7 @@
 # II - Project
 
 
-In this section you will learn how set up a new AnyBlok project and how it
+In this section you will learn how to set up a new AnyBlok project and how it
 differs from a standard python library.
 
 At the end of this chapter, you will have a virtual environment created
