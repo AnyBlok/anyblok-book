@@ -11,7 +11,7 @@ cd III-06-polymorphisme
 [Polymorphism][wiki_polymorphism] in AnyBlok allows you to share same database
 table with different models.
 
-It helps building elegant and comprehensive Python APi, each polymorphic model
+It helps building elegant and comprehensive Python API, each polymorphic model
 can be accessed through a different namespace (Employee vs
 Employee.Professor for example).
 Namespacing is also helpful for giving different behaviours per polymorphic
