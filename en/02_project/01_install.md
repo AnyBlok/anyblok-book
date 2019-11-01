@@ -4,7 +4,7 @@
 ### Requirements
 
 To develop an AnyBlok project you need to make sure you have
-python >= 3.3 and a SGDB supported by [SQLAlchemy]
+python >= 3.6 and a SGDB supported by [SQLAlchemy]
 [sqlalchemy_requirements]. Also, don't forget to install [Git][git]
 
 All this book was tested using Debian and PostgreSQL. Here is how to install all
@@ -51,8 +51,8 @@ source rooms-venv/bin/activate
 Once activated, all python commands (like ``pip`` and so on) are launched in
 this context.
 
-In all this book we assume you have activated your virtual environment. You can
-make sure of it by looking at the left of your terminal, 
+In all book examples, we assume you have activated your virtual environment.
+Make sure it is activated by looking at the left part of your terminal,
 its name is generally displayed.
 
 ```bash

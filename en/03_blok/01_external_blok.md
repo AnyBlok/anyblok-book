@@ -1,7 +1,7 @@
 ## Add external Blok
 
 We are going to use an existing generic business blok within our project to
-represent addresses.
+represent postal addresses.
 
 > **Note**: You can clone ``II_setup-project`` branch from
 > [AnyBlok/anyblok-book-examples][gh_abe] repo to get ready to start
