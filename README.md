@@ -10,6 +10,7 @@ upgraded or uninstalled.
 * Jean-Sébastien Suzanne
 * Christophe Combelles
 * Pierre Verkest
+* Franck Bret
 
 ## Licence
 
