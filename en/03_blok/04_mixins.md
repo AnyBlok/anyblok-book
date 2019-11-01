@@ -78,13 +78,13 @@ class TestRoom:
         assert after_create <= room.edit_date <= after_edit
 ```
 
-> *Note*: ``room.flush()`` is used here to force sending data to the database
-> as ``edit_date`` field is configured with [auto_update][ref_doc_auto_update]
-> option wich is called before sending data to the database.
-
 > *Note*: ``room.refresh()`` is used to clear cache on the ORM side to
 > request data from the database. It will perform a flush before if
 > necessary.
+
+> *Note*: ``registry.flush()`` is used here to force sending data to the database
+> as ``edit_date`` field is configured with an [auto_update][ref_doc_auto_update]
+> option wich is called before sending data to the database.
 
 Those methods are rarely used in your code but can be tricky while playing with
 some kind of fields.
