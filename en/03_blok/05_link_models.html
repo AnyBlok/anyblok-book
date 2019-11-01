@@ -1,0 +1,826 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Link models · AnyBlok tutorial</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-language-picker/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="06_polymorphism.html" />
+    
+    
+    <link rel="prev" href="04_mixins.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Book intent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../01_discovery/">
+            
+                <a href="../01_discovery/">
+            
+                    
+                    I - Discover AnyBlok
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../01_discovery/01_what_is_it.html">
+            
+                <a href="../01_discovery/01_what_is_it.html">
+            
+                    
+                    What is AnyBlok ?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../01_discovery/02_main_features.html">
+            
+                <a href="../01_discovery/02_main_features.html">
+            
+                    
+                    AnyBlok features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../01_discovery/03_ecosystem.html">
+            
+                <a href="../01_discovery/03_ecosystem.html">
+            
+                    
+                    AnyBlok ecosystem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../01_discovery/04_versus_others.html">
+            
+                <a href="../01_discovery/04_versus_others.html">
+            
+                    
+                    AnyBlok vs others
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../02_project/">
+            
+                <a href="../02_project/">
+            
+                    
+                    II - Setup project
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02_project/01_install.html">
+            
+                <a href="../02_project/01_install.html">
+            
+                    
+                    Install AnyBlok
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02_project/02_cookiecutter.html">
+            
+                <a href="../02_project/02_cookiecutter.html">
+            
+                    
+                    Initialize a project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../02_project/03_structure.html">
+            
+                <a href="../02_project/03_structure.html">
+            
+                    
+                    Understanding Blok structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    III - First Bloks
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="01_external_blok.html">
+            
+                <a href="01_external_blok.html">
+            
+                    
+                    External Blok
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="02_extend_blok.html">
+            
+                <a href="02_extend_blok.html">
+            
+                    
+                    Extend Blok
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="03_create_model.html">
+            
+                <a href="03_create_model.html">
+            
+                    
+                    Create a model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="04_mixins.html">
+            
+                <a href="04_mixins.html">
+            
+                    
+                    Use mixins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.5" data-path="05_link_models.html">
+            
+                <a href="05_link_models.html">
+            
+                    
+                    Link models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="06_polymorphism.html">
+            
+                <a href="06_polymorphism.html">
+            
+                    
+                    Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="07_exercises.html">
+            
+                <a href="07_exercises.html">
+            
+                    
+                    Exercices
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../04_service/">
+            
+                <a href="../04_service/">
+            
+                    
+                    IV - Expose your http service
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Link models</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="link-models">Link models</h2>
+<p>We know that each room must be linked to an address. Lets make it true in our
+project.</p>
+<blockquote>
+<p><strong>Note</strong>: You can clone <code>III-04_mixins</code> branch from
+<a href="https://github.com/AnyBlok/anyblok-book-examples" target="_blank">AnyBlok/anyblok-book-examples</a> repo to get ready to start
+with this chapter.</p>
+</blockquote>
+<h3 id="add-the-field">Add the field</h3>
+<p>In any database system, to link two tables together we use relationships, here
+we need to add a <code>Many2One</code> relationship between <code>Room</code> and <code>Address</code>:</p>
+<pre><code class="lang-python"><span class="hljs-comment"># File rooms_booking/room/room.py</span>
+<span class="hljs-meta">@@ -8,6 +8,7 @@</span>
+
+ <span class="hljs-keyword">from</span> anyblok <span class="hljs-keyword">import</span> Declarations
+ <span class="hljs-keyword">from</span> anyblok.column <span class="hljs-keyword">import</span> String, Integer
++<span class="hljs-keyword">from</span> anyblok.relationship <span class="hljs-keyword">import</span> Many2One
+
+ Model = Declarations.Model
+ Mixin = Declarations.Mixin
+<span class="hljs-meta">@@ -20,3 +21,6 @@ class Room(Mixin.IdColumn, Mixin.TrackModel):</span>
+
+     name = String(label=<span class="hljs-string">&quot;Room name&quot;</span>, nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)
+     capacity = Integer(label=<span class="hljs-string">&quot;Capacity&quot;</span>, nullable=<span class="hljs-keyword">False</span>)
++    address = Many2One(
++        label=<span class="hljs-string">&quot;Address&quot;</span>, model=Model.Address, nullable=<span class="hljs-keyword">False</span>, one2many=<span class="hljs-string">&quot;rooms&quot;</span>
++    )
+</code></pre>
+<h3 id="fix-tests">Fix tests</h3>
+<p>You probably have noticed that your tests are failing now! We have to fix them.</p>
+<pre><code class="lang-python">rooms_booking/room/tests/conftest.py
+<span class="hljs-meta">@@ -1 +1,15 @@</span>
++<span class="hljs-keyword">import</span> pytest
+ <span class="hljs-keyword">from</span> anyblok.conftest <span class="hljs-keyword">import</span> *  <span class="hljs-comment"># noqa: F401,F403</span>
++
++
++@pytest.fixture()
++<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">an_address</span><span class="hljs-params">(rollback_registry)</span>:</span>
++    <span class="hljs-keyword">return</span> rollback_registry.Address.insert(
++        first_name=<span class="hljs-string">&quot;The Queen&apos;s College&quot;</span>,
++        last_name=<span class="hljs-string">&quot;University of oxford&quot;</span>,
++        street1=<span class="hljs-string">&quot;High Street&quot;</span>,
++        zip_code=<span class="hljs-string">&quot;OX1 4AW&quot;</span>,
++        city=<span class="hljs-string">&quot;Oxford&quot;</span>,
++        country=<span class="hljs-string">&quot;GBR&quot;</span>,
++        access=<span class="hljs-string">&quot;Kick the door to open it!&quot;</span>
++    )
+</code></pre>
+<pre><code class="lang-python">rooms_booking/room/tests/test_room.py
+<span class="hljs-meta">@@ -14,22 +13,24 @@ import pytz</span>
+ <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestRoom</span>:</span>
+     <span class="hljs-string">&quot;&quot;&quot;Test Room model&quot;&quot;&quot;</span>
+
+-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_create_room</span><span class="hljs-params">(self, rollback_registry)</span>:</span>
++    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_create_room</span><span class="hljs-params">(self, rollback_registry, an_address)</span>:</span>
+         registry = rollback_registry
+         room_count = registry.Room.query().count()
+         room = registry.Room.insert(
+             name=<span class="hljs-string">&quot;A1&quot;</span>,
+             capacity=<span class="hljs-number">25</span>,
++            address=an_address
+         )
+         <span class="hljs-keyword">assert</span> registry.Room.query().count() == room_count + <span class="hljs-number">1</span>
+         <span class="hljs-keyword">assert</span> room.name == <span class="hljs-string">&quot;A1&quot;</span>
+
+-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_track_modification_date</span><span class="hljs-params">(self, rollback_registry)</span>:</span>
++    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_track_modification_date</span><span class="hljs-params">(self, rollback_registry, an_address)</span>:</span>
+         registry = rollback_registry
+         before_create = datetime.now(tz=pytz.timezone(time.tzname[<span class="hljs-number">0</span>]))
+         room = registry.Room.insert(
+             name=<span class="hljs-string">&quot;A1&quot;</span>,
+             capacity=<span class="hljs-number">25</span>,
++            address=an_address
+         )
+         room.refresh()
+         after_create = datetime.now(tz=pytz.timezone(time.tzname[<span class="hljs-number">0</span>]))
+</code></pre>
+<p>If you are curious, you may read which kind of relationship AnyBlok provides
+and learn from <a href="http://doc.anyblok.org/en/latest/MEMENTO.html#relationship" target="_blank">documentation reference</a></p>
+<h3 id="init-some-data">Init some data</h3>
+<p>To play with queries we need to populate some data entries while installing
+the blok.</p>
+<pre><code class="lang-python"><span class="hljs-comment"># File: rooms_booking/room/__init__.py</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">install</span><span class="hljs-params">(self)</span>:</span>
+        sorbonne = self.registry.Address.insert(
+            first_name=<span class="hljs-string">&quot;La Sorbonne&quot;</span>,
+            last_name=<span class="hljs-string">&quot;La Chancellerie des Universit&#xE9;s de Paris&quot;</span>,
+            street1=<span class="hljs-string">&quot;47, rue des &#xC9;coles &quot;</span>,
+            zip_code=<span class="hljs-string">&quot;75230&quot;</span>,
+            city=<span class="hljs-string">&quot;Paris cedex 05&quot;</span>,
+            country=<span class="hljs-string">&quot;FRA&quot;</span>,
+            access=<span class="hljs-string">&quot;Crie fort pour r&#xE9;veiller le consi&#xE8;rge&quot;</span>
+        )
+        self.registry.Room.insert(
+            name=<span class="hljs-string">&quot;Salle 101&quot;</span>,
+            capacity=<span class="hljs-number">25</span>,
+            address=sorbonne
+        )
+        self.registry.Room.insert(
+            name=<span class="hljs-string">&quot;Salle 102&quot;</span>,
+            capacity=<span class="hljs-number">30</span>,
+            address=sorbonne
+        )
+        self.registry.Room.insert(
+            name=<span class="hljs-string">&quot;Salle 103&quot;</span>,
+            capacity=<span class="hljs-number">28</span>,
+            address=sorbonne
+        )
+        trinity = self.registry.Address.insert(
+            first_name=<span class="hljs-string">&quot;Trinity College&quot;</span>,
+            last_name=<span class="hljs-string">&quot;University of Oxford&quot;</span>,
+            street1=<span class="hljs-string">&quot;Broad Street&quot;</span>,
+            zip_code=<span class="hljs-string">&quot;OX1 3BH&quot;</span>,
+            city=<span class="hljs-string">&quot;Oxford&quot;</span>,
+            country=<span class="hljs-string">&quot;GBR&quot;</span>,
+            access=<span class="hljs-string">&quot;Ring the bell!&quot;</span>
+        )
+        self.registry.Room.insert(
+            name=<span class="hljs-string">&quot;Room 101&quot;</span>,
+            capacity=<span class="hljs-number">47</span>,
+            address=trinity
+        )
+        self.registry.Room.insert(
+            name=<span class="hljs-string">&quot;102&quot;</span>,
+            capacity=<span class="hljs-number">50</span>,
+            address=trinity
+        )
+        self.registry.Room.insert(
+            name=<span class="hljs-string">&quot;103&quot;</span>,
+            capacity=<span class="hljs-number">42</span>,
+            address=trinity
+        )
+        imt_lille = self.registry.Address.insert(
+            first_name=<span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>,
+            last_name=<span class="hljs-string">&quot;Universit&#xE9; de Lille&quot;</span>,
+            street1=<span class="hljs-string">&quot;Site de Villeneuve d&apos;Ascq&quot;</span>,
+            street2=<span class="hljs-string">&quot;20 rue Guglielmo Marconi&quot;</span>,
+            zip_code=<span class="hljs-string">&quot;59650&quot;</span>,
+            city=<span class="hljs-string">&quot;Villeneuve - d&#x2019;Ascq&quot;</span>,
+            country=<span class="hljs-string">&quot;FRA&quot;</span>,
+            access=<span class="hljs-string">&quot;Ring the bell!&quot;</span>
+        )
+        self.registry.Room.insert(
+            name=<span class="hljs-string">&quot;Salle E001S&quot;</span>,
+            capacity=<span class="hljs-number">42</span>,
+            address=imt_lille
+        )
+        self.registry.Room.insert(
+            name=<span class="hljs-string">&quot;Salle E002S&quot;</span>,
+            capacity=<span class="hljs-number">28</span>,
+            address=imt_lille
+        )
+        self.registry.Room.insert(
+            name=<span class="hljs-string">&quot;Salle E003S&quot;</span>,
+            capacity=<span class="hljs-number">60</span>,
+            address=imt_lille
+        )
+        self.registry.Room.insert(
+            name=<span class="hljs-string">&quot;Amphi Byron&quot;</span>,
+            capacity=<span class="hljs-number">200</span>,
+            address=imt_lille
+        )
+        self.registry.Room.insert(
+            name=<span class="hljs-string">&quot;Amphi Pascal&quot;</span>,
+            capacity=<span class="hljs-number">150</span>,
+            address=imt_lille
+        )
+        self.registry.Room.insert(
+            name=<span class="hljs-string">&quot;Amphi Morse&quot;</span>,
+            capacity=<span class="hljs-number">500</span>,
+            address=imt_lille
+        )
+        self.registry.Room.insert(
+            name=<span class="hljs-string">&quot;Amphi Shannon&quot;</span>,
+            capacity=<span class="hljs-number">200</span>,
+            address=imt_lille
+        )
+        self.registry.Room.insert(
+            name=<span class="hljs-string">&quot;Amphi Chappe&quot;</span>,
+            capacity=<span class="hljs-number">500</span>,
+            address=imt_lille
+        )
+</code></pre>
+<p>As this code is only called while installing this blok we are going to recreate
+the dev database:</p>
+<p><code>bash
+dropdb rooms_booking
+make setup-dev</code></p>
+<h3 id="play-with-queries">Play with queries</h3>
+<p>As AnyBlok is based on <strong>SqlAlchemy</strong> you can directly learn how to build
+queries from <a href="https://docs.sqlalchemy.org/en/latest/orm/query.html" target="_blank">SqlAlchemy query API doc</a>. Here are some examples
+using <code>anyblok_interpreter -c app.dev.cfg</code></p>
+<ul>
+<li>How many addresses we have</li>
+</ul>
+<pre><code class="lang-python">registry.Address.query().count()
+<span class="hljs-number">3</span>
+</code></pre>
+<ul>
+<li>Count how many rooms have a capacity greater than 45</li>
+</ul>
+<pre><code class="lang-python">registry.Room.query().filter(
+    registry.Room.capacity &gt; <span class="hljs-number">45</span>).count()
+<span class="hljs-number">8</span>
+</code></pre>
+<ul>
+<li>Count how many rooms have a capacity greater than 45 in France</li>
+</ul>
+<pre><code class="lang-python">registry.Room.query().join(
+    registry.Room.address).filter_by(
+    country=<span class="hljs-string">&apos;FRA&apos;</span>).filter(
+    registry.Room.capacity &gt; <span class="hljs-number">45</span>).count()
+<span class="hljs-number">6</span>
+</code></pre>
+<ul>
+<li>Display the query that will be execute</li>
+</ul>
+<pre><code class="lang-python">str(
+    registry.Room.query().join(
+        registry.Room.address).filter_by(
+        country=&apos;FRA&apos;).filter(
+        registry.Room.capacity &gt; 45)
+)
+&apos;SELECT room.capacity AS room_capacity, room.name AS room_name, room.id AS room_id, room.create_date AS room_create_date, room.edit_date AS room_edit_date, room.address_uuid AS room_address_uuid
+ FROM room JOIN address ON address.uuid = room.address_uuid
+ WHERE address.country = %(country_1)s AND room.capacity &gt; %(capacity_1)s&apos;
+</code></pre>
+<ul>
+<li>Count how many rooms have a capacity greater than 45 <strong>OR</strong> in France</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> or_
+
+registry.Room.query().join(
+    registry.Room.address).filter(
+    or_(
+        registry.Address.country==<span class="hljs-string">&apos;FRA&apos;</span>,
+        registry.Room.capacity &gt; <span class="hljs-number">45</span>
+    )
+).count()
+<span class="hljs-number">13</span>
+</code></pre>
+<ul>
+<li>Display a list of tuple (room name, address first name, room capacity) using the previous query.</li>
+</ul>
+<pre><code class="lang-Python">registry.Room.query(
+    registry.Room.name,
+    registry.Address.first_name,
+    registry.Room.capacity
+).join(
+    registry.Room.address
+).filter(
+    or_(
+        registry.Address.country==<span class="hljs-string">&apos;FRA&apos;</span>,
+        registry.Room.capacity &gt; <span class="hljs-number">45</span>)
+).all()
+[(<span class="hljs-string">&apos;Salle 101&apos;</span>, <span class="hljs-string">&apos;La Sorbonne&apos;</span>, <span class="hljs-number">25</span>),
+ (<span class="hljs-string">&apos;Salle 102&apos;</span>, <span class="hljs-string">&apos;La Sorbonne&apos;</span>, <span class="hljs-number">30</span>),
+ (<span class="hljs-string">&apos;Salle 103&apos;</span>, <span class="hljs-string">&apos;La Sorbonne&apos;</span>, <span class="hljs-number">28</span>),
+ (<span class="hljs-string">&apos;Room 101&apos;</span>, <span class="hljs-string">&apos;Trinity College&apos;</span>, <span class="hljs-number">47</span>),
+ (<span class="hljs-string">&apos;102&apos;</span>, <span class="hljs-string">&apos;Trinity College&apos;</span>, <span class="hljs-number">50</span>),
+ (<span class="hljs-string">&apos;Salle E001S&apos;</span>, <span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>, <span class="hljs-number">42</span>),
+ (<span class="hljs-string">&apos;Salle E002S&apos;</span>, <span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>, <span class="hljs-number">28</span>),
+ (<span class="hljs-string">&apos;Salle E003S&apos;</span>, <span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>, <span class="hljs-number">60</span>),
+ (<span class="hljs-string">&apos;Amphi Byron&apos;</span>, <span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>, <span class="hljs-number">200</span>),
+ (<span class="hljs-string">&apos;Amphi Pascal&apos;</span>, <span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>, <span class="hljs-number">150</span>),
+ (<span class="hljs-string">&apos;Amphi Morse&apos;</span>, <span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>, <span class="hljs-number">500</span>),
+ (<span class="hljs-string">&apos;Amphi Shannon&apos;</span>, <span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>, <span class="hljs-number">200</span>),
+ (<span class="hljs-string">&apos;Amphi Chappe&apos;</span>, <span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>, <span class="hljs-number">500</span>)]
+</code></pre>
+<ul>
+<li>... and order results by capacity</li>
+</ul>
+<pre><code class="lang-python">registry.Room.query(
+    registry.Room.name,
+    registry.Address.first_name,
+    registry.Room.capacity
+).join(registry.Room.address).filter(
+    or_(
+        registry.Address.country == <span class="hljs-string">&apos;FRA&apos;</span>,
+        registry.Room.capacity &gt; <span class="hljs-number">45</span>)
+).order_by(
+    registry.Room.capacity
+).all()
+[(<span class="hljs-string">&apos;Salle 101&apos;</span>, <span class="hljs-string">&apos;La Sorbonne&apos;</span>, <span class="hljs-number">25</span>),
+ (<span class="hljs-string">&apos;Salle 103&apos;</span>, <span class="hljs-string">&apos;La Sorbonne&apos;</span>, <span class="hljs-number">28</span>),
+ (<span class="hljs-string">&apos;Salle E002S&apos;</span>, <span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>, <span class="hljs-number">28</span>),
+ (<span class="hljs-string">&apos;Salle 102&apos;</span>, <span class="hljs-string">&apos;La Sorbonne&apos;</span>, <span class="hljs-number">30</span>),
+ (<span class="hljs-string">&apos;Salle E001S&apos;</span>, <span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>, <span class="hljs-number">42</span>),
+ (<span class="hljs-string">&apos;Room 101&apos;</span>, <span class="hljs-string">&apos;Trinity College&apos;</span>, <span class="hljs-number">47</span>),
+ (<span class="hljs-string">&apos;102&apos;</span>, <span class="hljs-string">&apos;Trinity College&apos;</span>, <span class="hljs-number">50</span>),
+ (<span class="hljs-string">&apos;Salle E003S&apos;</span>, <span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>, <span class="hljs-number">60</span>),
+ (<span class="hljs-string">&apos;Amphi Pascal&apos;</span>, <span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>, <span class="hljs-number">150</span>),
+ (<span class="hljs-string">&apos;Amphi Byron&apos;</span>, <span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>, <span class="hljs-number">200</span>),
+ (<span class="hljs-string">&apos;Amphi Shannon&apos;</span>, <span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>, <span class="hljs-number">200</span>),
+ (<span class="hljs-string">&apos;Amphi Chappe&apos;</span>, <span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>, <span class="hljs-number">500</span>),
+ (<span class="hljs-string">&apos;Amphi Morse&apos;</span>, <span class="hljs-string">&quot;l&apos;IMT Lille Douai&quot;</span>, <span class="hljs-number">500</span>)]
+</code></pre>
+<ul>
+<li>Get only the first element</li>
+</ul>
+<pre><code class="lang-Python">registry.Room.query(
+    registry.Room.name, registry.Address.first_name, registry.Room.capacity
+).join(
+    registry.Room.address
+).filter(
+    or_(registry.Address.country==<span class="hljs-string">&apos;FRA&apos;</span>, registry.Room.capacity &gt; <span class="hljs-number">45</span>)
+).order_by(registry.Room.capacity).first()
+(<span class="hljs-string">&apos;Salle 101&apos;</span>, <span class="hljs-string">&apos;La Sorbonne&apos;</span>, <span class="hljs-number">25</span>)
+</code></pre>
+<ul>
+<li>Get a unique instance matching query if exists and None otherwise</li>
+</ul>
+<pre><code class="lang-Python">registry.Room.query(
+    registry.Room.name, registry.Room.capacity
+).filter_by(
+    name=<span class="hljs-string">&apos;Salle 101&apos;</span>).one_or_none()
+(<span class="hljs-string">&apos;Salle 101&apos;</span>, <span class="hljs-number">25</span>)
+registry.Room.query().filter_by(name=<span class="hljs-string">&apos;not an existing name&apos;</span>).one_or_none()
+<span class="hljs-keyword">None</span>
+</code></pre>
+<blockquote>
+<p><strong>Note</strong>: You can clone <code>III-05_link-models</code> branch from
+<a href="https://github.com/AnyBlok/anyblok-book-examples" target="_blank">AnyBlok/anyblok-book-examples</a> repo to get that whole code.</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="04_mixins.html" class="navigation navigation-prev " aria-label="Previous page: Use mixins">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="06_polymorphism.html" class="navigation navigation-next " aria-label="Next page: Polymorphism">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Link models","level":"1.4.5","depth":2,"next":{"title":"Polymorphism","level":"1.4.6","depth":2,"path":"03_blok/06_polymorphism.md","ref":"03_blok/06_polymorphism.md","articles":[]},"previous":{"title":"Use mixins","level":"1.4.4","depth":2,"path":"03_blok/04_mixins.md","ref":"03_blok/04_mixins.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","language-picker","heading-anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/AnyBlok/anyblok-book"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"AnyBlok tutorial","language":"en","gitbook":"*","description":"Create your first application step by step"},"file":{"path":"03_blok/05_link_models.md","mtime":"2019-11-01T09:38:12.505Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-01T09:39:18.254Z"},"basePath":"..","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/1.2.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-heading-anchors/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

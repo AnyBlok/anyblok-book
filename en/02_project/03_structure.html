@@ -1,0 +1,599 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Understanding Blok structure · AnyBlok tutorial</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-language-picker/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../03_blok/" />
+    
+    
+    <link rel="prev" href="02_cookiecutter.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Book intent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../01_discovery/">
+            
+                <a href="../01_discovery/">
+            
+                    
+                    I - Discover AnyBlok
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../01_discovery/01_what_is_it.html">
+            
+                <a href="../01_discovery/01_what_is_it.html">
+            
+                    
+                    What is AnyBlok ?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../01_discovery/02_main_features.html">
+            
+                <a href="../01_discovery/02_main_features.html">
+            
+                    
+                    AnyBlok features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../01_discovery/03_ecosystem.html">
+            
+                <a href="../01_discovery/03_ecosystem.html">
+            
+                    
+                    AnyBlok ecosystem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../01_discovery/04_versus_others.html">
+            
+                <a href="../01_discovery/04_versus_others.html">
+            
+                    
+                    AnyBlok vs others
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    II - Setup project
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="01_install.html">
+            
+                <a href="01_install.html">
+            
+                    
+                    Install AnyBlok
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="02_cookiecutter.html">
+            
+                <a href="02_cookiecutter.html">
+            
+                    
+                    Initialize a project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="03_structure.html">
+            
+                <a href="03_structure.html">
+            
+                    
+                    Understanding Blok structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../03_blok/">
+            
+                <a href="../03_blok/">
+            
+                    
+                    III - First Bloks
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../03_blok/01_external_blok.html">
+            
+                <a href="../03_blok/01_external_blok.html">
+            
+                    
+                    External Blok
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../03_blok/02_extend_blok.html">
+            
+                <a href="../03_blok/02_extend_blok.html">
+            
+                    
+                    Extend Blok
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../03_blok/03_create_model.html">
+            
+                <a href="../03_blok/03_create_model.html">
+            
+                    
+                    Create a model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../03_blok/04_mixins.html">
+            
+                <a href="../03_blok/04_mixins.html">
+            
+                    
+                    Use mixins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../03_blok/05_link_models.html">
+            
+                <a href="../03_blok/05_link_models.html">
+            
+                    
+                    Link models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../03_blok/06_polymorphism.html">
+            
+                <a href="../03_blok/06_polymorphism.html">
+            
+                    
+                    Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../03_blok/07_exercises.html">
+            
+                <a href="../03_blok/07_exercises.html">
+            
+                    
+                    Exercices
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../04_service/">
+            
+                <a href="../04_service/">
+            
+                    
+                    IV - Expose your http service
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Understanding Blok structure</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="project-structure">Project structure</h2>
+<p>Here is a basic structure generated by the
+<a href="https://github.com/AnyBlok/cookiecutter-anyblok-project" target="_blank">AnyBlok/cookiecutter-anyblok-project</a> as you
+learned in the how to <a href="02_cookiecutter.html">Set up your own project</a>.</p>
+<pre><code class="lang-bash">&#x251C;&#x2500;&#x2500; app.cfg                      <span class="hljs-comment"># Configuration file used in production environment</span>
+&#x251C;&#x2500;&#x2500; app.dev.cfg                  <span class="hljs-comment"># Configuration file used for development</span>
+&#x251C;&#x2500;&#x2500; app.test.cfg                 <span class="hljs-comment"># Configuration file used to run tests</span>
+&#x251C;&#x2500;&#x2500; CHANGELOG.rst                <span class="hljs-comment"># Change log of the project</span>
+&#x251C;&#x2500;&#x2500; doc                          <span class="hljs-comment"># Documentation root directory</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; build                    <span class="hljs-comment"># Directory where the output documentation(s) is built</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; Makefile                 <span class="hljs-comment"># Used to build the documentation</span>
+&#x2502;   &#x2514;&#x2500;&#x2500; <span class="hljs-built_in">source</span>                   <span class="hljs-comment"># Source &quot;code&quot; documentation directory</span>
+&#x2502;       &#x251C;&#x2500;&#x2500; apidoc.rst           <span class="hljs-comment"># Predefined apidoc chapter loading api blok documentation</span>
+&#x2502;       &#x251C;&#x2500;&#x2500; conf.py              <span class="hljs-comment"># Sphinx configuration documentation</span>
+&#x2502;       &#x251C;&#x2500;&#x2500; index.rst            <span class="hljs-comment"># Main documentation page</span>
+&#x2502;       &#x251C;&#x2500;&#x2500; _static              <span class="hljs-comment"># Sphinx documentation assets</span>
+&#x2502;       &#x2514;&#x2500;&#x2500; _templates           <span class="hljs-comment"># Sphinx templates</span>
+&#x251C;&#x2500;&#x2500; LICENSE                      <span class="hljs-comment"># Project license</span>
+&#x251C;&#x2500;&#x2500; Makefile                     <span class="hljs-comment"># A Makefile: see make help to list available commands</span>
+&#x251C;&#x2500;&#x2500; README.rst                   <span class="hljs-comment"># Project&apos;s README with basics project information</span>
+&#x251C;&#x2500;&#x2500; requirements.dev.txt         <span class="hljs-comment"># Python package dependencies required for development</span>
+&#x251C;&#x2500;&#x2500; requirements.test.txt        <span class="hljs-comment"># Python package dependencies required for running unittest</span>
+&#x251C;&#x2500;&#x2500; rooms_booking                <span class="hljs-comment"># The python package directory where you develop your bloks </span>
+&#x2502;   &#x251C;&#x2500;&#x2500; room                     <span class="hljs-comment"># A blok directory</span>
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; __init__.py          <span class="hljs-comment"># Blok definition</span>
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; model.py             <span class="hljs-comment"># Python module with model that define an example class</span>
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; tests                <span class="hljs-comment"># Test directory</span>
+&#x2502;   &#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; __init__.py      <span class="hljs-comment"># Likes standard python, the __init__.py file!</span>
+&#x2502;   &#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; conftest.py      <span class="hljs-comment"># py.test configuration file. (You will likely import ``anyblok.conftest``</span>
+&#x2502;   &#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; <span class="hljs-built_in">test</span>_model.py    <span class="hljs-comment"># File that test model.py methods</span>
+&#x2502;   &#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; <span class="hljs-built_in">test</span>_pyramid.py  <span class="hljs-comment"># File that test view.py methods</span>
+&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; views.py             <span class="hljs-comment"># Python module to declare pyramid route components </span>
+&#x2502;   &#x2514;&#x2500;&#x2500; __init__.py              <span class="hljs-comment"># Likes standard python, the __init__.py file!</span>
+&#x251C;&#x2500;&#x2500; setup.cfg                    <span class="hljs-comment"># The python package setup.cfg file</span>
+&#x251C;&#x2500;&#x2500; setup.py                     <span class="hljs-comment"># The python package setup.py file</span>
+&#x251C;&#x2500;&#x2500; tox.ini                      <span class="hljs-comment"># A default tox config file</span>
+&#x2514;&#x2500;&#x2500; VERSION                      <span class="hljs-comment"># Python package version file</span>
+</code></pre>
+<p>An AnyBlok project follows the rules of <a href="https://packaging.python.org/tutorials/packaging-projects/" target="_blank">python package projects</a>, there are few additional requirements:</p>
+<ul>
+<li>You must add <code>room</code> blok in the <code>bloks</code> list 
+<code>entry_points</code> in your package manifest: the <code>setup.py</code>
+file:</li>
+</ul>
+<pre><code class="lang-python">entry_points={
+    <span class="hljs-string">&apos;bloks&apos;</span>: [
+        <span class="hljs-string">&apos;room=rooms_booking.room:Room&apos;</span>
+        ]
+},
+</code></pre>
+<ul>
+<li>Then you must declare your blok in <code>rooms_booking/room/__init__.py</code> by
+creating a python class that inherits from <code>anyblok.blok.Blok</code>:</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-string">&quot;&quot;&quot;Blok declaration example
+&quot;&quot;&quot;</span>
+<span class="hljs-keyword">from</span> anyblok.blok <span class="hljs-keyword">import</span> Blok
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Room</span><span class="hljs-params">(Blok)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Room&apos;s Blok class definition
+    &quot;&quot;&quot;</span>
+    version = <span class="hljs-string">&quot;0.1.0&quot;</span>
+    author = <span class="hljs-string">&quot;Pierre Verkest&quot;</span>
+    required = [<span class="hljs-string">&apos;anyblok-core&apos;</span>]
+
+<span class="hljs-meta">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">import_declaration_module</span><span class="hljs-params">(cls)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Python module to import in the given order at start-up
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">from</span> . <span class="hljs-keyword">import</span> model  <span class="hljs-comment"># noqa</span>
+
+<span class="hljs-meta">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">reload_declaration_module</span><span class="hljs-params">(cls, reload)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Python module to import while reloading server (ie when
+        adding Blok at runtime
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">from</span> . <span class="hljs-keyword">import</span> model  <span class="hljs-comment"># noqa</span>
+        reload(model)
+
+<span class="hljs-meta">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pyramid_load_config</span><span class="hljs-params">(cls, config)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;configure pyramid server route&quot;&quot;&quot;</span>
+        config.add_route(<span class="hljs-string">&quot;root&quot;</span>, <span class="hljs-string">&quot;/&quot;</span>)
+        config.add_route(<span class="hljs-string">&quot;example_list&quot;</span>, <span class="hljs-string">&quot;/example&quot;</span>)
+        config.add_route(<span class="hljs-string">&quot;example&quot;</span>, <span class="hljs-string">&quot;/example/{id}&quot;</span>)
+        config.scan(cls.__module__ + <span class="hljs-string">&apos;.views&apos;</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">update</span><span class="hljs-params">(self, latest)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Update blok&quot;&quot;&quot;</span>
+        <span class="hljs-comment"># if we install this blok in the database we add a new record</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> latest:
+            self.registry.Example.insert(name=<span class="hljs-string">&quot;An example&quot;</span>)
+</code></pre>
+<p>As you can see a python package can contain one or more bloks. </p>
+<p>An Anyblok application project is a blok by itself that will have requirements
+to some other bloks published in other python packages or within the same
+package.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02_cookiecutter.html" class="navigation navigation-prev " aria-label="Previous page: Initialize a project">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../03_blok/" class="navigation navigation-next " aria-label="Next page: III - First Bloks">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Understanding Blok structure","level":"1.3.3","depth":2,"next":{"title":"III - First Bloks","level":"1.4","depth":1,"path":"03_blok/README.md","ref":"03_blok/README.md","articles":[{"title":"External Blok","level":"1.4.1","depth":2,"path":"03_blok/01_external_blok.md","ref":"03_blok/01_external_blok.md","articles":[]},{"title":"Extend Blok","level":"1.4.2","depth":2,"path":"03_blok/02_extend_blok.md","ref":"03_blok/02_extend_blok.md","articles":[]},{"title":"Create a model","level":"1.4.3","depth":2,"path":"03_blok/03_create_model.md","ref":"03_blok/03_create_model.md","articles":[]},{"title":"Use mixins","level":"1.4.4","depth":2,"path":"03_blok/04_mixins.md","ref":"03_blok/04_mixins.md","articles":[]},{"title":"Link models","level":"1.4.5","depth":2,"path":"03_blok/05_link_models.md","ref":"03_blok/05_link_models.md","articles":[]},{"title":"Polymorphism","level":"1.4.6","depth":2,"path":"03_blok/06_polymorphism.md","ref":"03_blok/06_polymorphism.md","articles":[]},{"title":"Exercices","level":"1.4.7","depth":2,"path":"03_blok/07_exercises.md","ref":"03_blok/07_exercises.md","articles":[]}]},"previous":{"title":"Initialize a project","level":"1.3.2","depth":2,"path":"02_project/02_cookiecutter.md","ref":"02_project/02_cookiecutter.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","language-picker","heading-anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/AnyBlok/anyblok-book"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"AnyBlok tutorial","language":"en","gitbook":"*","description":"Create your first application step by step"},"file":{"path":"02_project/03_structure.md","mtime":"2019-11-01T09:38:12.505Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-01T09:39:18.254Z"},"basePath":"..","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/1.2.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-heading-anchors/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
