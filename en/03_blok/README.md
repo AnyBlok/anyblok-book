@@ -4,15 +4,15 @@ In the previous section, you learned how to create an AnyBlok project tree
 ready to hack using [anyblok cookiecutter project template](
 https://github.com/AnyBlok/cookiecutter-anyblok-project).
 
-You can clone ``II_setup-project`` branch from [AnyBlok/anyblok-book-examples](
-https://github.com/AnyBlok/anyblok-book-examples) repository to get ready to
-start this section:
+You can start with ``II_setup-project`` directory from [AnyBlok/anyblok-book-examples](
+https://github.com/AnyBlok/anyblok-book-examples/tree/master/II_setup-project)
+repository to get ready to start this section:
 
 ```bash
 # clone 
-git clone -b II_setup-project https://github.com/AnyBlok/anyblok-book-examples
-cd anyblok-book-examples
-source ../venv
+git clone https://github.com/AnyBlok/anyblok-book-examples
+cd anyblok-book-examples/II_setup-project
+source ../../rooms-venv/bin/activate
 ```
 In this section, you will learn how to add: 
 

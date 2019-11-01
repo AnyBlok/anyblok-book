@@ -124,6 +124,8 @@ In [5]: registry.Example.query().all().name
 Out[5]: ['An example', 'Another example']
 
 In [7]: registry.commit()
+
+In [8]: exit
 ```
 
 ### Run webserver
@@ -153,6 +155,8 @@ $ curl 127.0.0.1:8080/example
 $ curl localhost:8080/example/1
 An example
 ```
+
+> **Tips**: you can use ``ctrl+C`` to kill the server
 
 ### Run tests
 
@@ -204,4 +208,4 @@ what each component is, if you want to go further keep reading!
 
 
 [cookiecutter]: https://github.com/AnyBlok/cookiecutter-anyblok-project
-[makefile-setup-dev]: https://github.com/AnyBlok/anyblok-book-examples/blob/II_setup-project/Makefile#L29-L33
+[makefile-setup-dev]: https://github.com/AnyBlok/anyblok-book-examples/blob/master/II_setup-project/Makefile#L29-L33

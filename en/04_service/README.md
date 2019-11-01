@@ -1,7 +1,7 @@
 # IV Expose model as Rest API
 
-> **Note**: You can clone ``IV-service`` branch from
-> [AnyBlok/anyblok-book-examples][gh_abe] repo to get ready to start
+> **Note**: You can use ``IV-service`` directory from
+> [AnyBlok/anyblok-book-examples][gh_abe] repository to get ready to start
 > with this chapter.
 
 

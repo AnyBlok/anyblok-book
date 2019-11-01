@@ -3,8 +3,8 @@
 We know that each room must be linked to an address. Lets make it true in our
 project.
 
-> **Note**: You can clone ``III-04_mixins`` branch from
-> [AnyBlok/anyblok-book-examples][gh_abe] repo to get ready to start
+> **Note**: You can use ``III-04_mixins`` directory from
+> [AnyBlok/anyblok-book-examples][gh_abe] repository to get ready to start
 > with this chapter.
 
 ### Add the field
@@ -351,10 +351,12 @@ registry.Room.query(
 ('Salle 101', 25)
 registry.Room.query().filter_by(name='not an existing name').one_or_none()
 None
+
+exit
 ```
 
-> **Note**: You can clone ``III-05_link-models`` branch from
-> [AnyBlok/anyblok-book-examples][gh_abe] repo to get that whole code.
+> **Note**: You can use ``III-05_link-models`` directory from
+> [AnyBlok/anyblok-book-examples][gh_abe] repository to get that whole code.
 
 
 [sqlalchemy_query]: https://docs.sqlalchemy.org/en/latest/orm/query.html
