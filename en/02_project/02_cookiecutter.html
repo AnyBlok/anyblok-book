@@ -463,7 +463,7 @@ to get dependencies like AnyBlok itself and setup a database:</p>
 <pre><code class="lang-bash">(rooms-venv)$ <span class="hljs-built_in">cd</span> rooms-booking
 (rooms-venv)$ make setup-dev
 </code></pre>
-<p>You can read the <a href="https://github.com/AnyBlok/anyblok-book-examples/blob/II_setup-project/Makefile#L29-L33" target="_blank">Makefile</a> to understand what&apos;s done:</p>
+<p>You can read the <a href="https://github.com/AnyBlok/anyblok-book-examples/blob/master/II_setup-project/Makefile#L29-L33" target="_blank">Makefile</a> to understand what&apos;s done:</p>
 <pre><code class="lang-bash">setup-dev: <span class="hljs-comment">## install python project dependencies for development</span>
     pip install -r requirements.dev.txt
     python setup.py develop
@@ -505,6 +505,8 @@ In [<span class="hljs-number">5</span>]: registry.Example.query().all().name
 Out[<span class="hljs-number">5</span>]: [<span class="hljs-string">&apos;An example&apos;</span>, <span class="hljs-string">&apos;Another example&apos;</span>]
 
 In [<span class="hljs-number">7</span>]: registry.commit()
+
+In [<span class="hljs-number">8</span>]: exit
 </code></pre>
 <h3 id="run-webserver">Run webserver</h3>
 <p>To run a development webserver execute:</p>
@@ -527,6 +529,9 @@ $ curl 127.0.0.1:8080/example
 $ curl localhost:8080/example/1
 An example
 </code></pre>
+<blockquote>
+<p><strong>Tips</strong>: you can use <code>ctrl+C</code> to kill the server</p>
+</blockquote>
 <h3 id="run-tests">Run tests</h3>
 <p>Before running tests, you&apos;ll have to configure the tests environment, we usually
 use a different database to launch unittests as some tests may depend on
@@ -613,7 +618,7 @@ what each component is, if you want to go further keep reading!</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Initialize a project","level":"1.3.2","depth":2,"next":{"title":"Understanding Blok structure","level":"1.3.3","depth":2,"path":"02_project/03_structure.md","ref":"02_project/03_structure.md","articles":[]},"previous":{"title":"Install AnyBlok","level":"1.3.1","depth":2,"path":"02_project/01_install.md","ref":"02_project/01_install.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","language-picker","heading-anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/AnyBlok/anyblok-book"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"AnyBlok tutorial","language":"en","gitbook":"*","description":"Create your first application step by step"},"file":{"path":"02_project/02_cookiecutter.md","mtime":"2019-11-01T13:32:33.155Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-01T13:33:39.759Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Initialize a project","level":"1.3.2","depth":2,"next":{"title":"Understanding Blok structure","level":"1.3.3","depth":2,"path":"02_project/03_structure.md","ref":"02_project/03_structure.md","articles":[]},"previous":{"title":"Install AnyBlok","level":"1.3.1","depth":2,"path":"02_project/01_install.md","ref":"02_project/01_install.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","language-picker","heading-anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/AnyBlok/anyblok-book"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"AnyBlok tutorial","language":"en","gitbook":"*","description":"Create your first application step by step"},"file":{"path":"02_project/02_cookiecutter.md","mtime":"2019-11-01T18:05:43.898Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-01T18:07:10.893Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
