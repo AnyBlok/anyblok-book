@@ -13,6 +13,11 @@ upgraded or uninstalled.
 * Christophe Combelles
 * Pierre Verkest
 * Franck Bret
+* Hugo Quezada
+* Marc Lamazouère
+* Marc Szilagyi
+* Denis Viviès
+* @AlexTorx
 
 ## Licence
 
