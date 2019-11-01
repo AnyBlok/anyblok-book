@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/AnyBlok/anyblok-book.svg?branch=master)](https://travis-ci.org/AnyBlok/anyblok-book)
+
 # AnyBlok Tutorial
 
 [Anyblok](https://github.com/AnyBlok "Anyblok") is a Python framework allowing
@@ -10,6 +12,12 @@ upgraded or uninstalled.
 * Jean-Sébastien Suzanne
 * Christophe Combelles
 * Pierre Verkest
+* Franck Bret
+* Hugo Quezada
+* Marc Lamazouère
+* Marc Szilagyi
+* Denis Viviès
+* @AlexTorx
 
 ## Licence
 

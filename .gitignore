@@ -7,5 +7,5 @@ node_modules
 _book
 *.pdf
 
-# Ide artifacts
+# IDE artifacts
 *.swp
