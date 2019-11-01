@@ -3,8 +3,8 @@
 We are going to use an existing generic business blok within our project to
 represent postal addresses.
 
-> **Note**: You can clone ``II_setup-project`` branch from
-> [AnyBlok/anyblok-book-examples][gh_abe] repo to get ready to start
+> **Note**: You can use ``II_setup-project`` directory from
+> [AnyBlok/anyblok-book-examples][gh_abe] repository to get ready to start
 > with this chapter.
 
 ### Add dependency
@@ -66,6 +66,7 @@ In [11]: registry.Address.insert(
 Out[11]: <Address: 2ff62d0b-1168-4866-9cfa-f1ed4432d5b9, Pierre, Verkest, None, 75008, Country(alpha_2='FR', alpha_3='FRA', name='France', numeric='250', official_name='French Republic') [RO=False] >
 
 registry.commit()
+exit
 ```
 
 [pypi_address_blok]: https://pypi.org/project/anyblok_address/

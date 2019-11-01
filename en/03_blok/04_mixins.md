@@ -6,8 +6,8 @@ Now we are going to use AnyBlok [mixins][wikipedia_mixin] to:
 * Use the ``TrackModel`` mixin that adds 2 fields to track creation and last
   modification date:
 
-> **Note**: You can clone ``III-03_create-model`` branch from
-> [AnyBlok/anyblok-book-examples][gh_abe] repo to get ready to start
+> **Note**: You can use ``III-03_create-model`` directory from
+> [AnyBlok/anyblok-book-examples][gh_abe] repository to get ready to start
 > with this chapter.
 
 
@@ -114,7 +114,7 @@ Diff result:
      capacity = Integer(label="Capacity", nullable=False)
 ```
 
-You should now be able to launch previousily added tests and make them pass.
+You should now be able to launch previously added tests and make them pass.
 
 
 [gh_abe]: https://github.com/AnyBlok/anyblok-book-examples

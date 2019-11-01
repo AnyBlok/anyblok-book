@@ -53,6 +53,10 @@ know where they will give their courses.
 * Pierre Verkest
 * Denis Viviès
 * Franck Bret
+* Hugo Quezada
+* Marc Lamazouère
+* Marc Szilagyi
+* @AlexTorx
 
 ## Licence
 

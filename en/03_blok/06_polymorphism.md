@@ -1,11 +1,12 @@
 ## Polymorphism
 
-You must clone the ``III-06-before_polymorphism`` branch
-from [AnyBlok/anyblok-book-examples][gh_abe] repository before starting:
+You must get code in ``III-06-before_polymorphism`` directory
+from [AnyBlok/anyblok-book-examples][gh_abe] repository before starting as
+we have had some code source to explain this chapter:
 
 ```bash
-git clone https://github.com/AnyBlok/anyblok-book-examples -b III-06-before_polymorphisme III-06-polymorphisme
-cd III-06-polymorphisme
+git clone https://github.com/AnyBlok/anyblok-book-examples -b III-06-polymorphisme
+cd III-06-polymorphisme/III-06-before_polymorphisme
 ```
 
 [Polymorphism][wiki_polymorphism] in AnyBlok allows you to share same database

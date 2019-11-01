@@ -2,8 +2,8 @@
 
 In this chapter we will see how to create a new ``Room`` model.
 
-> **Note**: You can clone ``III-02_extend-blok`` branch from
-> [AnyBlok/anyblok-book-examples][gh_abe] repo to get ready to start
+> **Note**: You can use ``III-02_extend-blok`` directory from
+> [AnyBlok/anyblok-book-examples][gh_abe] repository to get ready to start
 > with this chapter.
 
 
@@ -59,7 +59,7 @@ class Room:
 ```
 
 > **Note**: AnyBlok requires a primary key because the SQLAlchemy ORM needs it
-> as exmplain in [this SQLAlchemy FAQ](
+> as explain in [this SQLAlchemy FAQ](
 > https://docs.sqlalchemy.org/en/rel_1_1/faq/ormconfiguration.html#faq-mapper-primary-key)
 
 Mind to import your new module ``room.py`` in the *Blok* definition:

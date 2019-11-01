@@ -2,8 +2,8 @@
 
 In this chapter we will discover how to add a field to the ̀ `Address`` model.
 
-> **Note**: You can clone ``III-01_external-blok`` branch from
-> [AnyBlok/anyblok-book-examples][gh_abe] repo to get ready to start
+> **Note**: You can use ``III-01_external-blok`` directory from
+> [AnyBlok/anyblok-book-examples][gh_abe] repository to get ready to start
 > with this chapter.
 
 ### Clean up examples
@@ -34,7 +34,7 @@ rm rooms_booking/room/model.py \
 -        config.scan(cls.__module__ + '.views')
 ```
 
-### Extend the Adress model
+### Extend the Address model
 
 We need to add an ``access`` information field on each address.
 Let's add two new files in your project:
@@ -110,7 +110,7 @@ Out[1]:
  room (installed),
  anyblok-test (uninstalled)]
 
-In [2]:  
+In [2]: exit
 ```
 
 (loving [TDD][wikipedia_tdd]) Before you start coding, add the following unit
