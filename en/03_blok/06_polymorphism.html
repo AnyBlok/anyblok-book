@@ -405,10 +405,17 @@
                                 
                                 <h2 id="polymorphism">Polymorphism</h2>
 <p>You must clone the <code>III-06-before_polymorphism</code> branch
-from <a href="https://github.com/AnyBlok/anyblok-book-examples" target="_blank">AnyBlok/anyblok-book-examples</a> repo before starting:</p>
+from <a href="https://github.com/AnyBlok/anyblok-book-examples" target="_blank">AnyBlok/anyblok-book-examples</a> repository before starting:</p>
 <pre><code class="lang-bash">git <span class="hljs-built_in">clone</span> https://github.com/AnyBlok/anyblok-book-examples -b III-06-before_polymorphisme III-06-polymorphisme
 <span class="hljs-built_in">cd</span> III-06-polymorphisme
 </code></pre>
+<p><a href="https://en.wikipedia.org/wiki/Polymorphism_(computer_science)" target="_blank">Polymorphism</a> in AnyBlok allows you to share same database
+table with different models.</p>
+<p>It helps building elegant and comprehensive Python API, each polymorphic model
+can be accessed through a different namespace (Employee vs
+Employee.Professor for example).
+Namespacing is also helpful for giving different behaviours per polymorphic
+models</p>
 <p>We have added some models to get started with polymorphism:</p>
 <ul>
 <li>A <strong>person</strong> blok that contains following models<ul>
@@ -423,10 +430,19 @@ polymorphism</li>
 </ul>
 </li>
 </ul>
-<p>We also add the <code>University</code> model link to the Address model, an university
-could have zero or more addresses.</p>
-<p><a href="https://en.wikipedia.org/wiki/Polymorphism_(computer_science)" target="_blank">Polymorphism</a> in AnyBlok allows you to get clear business
-readable queries as we will see later.</p>
+<p>As you can see a <code>Professor</code> is an <code>Employee</code> of another kind. Anyblok
+polymorphism will help for:</p>
+<h3 id="querying-all-persons-through-registryperson-namespace">Querying all persons through registry.Person namespace</h3>
+<pre><code class="lang-python">In [<span class="hljs-number">1</span>]: registry.Person.query().all()
+Out[<span class="hljs-number">1</span>]: [&lt;Model.Person(first_name=<span class="hljs-string">&apos;Alice&apos;</span>, id=<span class="hljs-number">1</span>, last_name=<span class="hljs-string">&apos;Wunderer&apos;</span>, person_type=<span class="hljs-string">&apos;person&apos;</span>)&gt;,
+ &lt;Model.Person.Employee(first_name=<span class="hljs-string">&apos;John&apos;</span>, id=<span class="hljs-number">2</span>, last_name=<span class="hljs-string">&apos;Doe&apos;</span>, person_type=<span class="hljs-string">&apos;employee&apos;</span>, position=&lt;<span class="hljs-keyword">not</span> loaded&gt;)&gt;]
+</code></pre>
+<h3 id="querying-all-employees-through-registrypersonemployee">Querying all employees through registry.Person.Employee</h3>
+<p>```python
+In [2]: registry.Person.Employee.query().all()
+Out[2]: [<model.person.employee(first_name='john', id="2," last_name="Doe" ,="" person_type="employee" position="Accountant" )="">] </model.person.employee(first_name='john',></p>
+<p>We also add the <code>University</code> model thats links to the <code>Address</code> model, an
+university could have from zero to N addresses.</p>
 <p>...</p>
 
                                 
@@ -471,7 +487,7 @@ readable queries as we will see later.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Polymorphism","level":"1.4.6","depth":2,"next":{"title":"Exercices","level":"1.4.7","depth":2,"path":"03_blok/07_exercises.md","ref":"03_blok/07_exercises.md","articles":[]},"previous":{"title":"Link models","level":"1.4.5","depth":2,"path":"03_blok/05_link_models.md","ref":"03_blok/05_link_models.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","language-picker","heading-anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/AnyBlok/anyblok-book"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"AnyBlok tutorial","language":"en","gitbook":"*","description":"Create your first application step by step"},"file":{"path":"03_blok/06_polymorphism.md","mtime":"2019-11-01T10:44:59.754Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-01T10:46:22.335Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Polymorphism","level":"1.4.6","depth":2,"next":{"title":"Exercices","level":"1.4.7","depth":2,"path":"03_blok/07_exercises.md","ref":"03_blok/07_exercises.md","articles":[]},"previous":{"title":"Link models","level":"1.4.5","depth":2,"path":"03_blok/05_link_models.md","ref":"03_blok/05_link_models.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","language-picker","heading-anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/AnyBlok/anyblok-book"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"AnyBlok tutorial","language":"en","gitbook":"*","description":"Create your first application step by step"},"file":{"path":"03_blok/06_polymorphism.md","mtime":"2019-11-01T11:38:53.200Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-01T11:40:17.027Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
