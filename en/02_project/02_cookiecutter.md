@@ -92,6 +92,10 @@ As you may have noticed, the state saying what bloks are installed or not
 is saved in a database, so you can have two different databases working
 with the same code that behave in a different way according to installed bloks.
 
+
+![bloks](../../static/installed_blok.png)
+
+
 ### Run your project
 
 As long as you chose ``anyblok_pyramid``, you have two options. We will start

@@ -101,7 +101,9 @@ class Room(Blok):
             self.registry.Example.insert(name="An example")
 ```
 
-As you can see a python package can contain one or more bloks. 
+As you can see a python package can contain one or more bloks.
+
+![bloks](../../static/package_anyblok_wms_base.png)
 
 An Anyblok application project is a blok by itself that will have requirements
 to some other bloks published in other python packages or within the same
